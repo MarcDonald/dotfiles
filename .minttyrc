@@ -1,0 +1,7 @@
+ThemeFile=flat-ui
+Transparency=off
+OpaqueWhenFocused=no
+FontHeight=11
+Font=Fira Code
+CursorType=block
+BackgroundColour=64,128,128
