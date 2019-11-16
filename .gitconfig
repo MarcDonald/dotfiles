@@ -1,0 +1,20 @@
+[alias]
+	co = checkout
+	st = status
+	cm = commit
+	cl = clone
+	b = branch
+	lo = log --oneline
+	lg = log --oneline --graph --decorate
+	wd = diff --word-diff
+	wdc = diff --word-diff --cached
+	yeehaw = push --force
+	cane = commit --amend --no-edit
+	pr = pull --rebase
+[user]
+	email = marcsdeveloperemail@gmail.com
+	name = Marc
+[color]
+	ui = true
+	status = auto
+	branch = auto
