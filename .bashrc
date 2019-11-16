@@ -11,6 +11,7 @@ alias opvr='vim ~/.vimrc'
 alias cl='clear'
 
 alias ud='cddr && cd Dotfiles && ./update.sh'
+alias pd='cddr && cd Dotfiles && ./update.sh'
 
 #Docker
 alias d='docker'
