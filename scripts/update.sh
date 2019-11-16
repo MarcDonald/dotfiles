@@ -1,7 +1,15 @@
+#Bash
 cp ~/.bash_profile ..
 cp ~/.bashrc ..
+
+#Vim
 cp ~/.vimrc ..
+
+#Git
 cp ~/.gitconfig ..
+
+#Git Bash for Windows
+cp ~/.minttyrc ..
 
 #Do Git Commit
 if [ $# -eq 0 ]; then
