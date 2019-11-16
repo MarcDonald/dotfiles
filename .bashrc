@@ -10,8 +10,9 @@ alias opvr='vim ~/.vimrc'
 
 alias cl='clear'
 
-alias ud='cddr && cd Dotfiles && ./update.sh'
-alias pd='cddr && cd Dotfiles && ./update.sh'
+#Managing dotfiles repo
+alias ud='cddr && cd Dotfiles/scripts && ./update.sh'
+alias pd='cddr && cd Dotfiles/scripts && ./propagate.sh'
 
 #Docker
 alias d='docker'
@@ -51,46 +52,46 @@ alias gpm='git checkout master && git pull && grmb'
 #Functions
 #Gets Docker service name
 function dsname() {
-  lsdocs --format "{{.Name}}" | grep $1
+	lsdocs --format "{{.Name}}" | grep "$1"
 }
 
 #Gets Docker service ID
 function dsid() {
-  lsdocs | grep $1 | awk '{ print $1 }'
+	lsdocs | grep "$1" | awk '{ print $1 }'
 }
 
 #Prints the ports the Gateway is currently running on
 function wgp() {
-  lsdocs | grep gateway | awk '{ print $6 }'
+	lsdocs | grep gateway | awk '{ print $6 }'
 }
 
 #Gets Docker container ID
 function dcid() {
-  lsdocc | grep $1 | awk '{ print $1 }'
+	lsdocc | grep "$1" | awk '{ print $1 }'
 }
 
 #Tails logs for a Docker container
 function dl() {
-  docker service logs --follow `dsname $1`
+	docker service logs --follow "$(dsname "$1")"
 }
 
 #Opens a Docker container
 function ocon() {
-  docker exec -it `dcid $1` /bin/bash
+	docker exec -it "$(dcid "$1")" /bin/bash
 }
 
 #Removes a Docker service
 function rds() {
-  docker service rm `dsid $1`
+	docker service rm "$(dsid "$1")"
 }
 
 #Copies something to a docker container where $1 is the local path $2 is a part of the container name and $3 is the path to move it to in the container
 #E.g. to move a local version of common utils into the APH's node modules do dcp soe-common-utils auto /home/src/app/node_modules
 function dcp() {
-  docker cp $1 `dcid $2`:$3
+	docker cp "$1" "$(dcid "$2")":"$3"
 }
 
 #Same as dcp but copies directly into the node_modules folder
 function dcpnm() {
-  dcp $1 $2 /home/src/app/node_modules/$3
+	dcp "$1" "$2" /home/src/app/node_modules/"$3"
 }
