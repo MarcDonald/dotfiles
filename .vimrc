@@ -18,7 +18,7 @@ set hlsearch
 " Clear search by pressing enter
 nnoremap <CR> :noh<CR>
 " Show invisible characters
-set lcs=tab:▸\ ,trail:·,eol:¬,nbsp:_
+set lcs=tab:▸\ ,trail:·
 set list
 " Use file name as window title
 set title
