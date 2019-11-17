@@ -1,3 +1,5 @@
+#!/bin/sh
+
 #Name of the directory one level up
 mainDir=$(dirname "$(pwd)")
 
@@ -14,6 +16,9 @@ cp "$mainDir"/.gitconfig ~
 #Atom
 cp "$mainDir"/atom/keymap.cson ~/.atom/keymap.cson
 cp "$mainDir"/atom/config.cson ~/.atom/config.cson
+
+#Shellcheck
+cp "$mainDir"/.shellcheckrc ~
 
 #Git Bash for Windows
 cp "$mainDir"/.minttyrc ~

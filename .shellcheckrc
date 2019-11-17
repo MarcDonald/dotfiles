@@ -1,0 +1,2 @@
+#Disables warning about literal carriage returns
+disable=SC1017

@@ -1,3 +1,5 @@
+#!/bin/sh
+
 #Bash
 cp ~/.bash_profile ..
 cp ~/.bashrc ..
@@ -14,6 +16,9 @@ cp ~/.minttyrc ..
 #Atom
 cp ~/.atom/keymap.cson ../atom
 cp ~/.atom/config.cson ../atom
+
+#Shellcheck
+cp ~/.shellcheckrc ..
 
 #Do Git Commit
 if [ $# -eq 0 ]; then
