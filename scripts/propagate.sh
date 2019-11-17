@@ -1,4 +1,5 @@
 #!/bin/sh
+#TODO script doesn't work on Linux
 
 #Name of the directory one level up
 mainDir=$(dirname "$(pwd)")
