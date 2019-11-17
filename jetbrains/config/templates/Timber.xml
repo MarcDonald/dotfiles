@@ -1,0 +1,67 @@
+<templateSet group="Timber">
+  <template name="timv" value="Timber.v(&quot;Log: $method$: $text$&quot;)" description="" toReformat="false" toShortenFQNames="true">
+    <variable name="method" expression="kotlinFunctionName()" defaultValue="" alwaysStopAt="false" />
+    <variable name="text" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="KOTLIN" value="true" />
+    </context>
+  </template>
+  <template name="timd" value="Timber.d(&quot;Log: $method$: $text$&quot;)" description="" toReformat="false" toShortenFQNames="true">
+    <variable name="method" expression="kotlinFunctionName()" defaultValue="" alwaysStopAt="false" />
+    <variable name="text" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="KOTLIN" value="true" />
+    </context>
+  </template>
+  <template name="timi" value="Timber.i(&quot;Log: $method$: $text$&quot;)" description="" toReformat="false" toShortenFQNames="true">
+    <variable name="method" expression="kotlinFunctionName()" defaultValue="" alwaysStopAt="false" />
+    <variable name="text" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="KOTLIN" value="true" />
+    </context>
+  </template>
+  <template name="timw" value="Timber.w(&quot;Log: $method$: $text$&quot;)" description="" toReformat="false" toShortenFQNames="true">
+    <variable name="method" expression="kotlinFunctionName()" defaultValue="" alwaysStopAt="false" />
+    <variable name="text" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="KOTLIN" value="true" />
+    </context>
+  </template>
+  <template name="time" value="Timber.e(&quot;Log: $method$: $text$&quot;)" description="" toReformat="false" toShortenFQNames="true">
+    <variable name="method" expression="kotlinFunctionName()" defaultValue="" alwaysStopAt="false" />
+    <variable name="text" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="KOTLIN" value="true" />
+    </context>
+  </template>
+  <template name="timvs" value="Timber.v(&quot;Log: $method$: Started&quot;)" description="" toReformat="true" toShortenFQNames="true">
+    <variable name="method" expression="kotlinFunctionName()" defaultValue="" alwaysStopAt="false" />
+    <context>
+      <option name="KOTLIN" value="true" />
+    </context>
+  </template>
+  <template name="timds" value="Timber.d(&quot;Log: $method$: Started&quot;)" description="" toReformat="false" toShortenFQNames="true">
+    <variable name="method" expression="kotlinFunctionName()" defaultValue="" alwaysStopAt="false" />
+    <context>
+      <option name="KOTLIN" value="true" />
+    </context>
+  </template>
+  <template name="timis" value="Timber.i(&quot;Log: $method$: Started&quot;)" description="" toReformat="false" toShortenFQNames="true">
+    <variable name="method" expression="kotlinFunctionName()" defaultValue="" alwaysStopAt="false" />
+    <context>
+      <option name="KOTLIN" value="true" />
+    </context>
+  </template>
+  <template name="timws" value="Timber.w(&quot;Log: $method$: Started&quot;)" description="" toReformat="false" toShortenFQNames="true">
+    <variable name="method" expression="kotlinFunctionName()" defaultValue="" alwaysStopAt="false" />
+    <context>
+      <option name="KOTLIN" value="true" />
+    </context>
+  </template>
+  <template name="times" value="Timber.e(&quot;Log: $method$: Started&quot;)" description="" toReformat="false" toShortenFQNames="true">
+    <variable name="method" expression="kotlinFunctionName()" defaultValue="" alwaysStopAt="false" />
+    <context>
+      <option name="KOTLIN" value="true" />
+    </context>
+  </template>
+</templateSet>

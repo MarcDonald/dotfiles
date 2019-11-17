@@ -1,0 +1,16 @@
+.ignore
+AWS CloudFormation
+ESLint
+Key Promoter X
+Kotlin
+Kubernetes
+LiveEdit
+Lombok
+One Dark theme - Mark Skelton
+SonarLint
+String Manipulation
+JSON To Kotlin Class
+Rainbow Brackets
+
+# Android Studio
+ADB Idea
