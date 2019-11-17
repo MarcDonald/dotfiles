@@ -11,5 +11,9 @@ cp "$mainDir"/.vimrc ~
 #Git
 cp "$mainDir"/.gitconfig ~
 
+#Atom
+cp "$mainDir"/atom/keymap.cson ~/.atom/keymap.cson
+cp "$mainDir"/atom/config.cson ~/.atom/config.cson
+
 #Git Bash for Windows
 cp "$mainDir"/.minttyrc ~

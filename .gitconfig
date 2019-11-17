@@ -11,6 +11,7 @@
 	yeehaw = push --force
 	cane = commit --amend --no-edit
 	pr = pull --rebase
+	gaa = add .
 [user]
 	email = marcsdeveloperemail@gmail.com
 	name = Marc
@@ -18,3 +19,5 @@
 	ui = true
 	status = auto
 	branch = auto
+[core]
+	autocrlf = true
