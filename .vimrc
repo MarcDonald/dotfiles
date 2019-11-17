@@ -1,3 +1,6 @@
+" Enable plugin loading
+packloadall
+silent! helptags ALL
 " Enable syntax highlighting
 syntax enable
 " Spacing
