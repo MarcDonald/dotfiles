@@ -1,4 +1,5 @@
 #!/bin/sh
+#TODO script doesn't work on Linux
 
 #Bash
 cp ~/.bash_profile ..

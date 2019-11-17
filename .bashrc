@@ -14,10 +14,6 @@ alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 
-#Managing dotfiles repo
-alias ud='cddr && cd dotfiles/scripts && ./update.sh'
-alias pd='cddr && cd dotfiles/scripts && ./propagate.sh'
-
 #Docker
 alias d='docker'
 alias dco='docker-compose'
@@ -30,9 +26,13 @@ alias cllsdocc='cl && lsdocc'
 
 #Navigation
 alias doc='cd ~/Documents'
-alias cddr='doc && cd Code'
+alias cddr='doc && cd code'
 alias cddot='cddr && cd dotfiles'
-alias anddr='cddr && cd Android'
+alias anddr='cddr && cd android'
+
+#Managing dotfiles repo
+alias ud='cddr && cd dotfiles/scripts && ./update.sh'
+alias pd='cddr && cd dotfiles/scripts && ./propagate.sh'
 
 #Dynamo
 alias startdynamo='cd ~/DynamoDB && java -Djava.library.path=DynamoDBLocal_lib -jar DynamoDBLocal.jar'
