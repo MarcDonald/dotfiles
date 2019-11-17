@@ -1,0 +1,14 @@
+<templateSet group="Kotlin">
+  <template name="plv" value="private lateinit var $name$" description="private lateinit var" toReformat="false" toShortenFQNames="true">
+    <variable name="name" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="KOTLIN" value="true" />
+    </context>
+  </template>
+  <template name="vfv" value="view.findViewById(R.id.$name$)" description="Find view from view" toReformat="false" toShortenFQNames="true">
+    <variable name="name" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="KOTLIN" value="true" />
+    </context>
+  </template>
+</templateSet>
