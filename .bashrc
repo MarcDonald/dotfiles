@@ -34,18 +34,7 @@ alias startdynamo='cd ~/DynamoDB && java -Djava.library.path=DynamoDBLocal_lib -
 
 #Git
 alias g='git'
-git config --global alias.co checkout
-git config --global alias.st status
-git config --global alias.cm commit
-git config --global alias.cl clone
-git config --global alias.b branch
-git config --global alias.lo 'log --oneline'
-git config --global alias.lg 'log --oneline --graph --decorate'
-git config --global alias.wd 'diff --word-diff'
-git config --global alias.wdc 'diff --word-diff --cached'
-git config --global alias.yeehaw 'push --force'
-git config --global alias.cane 'commit --amend --no-edit'
-git config --global alias.pr 'pull --rebase'
+alias gaa='g add .'
 alias grmb='git branch --merged master | grep -v "^[ *]*master$" | xargs git branch -d'
 alias gpm='git checkout master && git pull && grmb'
 

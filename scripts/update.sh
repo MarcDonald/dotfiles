@@ -11,6 +11,10 @@ cp ~/.gitconfig ..
 #Git Bash for Windows
 cp ~/.minttyrc ..
 
+#Atom
+cp ~/.atom/keymap.cson ../atom
+cp ~/.atom/config.cson ../atom
+
 #Do Git Commit
 if [ $# -eq 0 ]; then
 	git st
