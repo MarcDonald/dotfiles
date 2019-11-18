@@ -1,3 +1,5 @@
+#bashrc loading
 if [ -r ~/.bashrc ]; then
-    source ~/.bashrc
+	# shellcheck disable=SC1090
+	. ~/.bashrc
 fi

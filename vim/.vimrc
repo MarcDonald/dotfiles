@@ -18,8 +18,6 @@ set showmatch
 set incsearch
 " Highlight search
 set hlsearch
-" Clear search by pressing enter
-nnoremap <CR> :noh<CR>
 " Show invisible characters
 set lcs=tab:▸\ ,trail:·
 set list
@@ -27,3 +25,12 @@ set list
 set title
 " Sets the scroll offset to 3 lines
 set scrolloff=2
+
+" KEYBINDS
+" Clear search by pressing enter or F3
+nnoremap <CR> :noh<CR><CR>
+nnoremap <F3> :noh<CR>
+" Toggle number display with F2
+nnoremap <F2> :set invnumber<CR>
+" Toggle NERDTree with F1
+nnoremap <F1> :NERDTreeToggle<CR>
