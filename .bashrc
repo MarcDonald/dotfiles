@@ -1,9 +1,9 @@
 #Opening Config
-alias opprofilea='open -a Atom ~/.bash_profile'
+alias opprofilea='atom ~/.bash_profile'
 alias opprofile='vim ~/.bash_profile'
 alias spprofile='. ~/.bash_profile'
 
-alias opa='open -a Atom ~/.bashrc'
+alias opa='atom ~/.bashrc'
 alias op='vim ~/.bashrc'
 alias sp='. ~/.bashrc'
 
