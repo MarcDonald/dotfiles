@@ -1,0 +1,4 @@
+NERDTree
+ALE
+Shellshock - Not a Vim plugin but used with ALE for Bash linting
+Vim Airline
