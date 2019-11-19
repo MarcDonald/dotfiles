@@ -19,3 +19,5 @@
 	ui = true
 	status = auto
 	branch = auto
+[core]
+	autocrlf = input
