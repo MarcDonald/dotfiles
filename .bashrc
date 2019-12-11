@@ -53,6 +53,7 @@ alias startdynamo='cd ~/DynamoDB && java -Djava.library.path=DynamoDBLocal_lib -
 
 #Git
 alias g='git'
+__git_complete g __git_main
 git config --global alias.co checkout
 git config --global alias.st status
 git config --global alias.cm commit
