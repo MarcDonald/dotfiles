@@ -30,8 +30,11 @@ syntax enable
 " Set colorscheme
 colorscheme pablo
 " Spacing
+set smartindent
 set tabstop=2
 set softtabstop=2
+set shiftwidth=2
+set expandtab
 " Show the command as its typed
 set showcmd
 " Command line completion
@@ -56,10 +59,10 @@ set updatetime=100
 nnoremap <F1> :NERDTreeToggle<CR>
 " Show and hide numbers by pressing F2
 nnoremap <F2> :set invnumber<CR>
+" Show and hide invisible characters by pressing F4
 " Clear search by pressing enter or F3
 nnoremap <CR> :noh<CR><CR>
 nnoremap <F3> :noh<CR>
-" Show and hide invisible characters by pressing F4
 nnoremap <F4> :set invlist<CR>
 " Toggle Goyo with F5
 nnoremap <F5> :Goyo<CR>
