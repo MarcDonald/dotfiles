@@ -45,8 +45,8 @@ alias cddot='cddr && cd dotfiles'
 alias anddr='cddr && cd android'
 
 #Managing dotfiles repo
-alias ud='cddr && cd dotfiles/scripts && ./update.sh'
-alias pd='cddr && cd dotfiles/scripts && ./propagate.sh'
+alias ud='cddot && ./scripts/updateDotfiles.sh'
+alias pd='cddot && ./scripts/propagateDotfiles.sh'
 
 #Dynamo
 alias startdynamo='cd ~/DynamoDB && java -Djava.library.path=DynamoDBLocal_lib -jar DynamoDBLocal.jar'
