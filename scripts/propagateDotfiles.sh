@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 #Bash
 cp .bash_profile ~
