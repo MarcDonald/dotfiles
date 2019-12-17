@@ -18,6 +18,9 @@ Plug 'vim-scripts/mru.vim'
 Plug 'amix/open_file_under_cursor.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+Plug 'shime/vim-livedown'
+Plug 'godlygeek/tabular'
+Plug 'plasticboy/vim-markdown'
 
 call plug#end()
 " Default vim8 plugin loading
@@ -59,12 +62,14 @@ set updatetime=100
 nnoremap <F1> :NERDTreeToggle<CR>
 " Show and hide numbers by pressing F2
 nnoremap <F2> :set invnumber<CR>
-" Show and hide invisible characters by pressing F4
 " Clear search by pressing enter or F3
 nnoremap <CR> :noh<CR><CR>
 nnoremap <F3> :noh<CR>
+" Show and hide invisible characters by pressing F4
 nnoremap <F4> :set invlist<CR>
 " Toggle Goyo with F5
 nnoremap <F5> :Goyo<CR>
+" Toggle search case sensitivity with F6
+nnoremap <F6> :set ignorecase! ignorecase?<CR>
 " Open fzf Files with ;
 nnoremap ; :Files<CR>
