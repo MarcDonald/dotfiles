@@ -74,6 +74,28 @@ alias gpm='git checkout develop && git pull && grmb'
 alias gpmm='git checkout master && git pull && grmbm'
 
 #FUNCTIONS
+#Shows the files changed in a specified Git commit. $1 is the commit hash you want to view
+function gscs() {
+  g diff-tree --no-commit-id --name-status -r "$1"
+}
+
+#Shows the changes in a specified Git commit. $1 is the commit hash you want to view
+function gsc() {
+  g lg -p -1 "$1"
+}
+
+#Rename a local branch $1 is the original branch name, $2 is the new branch name
+function grbl() {
+  g b -m "$1" "$2"
+}
+
+#Renames a remote branch $1 is the original branch name, $2 is the new branch name 
+function grbr() {
+  grbl "$1" "$2"
+  g push origin :"$1"
+  g push --set-upstream origin "$2"
+}
+
 #Copies an item to your clipboard without a new line character
 function ctc() {
 	echo "$1" | tr -d '\n' | pbcopy
