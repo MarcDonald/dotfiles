@@ -70,8 +70,7 @@ git config --global alias.pr 'pull --rebase'
 alias gaa='git add .'
 alias grmb='git branch --merged develop | grep -v "^[ *]*develop$" | xargs git branch -d'
 alias grmbm='git branch --merged master | grep -v "^[ *]*master$" | xargs git branch -d'
-alias gpm='git checkout develop && git pull && grmb'
-alias gpmm='git checkout master && git pull && grmbm'
+alias gpm='git checkout master && git pull && grmbm'
 
 #FUNCTIONS
 #Shows the files changed in a specified Git commit. $1 is the commit hash you want to view
@@ -93,7 +92,7 @@ function grbl() {
 function grbr() {
   grbl "$1" "$2"
   g push origin :"$1"
-  g push --set-upstream origin "$2"
+  g push --set-upstream origin "$2" 
 }
 
 #Copies an item to your clipboard without a new line character
