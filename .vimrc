@@ -26,8 +26,6 @@ call plug#end()
 " Default vim8 plugin loading
 packloadall
 silent! helptags ALL
-" Enable indent guides on startup
-let g:indent_guides_enable_on_vim_startup = 1
 " Enable syntax highlighting
 syntax enable
 " Set colorscheme
@@ -70,11 +68,11 @@ nnoremap <F3> :set rnu!<CR>
 " Clear search by pressing enter or F4
 nnoremap <CR> :noh<CR><CR>
 nnoremap <F4> :noh<CR>
-" Show and hide invisible characters by pressing F7
-nnoremap <F7> :set invlist<CR>
 " Toggle Goyo with F5
 nnoremap <F5> :Goyo<CR>
 " Toggle search case sensitivity with F6
 nnoremap <F6> :set ignorecase! ignorecase?<CR>
+" Show and hide invisible characters by pressing F7
+nnoremap <F7> :set invlist<CR>
 " Open fzf Files with ;
 nnoremap ; :Files<CR>
