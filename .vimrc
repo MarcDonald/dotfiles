@@ -58,15 +58,20 @@ set title
 set scrolloff=2
 " Set async update time to 100
 set updatetime=100
+" Show relative line numbers by default
+set rnu
+
 " Show and hide NERDTree by pressing F1
 nnoremap <F1> :NERDTreeToggle<CR>
-" Show and hide numbers by pressing F2
-nnoremap <F2> :set invnumber<CR>
-" Clear search by pressing enter or F3
+" Show and hide absolute line numbers by pressing F2
+nnoremap <F2> :set nu!<CR>
+" Show and hide relative line numbers by pressing F3
+nnoremap <F3> :set rnu!<CR>
+" Clear search by pressing enter or F4
 nnoremap <CR> :noh<CR><CR>
-nnoremap <F3> :noh<CR>
-" Show and hide invisible characters by pressing F4
-nnoremap <F4> :set invlist<CR>
+nnoremap <F4> :noh<CR>
+" Show and hide invisible characters by pressing F7
+nnoremap <F7> :set invlist<CR>
 " Toggle Goyo with F5
 nnoremap <F5> :Goyo<CR>
 " Toggle search case sensitivity with F6
