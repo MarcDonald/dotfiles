@@ -8,6 +8,7 @@ endif
 call plug#begin('~/.vim/plugged')
 
 Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 Plug 'scrooloose/nerdtree'
 Plug 'dense-analysis/ale'
 Plug 'tomtom/tcomment_vim'
@@ -31,6 +32,10 @@ silent! helptags ALL
 syntax enable
 " Set colorscheme
 colorscheme pablo
+" Airline settings
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_theme='dark'
 " Spacing
 set smartindent
 set tabstop=2
@@ -61,8 +66,12 @@ set updatetime=100
 set rnu
 " Show absolute line number of current line
 set nu
+" Make backspace behavior nicer
+set backspace=eol,start,indent
 " Show and hide NERDTree by pressing F1
 nnoremap <F1> :NERDTreeToggle<CR>
+" Open file under cursor in new tab
+map <F2> <Esc><C-W>gF<CR>:tabm<CR>
 " Clear search by pressing enter or F4
 nnoremap <CR> :noh<CR><CR>
 nnoremap <F4> :noh<CR>
