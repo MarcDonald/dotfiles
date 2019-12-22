@@ -74,5 +74,5 @@ nnoremap <F5> :Goyo<CR>
 nnoremap <F6> :set ignorecase! ignorecase?<CR>
 " Show and hide invisible characters by pressing F7
 nnoremap <F7> :set invlist<CR>
-" Open fzf Files with ;
-nnoremap ; :Files<CR>
+" Open fzf Files with =
+nnoremap = :Files<CR>
