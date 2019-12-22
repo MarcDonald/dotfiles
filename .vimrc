@@ -21,6 +21,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'shime/vim-livedown'
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
+Plug 'udalov/kotlin-vim'
 
 call plug#end()
 " Default vim8 plugin loading
