@@ -59,13 +59,10 @@ set scrolloff=2
 set updatetime=100
 " Show relative line numbers by default
 set rnu
-
+" Show absolute line number of current line
+set nu
 " Show and hide NERDTree by pressing F1
 nnoremap <F1> :NERDTreeToggle<CR>
-" Show and hide absolute line numbers by pressing F2
-nnoremap <F2> :set nu!<CR>
-" Show and hide relative line numbers by pressing F3
-nnoremap <F3> :set rnu!<CR>
 " Clear search by pressing enter or F4
 nnoremap <CR> :noh<CR><CR>
 nnoremap <F4> :noh<CR>
