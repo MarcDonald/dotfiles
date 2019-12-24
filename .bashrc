@@ -97,67 +97,67 @@ function grbr() {
 
 #Copies an item to your clipboard without a new line character
 function ctc() {
-	echo "$1" | tr -d '\n' | pbcopy
+  echo "$1" | tr -d '\n' | pbcopy
 }
 
 #Gets docker service name
 function dsname() {
-	lsdocs --format "{{.Name}}" | grep "$1"
+  lsdocs --format "{{.Name}}" | grep "$1"
 }
 
 #Gets docker service ID
 function dsid() {
-	lsdocs | grep "$1" | awk '{ print $1 }'
+  lsdocs | grep "$1" | awk '{ print $1 }'
 }
 
 #Gets the first docker service ID in a list
 function dsidf() {
-	list=$(dsid "$1")
-	set -- "$list"
-	echo "$1"
+  list=$(dsid "$1")
+  set -- "$list"
+  echo "$1"
 }
 
 #Gets docker container ID
 function dcid() {
-	lsdocc | grep "$1" | awk '{ print $1 }'
+  lsdocc | grep "$1" | awk '{ print $1 }'
 }
 
 #Gets the first docker container ID in a list
 function dcidf() {
-	list=$(dcid "$1")
-	set -- "$list"
-	echo "$1"
+  list=$(dcid "$1")
+  set -- "$list"
+  echo "$1"
 }
 
 #Tails logs for a docker container
 function dl() {
-	d service logs --follow "$(dsname "$1")"
+  d service logs --follow "$(dsname "$1")"
 }
 
 #Opens a docker container. If multiple containers are returned from dcid then it opens the first one in the list
 function ocon() {
-	d exec -it "$(dcidf "$1")" /bin/bash
+  d exec -it "$(dcidf "$1")" /bin/bash
 }
 
 #Opens a docker container with regular shell rather than bash. If multiple containers are returned from dcid then it opens the first one in the list
 function oconsh() {
-	d exec -it "$(dcidf "$1")" sh
+  d exec -it "$(dcidf "$1")" sh
 }
 
 #Removes a docker service
 function rds() {
-	d service rm "$(dsid "$1")"
+  d service rm "$(dsid "$1")"
 }
 
 #Copies something to a docker container where $1 is the local path $2 is a part of the container name and $3 is the path to move it to in the container
 #E.g. to move a local version of common utils into the APH's node modules do dcp soe-common-utils auto /home/src/app/node_modules
 function dcp() {
-	d cp "$1" "$(dcid "$2")":"$3"
+  d cp "$1" "$(dcid "$2")":"$3"
 }
 
 #Same as dcp but copies directly into the node_modules folder
 function dcpnm() {
-	dcp "$1" "$2" /home/src/app/node_modules/"$3"
+  dcp "$1" "$2" /home/src/app/node_modules/"$3"
 }
 
 #Gets the name of the git branch and outputs it in brackets
@@ -171,52 +171,52 @@ function parseGitBranch() {
 #   cdu 2 -> cd ../../
 #   cdu 3 -> cd ../../../
 function cdu() {
-local count=$1
-if [ -z "${count}" ]; then
-  count=1
-fi
-local path=""
-for i in $(seq 1 ${count}); do
-  path="${path}../"
-done
-cd $path || return
+  local count=$1
+    if [ -z "${count}" ]; then
+      count=1
+    fi
+
+  local path=""
+
+  for i in $(seq 1 ${count}); do
+    path="${path}../"
+  done
+
+  cd $path || return
 }
 
 #Set a fancy prompt (non-color, unless we know we "want" color)
 case "$TERM" in
-	xterm-color|*-256color) color_prompt=yes;;
+  xterm-color|*-256color) color_prompt=yes;;
 esac
 
 #Color prompt
 if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
-	color_prompt=yes
+  color_prompt=yes
 else
-	color_prompt=
+  color_prompt=
 fi
 
 #Set variable identifying the chroot you work in (used in the prompt below)
 if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
-	debian_chroot=$(cat /etc/debian_chroot)
+  debian_chroot=$(cat /etc/debian_chroot)
 fi
 
 if [ "$color_prompt" = yes ]; then
-	PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\[\033[01;32m\]$(parseGitBranch)\[\033[00m\]$ '
+  PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\[\033[01;32m\]$(parseGitBranch)\[\033[00m\]$ '
 else
-	PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w$(parseGitBranch)$ '
+  PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w$(parseGitBranch)$ '
 fi
 unset color_prompt force_color_prompt
 
 #Enable programmable completion features (you don't need to enable this if it's already enabled in /etc/bash.bashrc and /etc/profile sources /etc/bash.bashrc).
 if ! shopt -oq posix; then
-	if [ -f /usr/share/bash-completion/bash_completion ]; then
-		. /usr/share/bash-completion/bash_completion
-	elif [ -f /etc/bash_completion ]; then
-		. /etc/bash_completion
-	fi
+  if [ -f /usr/share/bash-completion/bash_completion ]; then
+    . /usr/share/bash-completion/bash_completion
+  elif [ -f /etc/bash_completion ]; then
+    . /etc/bash_completion
+  fi
 fi
-
-export VISUAL=vim
-export EDITOR="$VISUAL"
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/home/marc/.sdkman"
