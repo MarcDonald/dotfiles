@@ -20,9 +20,8 @@ Plug 'amix/open_file_under_cursor.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'shime/vim-livedown'
-Plug 'godlygeek/tabular'
-Plug 'plasticboy/vim-markdown'
 Plug 'udalov/kotlin-vim'
+Plug 'tpope/vim-unimpaired'
 
 call plug#end()
 " Default vim8 plugin loading
