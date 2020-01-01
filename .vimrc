@@ -82,3 +82,6 @@ nnoremap <F6> :set ignorecase! ignorecase?<CR>
 nnoremap <F7> :set invlist<CR>
 " Open fzf Files with =
 nnoremap = :Files<CR>
+" Scroll with Shift-Up and Shift-Down
+map <S-Down> <C-E>
+map <S-Up> <C-Y>
