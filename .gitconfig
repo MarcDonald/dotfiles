@@ -12,6 +12,7 @@
 	cane = commit --amend --no-edit
 	pr = pull --rebase
 	gaa = add .
+	cmm = commit -m
 [user]
 	email = marcsdeveloperemail@gmail.com
 	name = Marc
