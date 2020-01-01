@@ -67,10 +67,13 @@ git config --global alias.wdc 'diff --word-diff --cached'
 git config --global alias.yeehaw 'push --force'
 git config --global alias.cane 'commit --amend --no-edit'
 git config --global alias.pr 'pull --rebase'
+git config --global alias.cmm 'commit -m'
 alias gaa='git add .'
 alias grmb='git branch --merged develop | grep -v "^[ *]*develop$" | xargs git branch -d'
 alias grmbm='git branch --merged master | grep -v "^[ *]*master$" | xargs git branch -d'
 alias gpm='git checkout master && git pull && grmbm'
+alias gin='git pull'
+alias gout='git push'
 
 #FUNCTIONS
 #Shows the files changed in a specified Git commit. $1 is the commit hash you want to view
