@@ -43,6 +43,7 @@ alias doc='cd ~/Documents'
 alias cddr='doc && cd code'
 alias cddot='cddr && cd dotfiles'
 alias anddr='cddr && cd android'
+alias hibi='anddr && cd hibi'
 
 #Managing dotfiles repo
 alias ud='cddot && ./scripts/updateDotfiles.sh'
