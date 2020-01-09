@@ -39,11 +39,13 @@ alias lsdocc='d container ls'
 alias cllsdocc='cl && lsdocc'
 
 #Navigation
-alias doc='cd ~/Documents'
-alias cddr='doc && cd code'
-alias cddot='cddr && cd dotfiles'
-alias anddr='cddr && cd android'
-alias hibi='anddr && cd hibi'
+#shellcheck disable=SC2034
+DOC_DIR=~/Documents
+alias doc='cd $DOC_DIR'
+alias cddr='cd $DOC_DIR/code'
+alias cddot='cd $DOC_DIR/code/dotfiles'
+alias anddr='cd $DOC_DIR/code/android'
+alias hibi='cd $DOC_DIR/code/android/hibi'
 
 #Managing dotfiles repo
 alias ud='cddot && ./scripts/updateDotfiles.sh'
@@ -74,7 +76,6 @@ alias grmb='git branch --merged develop | grep -v "^[ *]*develop$" | xargs git b
 alias grmbm='git branch --merged master | grep -v "^[ *]*master$" | xargs git branch -d'
 alias gpm='git checkout master && git pull && grmbm'
 alias gin='git pull'
-alias gout='git push'
 
 #FUNCTIONS
 #Shows the files changed in a specified Git commit. $1 is the commit hash you want to view
@@ -97,6 +98,21 @@ function grbr() {
   grbl "$1" "$2"
   g push origin :"$1"
   g push --set-upstream origin "$2" 
+}
+
+#Pushes a local branch to origin, creating it at the origin if necessary
+function gout() {
+  local branch
+  branch=$(git rev-parse --abbrev-ref HEAD)
+  local existsOnRemote
+  existsOnRemote=$(git ls-remote | grep -c "\b${branch}$")
+  if [[ existsOnRemote -eq 0 ]];then
+    #git push --set-upstream origin "$branch"
+    echo "git push --set-upstream origin $branch"
+  else
+    echo push
+    #git push
+  fi
 }
 
 #Copies an item to your clipboard without a new line character

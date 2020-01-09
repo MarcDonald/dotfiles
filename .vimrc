@@ -67,6 +67,10 @@ set rnu
 set nu
 " Make backspace behavior nicer
 set backspace=eol,start,indent
+" When opening a markdown file, set the textwidth to 80
+au BufRead,BufNewFile *.md setlocal textwidth=80
+
+" KEYMAPS
 " Show and hide NERDTree by pressing F1
 nnoremap <F1> :NERDTreeToggle<CR>
 " Open file under cursor in new tab
