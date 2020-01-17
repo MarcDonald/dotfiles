@@ -38,6 +38,9 @@ alias cleanExitDoc='d ps -a | grep Exit | cut -d " " -f 1 | xargs d rm && lsdocs
 alias lsdocc='d container ls'
 alias cllsdocc='cl && lsdocc'
 
+#Rust/Cargo
+alias c='cargo'
+
 #Navigation
 #shellcheck disable=SC2034
 DOC_DIR=~/Documents
