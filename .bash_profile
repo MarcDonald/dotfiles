@@ -9,3 +9,5 @@ tabs 2
 
 export VISUAL=vim
 export EDITOR="$VISUAL"
+
+export PATH="$HOME/.cargo/bin:$PATH"
