@@ -107,11 +107,9 @@ function gout() {
   local existsOnRemote
   existsOnRemote=$(git ls-remote | grep -c "\b${branch}$")
   if [[ existsOnRemote -eq 0 ]];then
-    #git push --set-upstream origin "$branch"
-    echo "git push --set-upstream origin $branch"
+    git push --set-upstream origin "$branch"
   else
-    echo push
-    #git push
+    git push
   fi
 }
 
