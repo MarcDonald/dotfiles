@@ -22,6 +22,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'shime/vim-livedown'
 Plug 'udalov/kotlin-vim'
 Plug 'tpope/vim-unimpaired'
+Plug 'rust-lang/rust.vim'
 
 call plug#end()
 " Default vim8 plugin loading
@@ -32,7 +33,7 @@ syntax enable
 " Set colorscheme
 colorscheme pablo
 " Airline settings
-let g:airline_powerline_fonts = 1
+let g:airline_powerline_fonts = 0
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_theme='dark'
 " Spacing
@@ -69,6 +70,8 @@ set nu
 set backspace=eol,start,indent
 " When opening a markdown file, set the textwidth to 80
 au BufRead,BufNewFile *.md setlocal textwidth=80
+" Turn error bell off
+set belloff=all
 
 " KEYMAPS
 " Show and hide NERDTree by pressing F1
