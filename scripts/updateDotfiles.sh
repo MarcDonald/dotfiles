@@ -20,6 +20,9 @@ cp ~/.atom/config.cson ./atom
 #Shellcheck
 cp ~/.shellcheckrc .
 
+#tmux
+cp ~/.tmux.conf .
+
 #Do Git Commit
 if [ $# -eq 0 ]; then
 	git st

@@ -8,6 +8,7 @@ alias op='vim ~/.bashrc'
 alias sp='. ~/.bashrc'
 
 alias opvr='vim ~/.vimrc'
+alias optmux='vim ~/.tmux.conf'
 
 #Terminal
 alias cl='clear'
@@ -40,6 +41,10 @@ alias cllsdocc='cl && lsdocc'
 
 #Rust/Cargo
 alias c='cargo'
+
+#tmux
+alias t='tmux'
+alias ta='tmux attach -t'
 
 #Navigation
 #shellcheck disable=SC2034

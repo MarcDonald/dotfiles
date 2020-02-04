@@ -19,3 +19,6 @@ cp .shellcheckrc ~
 
 #Git Bash for Windows
 cp .minttyrc ~
+
+#tmux
+cp .tmux.conf ~
