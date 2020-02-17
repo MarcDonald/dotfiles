@@ -80,6 +80,7 @@ git config --global alias.cane 'commit --amend --no-edit'
 git config --global alias.pr 'pull --rebase'
 git config --global alias.cmm 'commit -m'
 alias gaa='git add .'
+alias gacane='git add . && git commit --amend --no-edit'
 alias grmb='git branch --merged develop | grep -v "^[ *]*develop$" | xargs git branch -d'
 alias grmbm='git branch --merged master | grep -v "^[ *]*master$" | xargs git branch -d'
 alias gpm='git checkout master && git pull && grmbm'
@@ -101,11 +102,11 @@ function grbl() {
   g b -m "$1" "$2"
 }
 
-#Renames a remote branch $1 is the original branch name, $2 is the new branch name 
+#Renames a remote branch $1 is the original branch name, $2 is the new branch name
 function grbr() {
   grbl "$1" "$2"
   g push origin :"$1"
-  g push --set-upstream origin "$2" 
+  g push --set-upstream origin "$2"
 }
 
 #Pushes a local branch to origin, creating it at the origin if necessary
@@ -117,7 +118,12 @@ function gout() {
   if [[ existsOnRemote -eq 0 ]];then
     git push --set-upstream origin "$branch"
   else
-    git push
+    if [[ "$1" == "-f" ]]; then
+      echo "Force pushing"
+      git push --force
+    else
+      git push
+    fi
   fi
 }
 
