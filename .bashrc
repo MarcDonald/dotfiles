@@ -39,6 +39,9 @@ alias cleanExitDoc='d ps -a | grep Exit | cut -d " " -f 1 | xargs d rm && lsdocs
 alias lsdocc='d container ls'
 alias cllsdocc='cl && lsdocc'
 
+#Dynamo
+alias startdynamo='docker run --name dynamo -d -p 8000:8000 amazon/dynamodb-local'
+
 #Rust/Cargo
 alias c='cargo'
 
@@ -58,9 +61,6 @@ alias hibi='cd $DOC_DIR/code/android/hibi'
 #Managing dotfiles repo
 alias ud='cddot && ./scripts/updateDotfiles.sh'
 alias pd='cddot && ./scripts/propagateDotfiles.sh'
-
-#Dynamo
-alias startdynamo='cd ~/DynamoDB && java -Djava.library.path=DynamoDBLocal_lib -jar DynamoDBLocal.jar'
 
 #Git
 alias g='git'
@@ -85,6 +85,7 @@ alias grmb='git branch --merged develop | grep -v "^[ *]*develop$" | xargs git b
 alias grmbm='git branch --merged master | grep -v "^[ *]*master$" | xargs git branch -d'
 alias gpm='git checkout master && git pull && grmbm'
 alias gin='git pull'
+alias gst='git status'
 
 #FUNCTIONS
 #Shows the files changed in a specified Git commit. $1 is the commit hash you want to view
