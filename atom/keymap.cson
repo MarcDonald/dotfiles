@@ -33,3 +33,5 @@
 
 'atom-text-editor:not([mini])':
   'ctrl-shift-backspace': 'editor:delete-line'
+'.platform-linux atom-workspace atom-text-editor:not(.mini)':
+  'ctrl-alt-l': 'code-format:format-code'

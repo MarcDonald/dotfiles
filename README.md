@@ -1,4 +1,5 @@
 # Marc's Dotfiles
+Gnome theme - [Juno](https://www.gnome-look.org/p/1280977/)
 
 ## How to update dotfiles
 Note: These scripts do not update all dotfiles, but will update the most common ones

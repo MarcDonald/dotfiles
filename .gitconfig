@@ -23,3 +23,6 @@
 [core]
 	autocrlf = input
 	editor = vim
+[color "status"]
+	changed = blue bold
+	untracked = cyan bold
