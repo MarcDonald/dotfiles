@@ -68,10 +68,15 @@ set rnu
 set nu
 " Make backspace behavior nicer
 set backspace=eol,start,indent
-" When opening a markdown file, set the textwidth to 80
+" When opening a markdown or txt, set the textwidth to 80 and enable spell check
 au BufRead,BufNewFile *.md setlocal textwidth=80
+au BufRead,BufNewFile *.md setlocal spell
+au BufRead,BufNewFile *.txt setlocal textwidth=80
+au BufRead,BufNewFile *.txt setlocal spell
 " Turn error bell off
 set belloff=all
+" Softwrap whole words instead of cutting words in half
+set linebreak
 
 " KEYMAPS
 " Show and hide NERDTree by pressing F1

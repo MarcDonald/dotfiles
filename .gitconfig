@@ -6,13 +6,16 @@
 	b = branch
 	lo = log --oneline
 	lg = log --oneline --graph --decorate
-	wd = diff --word-diff
-	wdc = diff --word-diff --cached
+	wd = diff --word-diff --color
+	wdc = diff --word-diff --cached --color
 	yeehaw = push --force
 	cane = commit --amend --no-edit
 	pr = pull --rebase
 	gaa = add .
 	cmm = commit -m
+	cob = checkout -b
+	df = diff --color
+	dfc = diff --cached --color
 [user]
 	email = marcsdeveloperemail@gmail.com
 	name = Marc
@@ -23,6 +26,19 @@
 [core]
 	autocrlf = input
 	editor = vim
+	pager = diff-so-fancy | less --tabs=4 -RFX
 [color "status"]
 	changed = blue bold
 	untracked = cyan bold
+[color "diff-highlight"]
+	oldNormal = red bold
+	oldHighlight = red bold 52
+	newNormal = green bold
+	newHighlight = green bold 22
+[color "diff"]
+	meta = 11
+	frag = magenta bold
+	commit = yellow bold
+	old = red bold
+	new = green bold
+	whitespace = red reverse

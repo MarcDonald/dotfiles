@@ -57,6 +57,7 @@ alias cddr='cd $DOC_DIR/code'
 alias cddot='cd $DOC_DIR/code/dotfiles'
 alias anddr='cd $DOC_DIR/code/android'
 alias hibi='cd $DOC_DIR/code/android/hibi'
+alias uni='cd $DOC_DIR/university'
 
 #Managing dotfiles repo
 alias ud='cddot && ./scripts/updateDotfiles.sh'
@@ -66,6 +67,7 @@ alias pd='cddot && ./scripts/propagateDotfiles.sh'
 alias g='git'
 source /usr/share/bash-completion/completions/git
 __git_complete g __git_main
+git config --global core.pager 'diff-so-fancy | less --tabs=4 -RFX'
 git config --global alias.co checkout
 git config --global alias.st status
 git config --global alias.cm commit
@@ -73,12 +75,13 @@ git config --global alias.cl clone
 git config --global alias.b branch
 git config --global alias.lo 'log --oneline'
 git config --global alias.lg 'log --oneline --graph --decorate'
-git config --global alias.wd 'diff --word-diff'
-git config --global alias.wdc 'diff --word-diff --cached'
+git config --global alias.df 'diff --color'
+git config --global alias.dfc 'diff --cached --color'
 git config --global alias.yeehaw 'push --force'
 git config --global alias.cane 'commit --amend --no-edit'
 git config --global alias.pr 'pull --rebase'
 git config --global alias.cmm 'commit -m'
+git config --global alias.cob 'checkout -b'
 alias gaa='git add .'
 alias gacane='git add . && git commit --amend --no-edit'
 alias grmb='git branch --merged develop | grep -v "^[ *]*develop$" | xargs git branch -d'
@@ -88,6 +91,8 @@ alias gin='git pull'
 alias gst='git status'
 alias gc='git commit'
 alias gcm='git commit -m'
+alias gdf='git df'
+alias gdfc='git dfc'
 
 #FUNCTIONS
 #Shows the files changed in a specified Git commit. $1 is the commit hash you want to view
