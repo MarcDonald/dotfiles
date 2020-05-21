@@ -77,6 +77,13 @@ au BufRead,BufNewFile *.txt setlocal spell
 set belloff=all
 " Softwrap whole words instead of cutting words in half
 set linebreak
+" Neovim specific settings
+if has('nvim')
+  " Exit terminal with escape
+  tnoremap <Esc> <C-\><C-n>
+  " Use clipboard for all operations
+  set clipboard+=unnamedplus
+endif
 
 " KEYMAPS
 " Show and hide NERDTree by pressing F1

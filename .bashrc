@@ -1,3 +1,6 @@
+#Use neovim instead of vim
+alias vim='nvim'
+
 #Opening Config
 alias opprofilea='atom ~/.bash_profile'
 alias opprofile='vim ~/.bash_profile'

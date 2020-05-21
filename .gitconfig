@@ -25,7 +25,7 @@
 	branch = auto
 [core]
 	autocrlf = input
-	editor = vim
+	editor = nvim
 	pager = diff-so-fancy | less --tabs=4 -RFX
 [color "status"]
 	changed = blue bold
