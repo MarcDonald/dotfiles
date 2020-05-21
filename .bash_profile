@@ -7,7 +7,7 @@ fi
 # Set terminal tab width to 2
 tabs 2
 
-export VISUAL=vim
+export VISUAL=nvim
 export EDITOR="$VISUAL"
 
 export PATH="$HOME/.cargo/bin:$PATH"
