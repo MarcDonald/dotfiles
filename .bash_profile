@@ -12,4 +12,5 @@ export EDITOR="$VISUAL"
 
 export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$HOME/.jetbrainsscripts:$PATH"
+export PATH="/usr/local/bin:${PATH}"
 complete -C '/usr/local/bin/aws_completer' aws

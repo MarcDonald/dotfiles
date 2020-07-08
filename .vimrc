@@ -23,8 +23,13 @@ Plug 'shime/vim-livedown'
 Plug 'udalov/kotlin-vim'
 Plug 'tpope/vim-unimpaired'
 Plug 'rust-lang/rust.vim'
+Plug 'airblade/vim-rooter'
+Plug 'machakann/vim-highlightedyank'
+Plug 'moll/vim-node'
+Plug 'sheerun/vim-polyglot'
 
 call plug#end()
+
 " Default vim8 plugin loading
 packloadall
 silent! helptags ALL
@@ -68,6 +73,8 @@ set rnu
 set nu
 " Make backspace behavior nicer
 set backspace=eol,start,indent
+" Ignore case by default
+set ignorecase
 " When opening a markdown or txt, set the textwidth to 80 and enable spell check
 au BufRead,BufNewFile *.md setlocal textwidth=80
 au BufRead,BufNewFile *.md setlocal spell
@@ -84,12 +91,15 @@ if has('nvim')
   " Use clipboard for all operations
   set clipboard+=unnamedplus
 endif
+" Ignore case by default
+set ignorecase
 
 " KEYMAPS
+" Set leader
+nnoremap <SPACE> <Nop>
+let mapleader = "\<Space>"
 " Show and hide NERDTree by pressing F1
 nnoremap <F1> :NERDTreeToggle<CR>
-" Open file under cursor in new tab
-map <F2> <Esc><C-W>gF<CR>:tabm<CR>
 " Clear search by pressing enter or F4
 nnoremap <CR> :noh<CR><CR>
 nnoremap <F4> :noh<CR>
@@ -99,8 +109,16 @@ nnoremap <F5> :Goyo<CR>
 nnoremap <F6> :set ignorecase! ignorecase?<CR>
 " Show and hide invisible characters by pressing F7
 nnoremap <F7> :set invlist<CR>
-" Open fzf Files with =
-nnoremap = :Files<CR>
-" Scroll with Shift-Up and Shift-Down
-map <S-Down> <C-E>
-map <S-Up> <C-Y>
+" Open file under cursor in new tab
+map <leader>o <esc><C-W>gF<CR>:tabm<CR>
+map <leader>f :GFiles<CR>
+map <leader>; :Buffers<CR>
+map <leader>w :w<CR>
+map <leader>aw :wa<CR>
+map <leader><leader> <C-^>
+map <leader>js :%!jq .<CR>
+map <leader>q :bd<CR>
+map <leader>n :bn<CR>
+map <leader>b :bp<CR>
+map <leader>aj :ALEPrevious<CR>
+map <leader>ak :ALENext<CR>
