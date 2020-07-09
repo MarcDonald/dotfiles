@@ -42,7 +42,7 @@ nmap <silent> gr <Plug>(coc-references)
 " Use <TAB> for selections ranges.
 nmap <silent> <TAB> <Plug>(coc-range-select)
 xmap <silent> <TAB> <Plug>(coc-range-select)
-" 'Smart' nevigation
+" 'Smart' navigation
 " Use tab for trigger completion with characters ahead and navigate.
 " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
 " other plugin before putting this into your config.
@@ -123,6 +123,10 @@ if has('nvim')
 endif
 " Ignore case by default
 set ignorecase
+" Ability to switch buffers without saving first
+set hidden
+" Auto update files in the background when changed outside vim
+set autoread
 
 " KEYMAPS
 " Set leader
@@ -142,6 +146,7 @@ nnoremap <F7> :set invlist<CR>
 " Open file under cursor in new tab
 map <leader>o <esc><C-W>gF<CR>:tabm<CR>
 map <leader>f :GFiles<CR>
+map <leader>af :Files<CR>
 map <leader>; :Buffers<CR>
 map <leader>w :w<CR>
 map <leader>aw :wa<CR>
