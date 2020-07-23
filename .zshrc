@@ -8,7 +8,7 @@ fi
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 export ZSH="/home/marc/.oh-my-zsh"
 ZSH_THEME="powerlevel10k/powerlevel10k"
-plugins=(git)
+plugins=(colored-man-pages autojump git adb)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -30,9 +30,6 @@ zstyle ':completion:*:*:git:*' script ~/.zsh/git-completion.bash
 fpath=(~/.zsh $fpath)
 
 autoload -Uz compinit && compinit
-
-# Autojump
-source /usr/share/autojump/autojump.sh
 
 #Use neovim instead of vim
 alias vim='nvim'
@@ -239,27 +236,25 @@ function parseGitBranch() {
   git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
 }
 
-alias cdu="cd .."
-
 # Change up a variable number of directories
 # E.g:
 #   cdu   -> cd ../
 #   cdu 2 -> cd ../../
 #   cdu 3 -> cd ../../../
-# function cdu() {
-#   local count=$1
-#     if [ -z "${count}" ]; then
-#       count=1
-#     fi
-# 
-#   local path=""
-# 
-#   for i in $(seq 1 ${count}); do
-#     path="${path}../"
-#   done
-# 
-#   cd $path || return
-# }
+function cdu() {
+  local count=$1
+    if [ -z "${count}" ]; then
+      count=1
+    fi
+
+  local path=""
+
+  for i in {1..${count}}; do
+    path="${path}../"
+  done
+
+  cd "$PATH" || return
+}
 
 # NVM
 export NVM_DIR="$HOME/.nvm"
