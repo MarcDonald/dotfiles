@@ -31,6 +31,19 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 call plug#end()
 
+" Set leader
+nnoremap <SPACE> <Nop>
+let mapleader = "\<Space>"
+
+" ALE
+let g:ale_fixers = {
+      \'javascript':['prettier'],
+      \'css':['prettier'],
+      \}
+let g:ale_linters_explicit = 1
+let g:ale_fix_on_save = 1
+" /ALE
+
 " COC
 " Symbol renaming.
 nmap <leader>rn <Plug>(coc-rename)
@@ -129,9 +142,6 @@ set hidden
 set autoread
 
 " KEYMAPS
-" Set leader
-nnoremap <SPACE> <Nop>
-let mapleader = "\<Space>"
 " Show and hide NERDTree by pressing F1
 nnoremap <F1> :NERDTreeToggle<CR>
 " Clear search by pressing enter or F4
@@ -157,3 +167,4 @@ map <leader>n :bn<CR>
 map <leader>b :bp<CR>
 map <leader>aj :ALEPrevious<CR>
 map <leader>ak :ALENext<CR>
+map <leader>pf :ALEFix<CR>
