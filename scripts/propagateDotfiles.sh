@@ -4,6 +4,12 @@
 cp .bash_profile ~
 cp .bashrc ~
 
+#zsh
+cp .zshrc ~
+
+#p10k
+cp .p10k.zsh ~
+
 #Vim
 cp .vimrc ~
 

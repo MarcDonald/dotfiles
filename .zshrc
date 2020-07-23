@@ -1,3 +1,39 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
+export PATH=$HOME/bin:/usr/local/bin:$PATH
+export ZSH="/home/marc/.oh-my-zsh"
+ZSH_THEME="powerlevel10k/powerlevel10k"
+plugins=(git)
+
+source $ZSH/oh-my-zsh.sh
+
+if [[ -n $SSH_CONNECTION ]]; then
+  export EDITOR='nvim'
+else
+  export EDITOR='nvim'
+fi
+
+HISTSIZE=10000000
+SAVEHIST=10000000
+setopt HIST_IGNORE_ALL_DUPS
+setopt SHARE_HISTORY
+autoload -Uz zcalc
+alias calc="zcalc"
+
+# Load Git completion
+zstyle ':completion:*:*:git:*' script ~/.zsh/git-completion.bash
+fpath=(~/.zsh $fpath)
+
+autoload -Uz compinit && compinit
+
+# Autojump
+source /usr/share/autojump/autojump.sh
+
 #Use neovim instead of vim
 alias vim='nvim'
 
@@ -7,8 +43,8 @@ alias opprofile='vim ~/.bash_profile'
 alias spprofile='. ~/.bash_profile'
 
 alias opa='atom ~/.bashrc'
-alias op='vim ~/.bashrc'
-alias sp='. ~/.bashrc'
+alias op='vim ~/.zshrc'
+alias sp='source ~/.zshrc'
 
 alias opvr='vim ~/.vimrc'
 alias optmux='vim ~/.tmux.conf'
@@ -65,8 +101,6 @@ alias pd='cddot && ./scripts/propagateDotfiles.sh'
 
 #Git
 alias g='git'
-source /usr/share/bash-completion/completions/git
-__git_complete g __git_main
 git config --global core.pager 'diff-so-fancy | less --tabs=4 -RFX'
 git config --global alias.co checkout
 git config --global alias.st status
@@ -205,61 +239,36 @@ function parseGitBranch() {
   git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
 }
 
+alias cdu="cd .."
+
 # Change up a variable number of directories
 # E.g:
 #   cdu   -> cd ../
 #   cdu 2 -> cd ../../
 #   cdu 3 -> cd ../../../
-function cdu() {
-  local count=$1
-    if [ -z "${count}" ]; then
-      count=1
-    fi
+# function cdu() {
+#   local count=$1
+#     if [ -z "${count}" ]; then
+#       count=1
+#     fi
+# 
+#   local path=""
+# 
+#   for i in $(seq 1 ${count}); do
+#     path="${path}../"
+#   done
+# 
+#   cd $path || return
+# }
 
-  local path=""
-
-  for i in $(seq 1 ${count}); do
-    path="${path}../"
-  done
-
-  cd $path || return
-}
-
-#Set a fancy prompt (non-color, unless we know we "want" color)
-case "$TERM" in
-  xterm-color|*-256color) color_prompt=yes;;
-esac
-
-#Color prompt
-if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
-  color_prompt=yes
-else
-  color_prompt=
-fi
-
-#Set variable identifying the chroot you work in (used in the prompt below)
-if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
-  debian_chroot=$(cat /etc/debian_chroot)
-fi
-
-if [ "$color_prompt" = yes ]; then
-  PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\[\033[01;32m\]$(parseGitBranch)\[\033[00m\]\n$ '
-else
-  PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w$(parseGitBranch)$ '
-fi
-unset color_prompt force_color_prompt
-
-export TERM=xterm-256color
-
-#Enable programmable completion features (you don't need to enable this if it's already enabled in /etc/bash.bashrc and /etc/profile sources /etc/bash.bashrc).
-if ! shopt -oq posix; then
-  if [ -f /usr/share/bash-completion/bash_completion ]; then
-    . /usr/share/bash-completion/bash_completion
-  elif [ -f /etc/bash_completion ]; then
-    . /etc/bash_completion
-  fi
-fi
+# NVM
+export NVM_DIR="$HOME/.nvm"
+[ -s "/home/linuxbrew/.linuxbrew/opt/nvm/nvm.sh" ] && . "/home/linuxbrew/.linuxbrew/opt/nvm/nvm.sh"  # This loads nvm
+[ -s "/home/linuxbrew/.linuxbrew/opt/nvm/etc/bash_completion.d/nvm" ] && . "/home/linuxbrew/.linuxbrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/home/marc/.sdkman"
 [[ -s "/home/marc/.sdkman/bin/sdkman-init.sh" ]] && source "/home/marc/.sdkman/bin/sdkman-init.sh"
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
