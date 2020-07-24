@@ -6,6 +6,7 @@ cp ~/.bashrc .
 
 #zsh
 cp ~/.zshrc .
+cp -r ~/.oh-my-zsh/custom/themes/marc .oh-my-zsh/custom/themes/
 
 #p10k
 cp ~/.p10k.zsh .
