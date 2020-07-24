@@ -6,8 +6,6 @@
 	b = branch
 	lo = log --oneline
 	lg = log --oneline --graph --decorate
-	wd = diff --word-diff --color
-	wdc = diff --word-diff --cached --color
 	yeehaw = push --force
 	cane = commit --amend --no-edit
 	pr = pull --rebase

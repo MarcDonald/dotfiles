@@ -8,7 +8,7 @@ fi
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 export ZSH="/home/marc/.oh-my-zsh"
 ZSH_THEME="powerlevel10k/powerlevel10k"
-plugins=(colored-man-pages autojump git adb)
+plugins=(colored-man-pages autojump git adb zsh-autosuggestions zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -20,10 +20,12 @@ fi
 
 HISTSIZE=10000000
 SAVEHIST=10000000
+setopt HIST_IGNORE_SPACE
 setopt HIST_IGNORE_ALL_DUPS
 setopt SHARE_HISTORY
 autoload -Uz zcalc
 alias calc="zcalc"
+ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 
 # Load Git completion
 zstyle ':completion:*:*:git:*' script ~/.zsh/git-completion.bash
