@@ -6,6 +6,8 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$PATH:/home/marc/.jetbrainsscripts
+
 export ZSH="/home/marc/.oh-my-zsh"
 ZSH_THEME="powerlevel10k/powerlevel10k"
 plugins=(colored-man-pages autojump git adb zsh-autosuggestions zsh-syntax-highlighting)
@@ -34,6 +36,7 @@ fpath=(~/.zsh $fpath)
 autoload -Uz compinit && compinit
 
 #Use neovim instead of vim
+alias vi='vim'
 alias vim='nvim'
 
 #Opening Config
