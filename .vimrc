@@ -28,6 +28,7 @@ Plug 'machakann/vim-highlightedyank'
 Plug 'moll/vim-node'
 Plug 'sheerun/vim-polyglot'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'justinmk/vim-sneak'
 
 call plug#end()
 
@@ -38,7 +39,10 @@ let mapleader = "\<Space>"
 " ALE
 let g:ale_fixers = {
       \'javascript':['prettier'],
+      \'typescript':['prettier'],
       \'css':['prettier'],
+      \'rust':['rustfmt'],
+      \'markdown':['prettier'],
       \}
 let g:ale_linters_explicit = 1
 let g:ale_fix_on_save = 1
@@ -71,6 +75,8 @@ function! s:check_back_space() abort
   let col = col('.') - 1
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
+" Show signature help on placeholder jump
+autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
 " /COC
 
 " Default vim8 plugin loading
