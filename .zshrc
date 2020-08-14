@@ -36,7 +36,7 @@ fpath=(~/.zsh $fpath)
 autoload -Uz compinit && compinit
 
 #Use neovim instead of vim
-alias vi='vim'
+alias vi='nvim'
 alias vim='nvim'
 
 #Opening Config

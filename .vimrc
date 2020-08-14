@@ -29,6 +29,7 @@ Plug 'moll/vim-node'
 Plug 'sheerun/vim-polyglot'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'justinmk/vim-sneak'
+Plug 'chrisbra/Colorizer'
 
 call plug#end()
 
@@ -39,10 +40,13 @@ let mapleader = "\<Space>"
 " ALE
 let g:ale_fixers = {
       \'javascript':['prettier'],
+      \'javascriptreact':['prettier'],
       \'typescript':['prettier'],
+      \'typescriptreact':['prettier'],
       \'css':['prettier'],
       \'rust':['rustfmt'],
       \'markdown':['prettier'],
+      \'json':['jq'],
       \}
 let g:ale_linters_explicit = 1
 let g:ale_fix_on_save = 1
@@ -78,6 +82,9 @@ endfunction
 " Show signature help on placeholder jump
 autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
 " /COC
+
+" Enable colorizer
+au BufRead * ColorHighlight
 
 " Default vim8 plugin loading
 packloadall
