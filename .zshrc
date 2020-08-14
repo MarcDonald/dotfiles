@@ -10,6 +10,7 @@ export PATH=$PATH:/home/marc/.jetbrainsscripts
 
 export ZSH="/home/marc/.oh-my-zsh"
 ZSH_THEME="powerlevel10k/powerlevel10k"
+source ~/.colors.sh
 plugins=(colored-man-pages autojump git adb zsh-autosuggestions zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
@@ -50,6 +51,10 @@ alias sp='source ~/.zshrc'
 
 alias opvr='vim ~/.vimrc'
 alias optmux='vim ~/.tmux.conf'
+
+alias opwm='vim ~/.config/bspwm/bspwmrc'
+alias opkb='vim ~/.config/sxhkd/sxhkdrc'
+alias opbar='vim ~/.config/polybar/config'
 
 #Terminal
 alias cl='clear'
