@@ -30,12 +30,23 @@ cp ~/.shellcheckrc .
 #tmux
 cp ~/.tmux.conf .
 
-#Do Git Commit
-if [ $# -eq 0 ]; then
-	git st
-	echo "No message given, not committing"
-else
-	git st
-	git add .
-	git cm -m "$1"
-fi
+#bspwm
+cp ~/.config/bspwm/bspwmrc ./.config/bspwm/bspwmrc
+cp ~/.config/sxhkd/sxhkdrc ./.config/sxhkd/sxhkdrc
+
+#polybar
+cp ~/.config/polybar/config ./.config/polybar/config
+cp ~/.config/polybar/launch.sh ./.config/polybar/launch.sh
+
+#dunst
+cp ~/.config/dunst/dunstrc ./.config/dunst/dunstrc
+
+#rofi
+cp ~/.config/rofi/config ./.config/rofi/config
+
+#gnome
+cp ~/.config/gtk-2.0/gtkfilechooser.ini ./.config/gtk-2.0/gtkfilechooser.ini
+cp ~/.config/gtk-3.0/settings.ini ./.config/gtk-3.0/settings.ini
+cp ~/.config/gtk-4.0/settings.ini ./.config/gtk-4.0/settings.ini
+
+echo 'If you made changes to polybar etc, make sure all the files you need were copied before committing'
