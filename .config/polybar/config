@@ -45,12 +45,12 @@ border-size = 4
 border-color = #00000000
 
 padding-left = 0
-padding-right = 2
+padding-right = 4
 
-module-margin-left = 1
-module-margin-right = 2
+module-margin-left = 4
+module-margin-right = 4
 
-font-0 = jetbrainsmono:pixelsize=10;1
+font-0 = ubuntu:pixelsize=12;1
 font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 font-2 = siji:pixelsize=10;1
 
@@ -63,7 +63,6 @@ tray-padding = 2
 ;tray-background = #0063ff
 
 ;wm-restack = bspwm
-;wm-restack = i3
 
 ;override-redirect = true
 
