@@ -1,8 +1,4 @@
-#!/bin/bash
-
-#Bash
-cp ~/.bash_profile .
-cp ~/.bashrc .
+#!/bin/sh
 
 #zsh
 cp ~/.zshrc .

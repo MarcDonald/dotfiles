@@ -148,7 +148,7 @@ format-connected-underline = ${colors.secondary}
 ;format-connected-prefix = " Net: "
 format-connected-prefix = "Net: "
 format-connected-prefix-foreground = ${colors.foreground-alt}
-label-connected = %{T6}%upspeed% %downspeed%%{T-}
+label-connected = %{T6}Up: %upspeed% Down: %downspeed%%{T-}
 
 format-disconnected-prefix = "Net: "
 format-disconnected = <label-disconnected>
