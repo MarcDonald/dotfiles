@@ -52,7 +52,7 @@ module-margin-right = 4
 
 font-0 = ubuntu:pixelsize=12;1
 font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
-font-2 = siji:pixelsize=10;1
+font-2 = FontAwesome5Free:style=Solid:pixelsize=10;1
 
 modules-left = bspwm spotify
 modules-center = date
@@ -108,7 +108,7 @@ label-empty-padding = 2
 type = internal/cpu
 interval = 2
 ;format-prefix = " CPU: "
-format-prefix = "CPU: "
+format-prefix = "  "
 format-prefix-foreground = ${colors.foreground-alt}
 format-underline = ${colors.secondary}
 label = %percentage:2%%
@@ -117,7 +117,7 @@ label = %percentage:2%%
 type = internal/memory
 interval = 2
 ;format-prefix = " Mem: "
-format-prefix = "Mem: "
+format-prefix = "  "
 format-prefix-foreground = ${colors.foreground-alt}
 format-underline = ${colors.secondary}
 label = %percentage_used%%
@@ -129,9 +129,9 @@ interval = 3.0
 
 format-connected-underline = ${colors.secondary}
 ;format-connected-prefix = " Net: "
-format-connected-prefix = "Net: "
+format-connected-prefix =
 format-connected-prefix-foreground = ${colors.foreground-alt}
-label-connected = %{T6}Down: %downspeed% Up: %upspeed%%{T-}
+label-connected = %{T6} %downspeed%    %upspeed%%{T-}
 
 format-disconnected-prefix = "Net: "
 format-disconnected = <label-disconnected>
@@ -160,10 +160,10 @@ label = %time% %date%
 type = internal/pulseaudio
 
 format-volume = <label-volume> <bar-volume>
-label-volume = Volume: %percentage%%
+label-volume =   %percentage%%
 label-volume-foreground = ${root.foreground}
 
-label-muted = 🔇 muted
+label-muted =   muted
 label-muted-foreground = #666
 
 bar-volume-width = 10
@@ -190,7 +190,7 @@ expand-right = true
 
 format-spacing = 1
 
-label-open = 
+label-open = 
 label-open-foreground = ${colors.secondary}
 label-close =  cancel
 label-close-foreground = ${colors.secondary}
