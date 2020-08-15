@@ -55,6 +55,7 @@ alias optmux='vim ~/.tmux.conf'
 alias opwm='vim ~/.config/bspwm/bspwmrc'
 alias opkb='vim ~/.config/sxhkd/sxhkdrc'
 alias opbar='vim ~/.config/polybar/config'
+alias opnot='vim ~/.config/dunst/dunstrc'
 
 #Terminal
 alias cl='clear'
