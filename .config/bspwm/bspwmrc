@@ -21,9 +21,9 @@ feh --bg-center ~/Pictures/Wallpapers/firewatch-forest-4k-3840×2160.jpg
 $HOME/.config/polybar/launch.sh
 
 # Three monitor setup
-bspc monitor DP-0 -d 1 2 3 4
-bspc monitor DP-4 -d 5 6 7
-bspc monitor DVI-I-0 -d 8 9 10
+bspc monitor DP-0 -d 1 2 3
+bspc monitor DP-4 -d 4 5 6
+bspc monitor DVI-I-0 -d 7 8 9
 bspc monitor DP-4 -s DP-0
 
 # Dual monitor setup
