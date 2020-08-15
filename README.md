@@ -6,6 +6,8 @@
 * Notifications - [Dunst](https://github.com/dunst-project/dunst)
 * Window Switcher - [Rofi](https://github.com/davatorium/rofi)
 * Colors generator - [pywal](https://github.com/dylanaraps/pywal)
+* Wallpaper -
+    [Firewatch](https://www.reddit.com/r/wallpapers/comments/i48y11/firewatch_forest_4k/)
 
 ## How to update dotfiles
 Note: These scripts do not update all dotfiles, but will update the most common ones
