@@ -11,7 +11,7 @@ export PATH=$PATH:/home/marc/.jetbrainsscripts
 export ZSH="/home/marc/.oh-my-zsh"
 ZSH_THEME="powerlevel10k/powerlevel10k"
 source ~/.colors.sh
-plugins=(colored-man-pages autojump git adb zsh-autosuggestions zsh-syntax-highlighting)
+plugins=(colored-man-pages autojump git adb zsh-autosuggestions zsh-syntax-highlighting fzf)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -277,3 +277,5 @@ export SDKMAN_DIR="/home/marc/.sdkman"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

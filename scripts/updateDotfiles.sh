@@ -2,7 +2,6 @@
 
 #zsh
 cp ~/.zshrc .
-cp -r ~/.oh-my-zsh/custom/themes/marc .oh-my-zsh/custom/themes/
 
 #p10k
 cp ~/.p10k.zsh .
@@ -39,6 +38,10 @@ cp ~/.config/dunst/dunstrc ./.config/dunst/dunstrc
 
 #rofi
 cp ~/.config/rofi/config ./.config/rofi/config
+cp ~/.config/rofi/marc.rasi ./.config/rofi/
+
+#fzf
+cp ~/.fzf.zsh .
 
 #gnome
 cp ~/.config/gtk-2.0/gtkfilechooser.ini ./.config/gtk-2.0/gtkfilechooser.ini
