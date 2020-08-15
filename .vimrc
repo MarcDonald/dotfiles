@@ -84,7 +84,7 @@ autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
 " /COC
 
 " Enable colorizer
-au BufRead * ColorHighlight
+au VimEnter,BufRead,BufNewFile * ColorHighlight
 
 " Default vim8 plugin loading
 packloadall
