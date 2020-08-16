@@ -21,6 +21,9 @@ super + Escape
 super f
   firefox
 
+super + shift + f
+  firefox --private-window
+
 super d
   discord
 
@@ -69,7 +72,7 @@ super + minus
 #
 
 # set the window state
-super + {t,shift + t,shift + f}
+super + {t,ctrl + t,ctrl + f}
 	bspc node -t {tiled,pseudo_tiled,floating}
 
 # set the node flags
