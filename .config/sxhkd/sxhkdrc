@@ -24,6 +24,12 @@ super f
 super + shift + f
   firefox --private-window
 
+alt + f; alt + r
+  firefox --new-window http://reddit.com/r/all
+
+alt + f; alt + y
+  firefox --new-window http://youtube.com
+
 super d
   discord
 
