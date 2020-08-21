@@ -43,6 +43,12 @@ cp ~/.config/rofi/marc.rasi ./.config/rofi/
 #fzf
 cp ~/.fzf.zsh .
 
+#icons
+cp ~/.icons/default/index.theme ./.icons/default/index.theme
+
+#Xresources
+cp ~/.Xresources .
+
 #gnome
 cp ~/.config/gtk-2.0/gtkfilechooser.ini ./.config/gtk-2.0/gtkfilechooser.ini
 cp ~/.config/gtk-3.0/settings.ini ./.config/gtk-3.0/settings.ini

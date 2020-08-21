@@ -12,6 +12,7 @@
   * [Ubuntu](https://fonts.google.com/specimen/Ubuntu)
   * [Jetbrains Mono](https://www.jetbrains.com/lp/mono/)
   * [Font Awesome 5](https://fontawesome.com/)
+* Cursor - [Bibata Ice](https://github.com/ful1e5/Bibata_Cursor)
 
 ## How to update dotfiles
 Note: These scripts do not update all dotfiles, but will update the most common ones
