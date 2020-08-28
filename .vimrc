@@ -153,6 +153,9 @@ set ignorecase
 set hidden
 " Auto update files in the background when changed outside vim
 set autoread
+" Persist undo tree
+set undodir=~/.vim/undodir
+set undofile
 
 " KEYMAPS
 " Show and hide NERDTree by pressing F1

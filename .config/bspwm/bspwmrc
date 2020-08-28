@@ -16,7 +16,7 @@ xinput --set-prop 'Logitech Gaming Mouse G502' 'libinput Accel Speed' -0.6
 # Stops the X cursor when not hovering over a window
 xsetroot -cursor_name left_ptr
 
-feh --bg-center ~/Pictures/Wallpapers/firewatch-forest-4k-3840×2160.jpg
+feh --bg-center ~/Pictures/Wallpapers/system/wallpaper.jpg
 
 $HOME/.config/polybar/launch.sh
 
@@ -44,3 +44,4 @@ bspc config borderless_monocle   true
 bspc config gapless_monocle      true
 
 bspc rule -a Peek state=floating
+bspc rule -a Soffice state=tiled

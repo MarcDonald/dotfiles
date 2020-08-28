@@ -147,7 +147,7 @@ date =
 date-alt = %d-%m-%Y
 
 time = " %H:%M"
-time-alt = " %H:%M:%S -"
+time-alt = " %H:%M:%S /"
 
 ;format-prefix = 
 format-prefix =
@@ -204,8 +204,8 @@ menu-0-1-exec = menu-open-2
 
 menu-1-0 = cancel
 menu-1-0-exec = menu-open-0
-menu-1-1 = reboot now
-menu-1-1-exec = sudo reboot
+menu-1-1 = sudo reboot now
+menu-1-1-exec = sudo reboot now
 
 menu-2-0 = power off
 menu-2-0-exec = shutdown now
