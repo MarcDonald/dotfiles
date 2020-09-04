@@ -1,5 +1,7 @@
 # Marc's Dotfiles
 * Gnome theme - [Juno](https://www.gnome-look.org/p/1280977/)
+* Gnome terminal theme - [One Gnome
+    Terminal](https://github.com/denysdovhan/one-gnome-terminal)
 * Window manager - [BSPWM](https://github.com/baskerville/bspwm)
 * Bar - [Polybar](https://github.com/polybar/polybar)
 * Spotify Polybar integration - [polybar-spotify](https://github.com/Jvanrhijn/polybar-spotify)
@@ -13,6 +15,7 @@
   * [Jetbrains Mono](https://www.jetbrains.com/lp/mono/)
   * [Font Awesome 5](https://fontawesome.com/)
 * Cursor - [Bibata Ice](https://github.com/ful1e5/Bibata_Cursor)
+* Colors - [Base16 Onedark](https://github.com/tilal6991/base16-onedark-scheme)
 
 ## How to update dotfiles
 Note: These scripts do not update all dotfiles, but will update the most common ones

@@ -54,4 +54,7 @@ cp ~/.config/gtk-2.0/gtkfilechooser.ini ./.config/gtk-2.0/gtkfilechooser.ini
 cp ~/.config/gtk-3.0/settings.ini ./.config/gtk-3.0/settings.ini
 cp ~/.config/gtk-4.0/settings.ini ./.config/gtk-4.0/settings.ini
 
+#colors
+cp ~/.colors.sh .
+
 echo 'If you made changes to polybar etc, make sure all the files you need were copied before committing'
