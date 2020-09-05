@@ -29,7 +29,7 @@ alert = #e06c75
 [bar/marc]
 monitor=${env:MONITOR:}
 width = 100%
-height = 27
+height = 26
 ;offset-x = 1%
 ;offset-y = 1%
 radius = 0
@@ -55,9 +55,9 @@ font-0 = ubuntu:pixelsize=12;1
 font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 font-2 = FontAwesome5Free:style=Solid:pixelsize=10;1
 
-modules-left = bspwm
-modules-center = date
-modules-right = eth memory cpu pulseaudio powermenu
+modules-left = bspwm eth
+modules-center = spotify
+modules-right = memory cpu pulseaudio date powermenu
 
 tray-position = right
 tray-padding = 2
@@ -142,20 +142,20 @@ label-disconnected-foreground = ${colors.foreground-alt}
 
 [module/date]
 type = internal/date
-interval = 5
+interval = 1
 
-date =
-date-alt = %d-%m-%Y
+date = %d %b %Y
+date-alt = %d %b %Y
 
-time = " %H:%M"
-time-alt = " %H:%M:%S /"
+time = %H:%M
+time-alt= %H:%M:%S
 
 ;format-prefix = 
 format-prefix =
 format-prefix-foreground = ${colors.foreground-alt}
 format-underline = ${colors.secondary}
 
-label = %time% %date%
+label = %date% / %time%
 
 [module/pulseaudio]
 type = internal/pulseaudio
@@ -190,35 +190,27 @@ type = custom/menu
 expand-right = true
 
 format-spacing = 1
+format-underline = ${colors.primary}
 
 label-open = 
 label-open-foreground = ${colors.secondary}
 label-close =  cancel
 label-close-foreground = ${colors.secondary}
-label-separator = |
+label-separator = -
 label-separator-foreground = ${colors.foreground-alt}
 
-menu-0-0 = reboot
+menu-0-0 = power off
 menu-0-0-exec = menu-open-1
-menu-0-1 = power off
-menu-0-1-exec = menu-open-2
 
-menu-1-0 = cancel
-menu-1-0-exec = menu-open-0
-menu-1-1 = sudo reboot now
-menu-1-1-exec = sudo reboot now
-
-menu-2-0 = power off
-menu-2-0-exec = shutdown now
-menu-2-1 = cancel
-menu-2-1-exec = menu-open-0
+menu-1-0 = confirm
+menu-1-0-exec = shutdown now
 
 [module/spotify]
 type = custom/script
 interval = 1
 ;format-prefix = " "
 format = <label>
-exec = python3 ~/.config/polybar/polybar-spotify/spotify_status.py -f '{song}: {artist}' -t 64
+exec = python ~/.config/polybar/polybar-spotify/spotify_status.py -f '{song}: {artist}' -t 64
 format-underline = ${colors.secondary}
 
 [settings]
@@ -230,7 +222,7 @@ screenchange-reload = true
 pseudo-transparency = true
 
 [global/wm]
-margin-top = 5
-margin-bottom = 5
+margin-top = 0
+margin-bottom = 0
 
 ; vim:ft=dosini
