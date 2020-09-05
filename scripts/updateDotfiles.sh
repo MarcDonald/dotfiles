@@ -17,7 +17,6 @@ cp ~/.minttyrc .
 
 #Atom
 cp ~/.atom/keymap.cson ./atom
-cp ~/.atom/config.cson ./atom
 
 #Shellcheck
 cp ~/.shellcheckrc .

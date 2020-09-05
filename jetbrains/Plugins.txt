@@ -1,15 +1,13 @@
 .ignore
-AWS CloudFormation
-ESLint
+Atom Material Icons
+IdeaVim
 Key Promoter X
 Kotlin
-Kubernetes
-LiveEdit
 Lombok
+Prettier
 One Dark theme - Mark Skelton
-SonarLint
-String Manipulation
 JSON To Kotlin Class
+Tailwindcss
 Rainbow Brackets
 
 # Android Studio
