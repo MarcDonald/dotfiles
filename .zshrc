@@ -39,6 +39,7 @@ autoload -Uz compinit && compinit
 #Use neovim instead of vim
 alias vi='nvim'
 alias vim='nvim'
+alias vimdiff='nvim -d'
 
 #Opening Config
 alias opprofilea='atom ~/.bash_profile'
