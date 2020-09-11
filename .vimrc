@@ -65,6 +65,7 @@ let g:ale_fixers = {
       \'rust':['rustfmt'],
       \'markdown':['prettier'],
       \'json':['jq'],
+      \'python':['pylint'],
       \}
 let g:ale_linters_explicit = 1
 let g:ale_fix_on_save = 1
@@ -100,6 +101,16 @@ endfunction
 " Show signature help on placeholder jump
 autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
 " /COC
+
+" Remap GitGutter keys to avoid conflicts
+silent! unmap <leader>hp
+silent! unmap <leader>hu
+silent! unmap <leader>hs
+nnoremap <leader>gp <Plug>(GitGutterPreviewHunk) 
+nnoremap <leader>gu <Plug>(GitGutterUndoHunk) 
+nnoremap <leader>gs <Plug>(GitGutterStageHunk) 
+xmap <leader>gs <Plug>(GitGutterPreviewHunk) 
+" /GitGutter
 
 " Enable colorizer
 au VimEnter,BufRead,BufNewFile * ColorHighlight
@@ -197,8 +208,8 @@ map <leader>aw :wa<CR>
 map <leader><leader> <C-^>
 map <leader>js :%!jq .<CR>
 map <leader>q :bd<CR>
-map <leader>n :bn<CR>
-map <leader>b :bp<CR>
+map <leader>l :bn<CR>
+map <leader>h :bp<CR>
 map <leader>aj :ALEPrevious<CR>
 map <leader>ak :ALENext<CR>
 map <leader>pf :ALEFix<CR>
