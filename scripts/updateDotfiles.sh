@@ -29,7 +29,7 @@ cp ~/.config/bspwm/bspwmrc ./.config/bspwm/bspwmrc
 cp ~/.config/sxhkd/sxhkdrc ./.config/sxhkd/sxhkdrc
 
 #polybar
-cp ~/.config/polybar/config ./.config/polybar/config
+cp ~/.config/polybar/config.ini ./.config/polybar/config.ini
 cp ~/.config/polybar/launch.sh ./.config/polybar/launch.sh
 
 #dunst
