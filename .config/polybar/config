@@ -129,7 +129,7 @@ type = internal/date
 interval = 1
 
 date = %d %b %Y
-date-alt = %d %b %Y
+date-alt = %A %d %b %Y
 
 time = %H:%M
 time-alt= %H:%M:%S
@@ -145,7 +145,7 @@ type = internal/date
 interval = 1
 
 date =
-date-alt = %d %b %Y /
+date-alt = %a %d %b %Y /
 
 time = %H:%M
 time-alt= %H:%M:%S
