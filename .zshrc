@@ -55,7 +55,7 @@ alias optmux='vim ~/.tmux.conf'
 
 alias opwm='vim ~/.config/bspwm/bspwmrc'
 alias opkb='vim ~/.config/sxhkd/sxhkdrc'
-alias opbar='vim ~/.config/polybar/config.ini'
+alias opbar='vim ~/.config/polybar/config'
 alias opnot='vim ~/.config/dunst/dunstrc'
 
 #Terminal
@@ -183,21 +183,9 @@ function ctc() {
   echo "$1" | tr -d '\n' | pbcopy
 }
 
-#Gets docker service name
-function dsname() {
-  lsdocs --format "{{.Name}}" | grep "$1"
-}
-
-#Gets docker service ID
-function dsid() {
-  lsdocs | grep "$1" | awk '{ print $1 }'
-}
-
-#Gets the first docker service ID in a list
-function dsidf() {
-  list=$(dsid "$1")
-  set -- "$list"
-  echo "$1"
+#Gets docker container name
+function dcname() {
+  lsdocc --format "{{.Image}}" | grep "$1"
 }
 
 #Gets docker container ID
@@ -214,7 +202,7 @@ function dcidf() {
 
 #Tails logs for a docker container
 function dl() {
-  d service logs --follow "$(dsname "$1")"
+  d logs --follow "$(dcid "$1")"
 }
 
 #Opens a docker container. If multiple containers are returned from dcid then it opens the first one in the list
@@ -225,11 +213,6 @@ function ocon() {
 #Opens a docker container with regular shell rather than bash. If multiple containers are returned from dcid then it opens the first one in the list
 function oconsh() {
   d exec -it "$(dcidf "$1")" sh
-}
-
-#Removes a docker service
-function rds() {
-  d service rm "$(dsid "$1")"
 }
 
 #Copies something to a docker container where $1 is the local path $2 is a part of the container name and $3 is the path to move it to in the container
@@ -246,26 +229,6 @@ function dcpnm() {
 #Gets the name of the git branch and outputs it in brackets
 function parseGitBranch() {
   git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
-}
-
-# Change up a variable number of directories
-# E.g:
-#   cdu   -> cd ../
-#   cdu 2 -> cd ../../
-#   cdu 3 -> cd ../../../
-function cdu() {
-  local count=$1
-    if [ -z "${count}" ]; then
-      count=1
-    fi
-
-  local path=""
-
-  for i in {1..${count}}; do
-    path="${path}../"
-  done
-
-  cd "$PATH" || return
 }
 
 # NVM

@@ -19,16 +19,22 @@ super + Escape
 #
 
 super f
-  firefox
+  chromium-browser
 
 super + shift + f
-  firefox --private-window
+  chromium-browser --incognito
 
 alt + f; alt + r
-  firefox --new-window http://reddit.com/r/all
+  chromium-browser --new-window http://reddit.com/r/all
 
 alt + f; alt + y
-  firefox --new-window http://youtube.com
+  chromium-browser --new-window http://youtube.com
+
+super + e; super + e
+  chromium-browser --new-window https://mail.google.com
+
+super + e; super + o
+  chromium-browser --new-window https://outlook.office.com
 
 super d
   discord
