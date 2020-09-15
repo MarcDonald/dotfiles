@@ -25,15 +25,18 @@ super + shift + f
   chromium-browser --incognito
 
 alt + f; alt + r
-  chromium-browser --new-window http://reddit.com/r/all
+  chromium-browser --new-window https://reddit.com/r/all
 
 alt + f; alt + y
-  chromium-browser --new-window http://youtube.com
+  chromium-browser --new-window https://youtube.com
 
-super + e; super + e
+alt + f; alt + t
+  chromium-browser --new-window https://ticktick.com
+
+alt + e; alt + e
   chromium-browser --new-window https://mail.google.com
 
-super + e; super + o
+alt + e; alt + o
   chromium-browser --new-window https://outlook.office.com
 
 super d
