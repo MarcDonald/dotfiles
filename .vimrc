@@ -118,6 +118,9 @@ au VimEnter,BufRead,BufNewFile * ColorHighlight
 " Default vim8 plugin loading
 packloadall
 silent! helptags ALL
+" Set encoding
+set encoding=utf-8
+set fileencoding=utf-8
 " Enable syntax highlighting
 syntax on
 " Set colorscheme

@@ -33,11 +33,14 @@ alt + f; alt + y
 alt + f; alt + t
   chromium-browser --new-window https://ticktick.com
 
-alt + e; alt + e
+alt + f; alt + e
   chromium-browser --new-window https://mail.google.com
 
-alt + e; alt + o
+alt + f; alt + o
   chromium-browser --new-window https://outlook.office.com
+
+alt + c
+  chromium-browser --new-window https://calendar.google.com
 
 super d
   discord
@@ -50,6 +53,9 @@ super s
 
 super + shift + s
   maim -s --format png /dev/stdout | xclip -selection clipboard -t image/png -i
+
+super + m
+  gnome-system-monitor
 
 #
 # bspwm hotkeys

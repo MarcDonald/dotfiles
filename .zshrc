@@ -58,6 +58,9 @@ alias opkb='vim ~/.config/sxhkd/sxhkdrc'
 alias opbar='vim ~/.config/polybar/config'
 alias opnot='vim ~/.config/dunst/dunstrc'
 
+#Reload bspwm
+alias rlwm='~/.config/bspwm/bspwmrc'
+
 #Terminal
 alias cl='clear'
 alias cdl='cl && dl'

@@ -61,7 +61,7 @@ inherit = bar/secondary
 
 modules-left = bspwm spotify
 modules-center = title
-modules-right = pulseaudio short-date powermenu
+modules-right = short-pulseaudio short-date powermenu
 
 [module/filesystem]
 type = internal/fs
@@ -141,18 +141,10 @@ format-underline = ${colors.secondary}
 label = %date% / %time%
 
 [module/short-date]
-type = internal/date
-interval = 1
+inherit = module/date
 
 date =
 date-alt = %a %d %b %Y /
-
-time = %H:%M
-time-alt= %H:%M:%S
-
-format-prefix =
-format-prefix-foreground = ${colors.foreground-alt}
-format-underline = ${colors.secondary}
 
 label = %date% %time%
 
@@ -182,6 +174,11 @@ bar-volume-fill-font = 2
 bar-volume-empty = ─
 bar-volume-empty-font = 2
 bar-volume-empty-foreground = ${colors.foreground-alt}
+
+[module/short-pulseaudio]
+inherit = module/pulseaudio
+
+format-volume = <label-volume>
 
 [module/powermenu]
 type = custom/menu
