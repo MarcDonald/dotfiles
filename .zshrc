@@ -61,6 +61,10 @@ alias opnot='vim ~/.config/dunst/dunstrc'
 #Reload bspwm
 alias rlwm='~/.config/bspwm/bspwmrc'
 
+#Do Not Disturb
+alias dndon='killall -SIGUSR1 dunst && echo "Notifications Paused"'
+alias dndoff='killall -SIGUSR2 dunst && echo "Notifications Resumed"'
+
 #Terminal
 alias cl='clear'
 alias cdl='cl && dl'
