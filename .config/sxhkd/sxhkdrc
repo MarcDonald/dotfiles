@@ -39,7 +39,7 @@ alt + f; alt + e
 alt + f; alt + o
   chromium-browser --new-window https://outlook.office.com
 
-alt + c
+alt + f; alt + c
   chromium-browser --new-window https://calendar.google.com
 
 super d

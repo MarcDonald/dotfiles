@@ -15,10 +15,10 @@ xrandr --output DP-2 --rotate left
 
 xrandr --output DP-4 --pos 0x300
 
+bspc monitor DP-0 -s DP-4
 bspc monitor DP-0 -d 1 2 3
 bspc monitor DP-4 -d 4 5 6
 bspc monitor DP-2 -d 7 8 9 0
-bspc monitor DP-0 -s DP-4
 
 # Lowers mouse sensitivity
 xinput --set-prop 'Logitech Gaming Mouse G502' 'libinput Accel Speed' -0.6
@@ -47,3 +47,4 @@ bspc rule -a Soffice state=tiled
 
 # Application startups
 discord &
+dropbox start &

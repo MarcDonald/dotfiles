@@ -59,7 +59,7 @@ modules-right = eth memory cpu pulseaudio date powermenu
 [bar/vertical]
 inherit = bar/secondary
 
-modules-left = bspwm spotify
+modules-left = bspwm short-spotify
 modules-center = title
 modules-right = short-pulseaudio short-date powermenu
 
@@ -69,9 +69,10 @@ interval = 25
 
 mount-0 = /
 
-label-mounted = %{F#0a81f5}%mountpoint%%{F-}: %percentage_used%%
+label-mounted =   %percentage_used%%
 label-unmounted = %mountpoint% not mounted
 label-unmounted-foreground = ${colors.foreground-alt}
+label-mounted-underline = ${colors.secondary}
 
 [module/bspwm]
 type = internal/bspwm
@@ -208,6 +209,10 @@ interval = 1
 format = <label>
 exec = python ~/.config/polybar/polybar-spotify/spotify_status.py -f '{song}: {artist}' -t 64
 format-underline = ${colors.secondary}
+
+[module/short-spotify]
+inherit = module/spotify
+exec = python ~/.config/polybar/polybar-spotify/spotify_status.py -f '{song}: {artist}' -t 32
 
 [module/title]
 type = internal/xwindow

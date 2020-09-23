@@ -65,8 +65,11 @@ let g:ale_fixers = {
       \'rust':['rustfmt'],
       \'markdown':['prettier'],
       \'json':['jq'],
+      \'python':['black','isort'],
+    \}
+let g:ale_linters = {
       \'python':['pylint'],
-      \}
+    \}
 let g:ale_linters_explicit = 1
 let g:ale_fix_on_save = 1
 " /ALE
@@ -216,3 +219,4 @@ map <leader>h :bp<CR>
 map <leader>aj :ALEPrevious<CR>
 map <leader>ak :ALENext<CR>
 map <leader>pf :ALEFix<CR>
+map <leader>sc :set cuc!<CR>
