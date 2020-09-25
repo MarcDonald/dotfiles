@@ -35,7 +35,7 @@ font-2 = FontAwesome5Free:style=Solid:pixelsize=10;1
 
 modules-left = bspwm spotify
 modules-center = title
-modules-right = eth memory cpu pulseaudio date powermenu
+modules-right = eth memory cpu mic-volume pulseaudio date powermenu
 
 tray-position = right
 tray-padding = 2
@@ -54,14 +54,14 @@ inherit = bar/main
 tray-position = none
 modules-left = bspwm spotify
 modules-center = title
-modules-right = eth memory cpu pulseaudio date powermenu
+modules-right = eth memory cpu mic-volume pulseaudio date powermenu
 
 [bar/vertical]
 inherit = bar/secondary
 
 modules-left = bspwm short-spotify
 modules-center = title
-modules-right = short-pulseaudio short-date powermenu
+modules-right = mic-volume short-pulseaudio short-date powermenu
 
 [module/filesystem]
 type = internal/fs
@@ -202,6 +202,13 @@ menu-0-0-exec = menu-open-1
 
 menu-1-0 = confirm
 menu-1-0-exec = shutdown now
+
+[module/mic-volume]
+type = custom/script
+interval = 1
+format = <label>
+click-left = sh ~/.config/polybar/mic-volume/fix-mic-volume.sh
+exec = sh ~/.config/polybar/mic-volume/mic-volume.sh 'Meteor'
 
 [module/spotify]
 type = custom/script
