@@ -42,6 +42,9 @@ alt + f; alt + o
 alt + f; alt + c
   chromium-browser --new-window https://calendar.google.com
 
+alt + f; alt + g
+  chromium-browser --new-window https://github.com
+
 super d
   discord
 

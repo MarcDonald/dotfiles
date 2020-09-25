@@ -61,6 +61,9 @@ alias opnot='vim ~/.config/dunst/dunstrc'
 #Reload bspwm
 alias rlwm='~/.config/bspwm/bspwmrc'
 
+#Fix mic volume
+alias fm='pactl set-source-volume alsa_input.usb-Samson_Technologies_Samson_Meteor_Mic-00.analog-stereo 0.125'
+
 #Do Not Disturb
 alias dndon='killall -SIGUSR1 dunst && echo "Notifications Paused"'
 alias dndoff='killall -SIGUSR2 dunst && echo "Notifications Resumed"'
