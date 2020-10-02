@@ -220,3 +220,4 @@ map <leader>aj :ALEPrevious<CR>
 map <leader>ak :ALENext<CR>
 map <leader>pf :ALEFix<CR>
 map <leader>sc :set cuc!<CR>
+xnoremap ytc "+y
