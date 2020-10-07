@@ -1,0 +1,4 @@
+#!/bin/zsh
+
+#Gets the name of the git branch and outputs it in brackets
+git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'

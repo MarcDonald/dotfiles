@@ -1,0 +1,6 @@
+#!/bin/zsh
+
+#Gets the first docker container ID in a list
+list=$(dcid "$1")
+set -- "$list"
+echo "$1"

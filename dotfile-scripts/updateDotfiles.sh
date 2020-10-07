@@ -2,6 +2,7 @@
 
 #zsh
 cp ~/.zshrc .
+cp ~/.zprofile .
 
 #p10k
 cp ~/.p10k.zsh .
@@ -55,5 +56,8 @@ cp ~/.config/gtk-4.0/settings.ini ./.config/gtk-4.0/settings.ini
 
 #colors
 cp ~/.colors.sh .
+
+#scripts
+cp -r ~/.scripts/ .
 
 echo 'If you made changes to polybar etc, make sure all the files you need were copied before committing'

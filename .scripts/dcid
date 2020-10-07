@@ -1,0 +1,4 @@
+#!/bin/zsh
+
+#Gets docker container ID
+docker container ls | grep "$1" | awk '{ print $1 }'

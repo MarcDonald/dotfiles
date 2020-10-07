@@ -1,0 +1,16 @@
+#!/bin/zsh
+
+local branch
+branch=$(git rev-parse --abbrev-ref HEAD)
+local existsOnRemote
+existsOnRemote=$(git ls-remote | grep -c "\b${branch}$")
+if [[ existsOnRemote -eq 0 ]];then
+  git push --set-upstream origin "$branch"
+else
+  if [[ "$1" == "-f" ]]; then
+    echo "Force pushing"
+    git push --force
+  else
+    git push
+  fi
+fi
