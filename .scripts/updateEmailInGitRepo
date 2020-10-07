@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/zsh
 
 git filter-branch --env-filter '
 OLD_EMAIL="OLD EMAIL"

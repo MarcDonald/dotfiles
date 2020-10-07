@@ -1,0 +1,4 @@
+#!/bin/zsh
+
+#Rename a local branch $1 is the original branch name, $2 is the new branch name
+git branch -m "$1" "$2"

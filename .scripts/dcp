@@ -1,0 +1,5 @@
+#!/bin/zsh
+
+#Copies something to a docker container where $1 is the local path $2 is a part of the container name and $3 is the path to move it to in the container
+#E.g. to move a local version of common utils into the APH's node modules do dcp soe-common-utils auto /home/src/app/node_modules
+docker cp "$1" "$(dcid "$2")":"$3"

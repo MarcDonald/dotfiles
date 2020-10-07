@@ -1,0 +1,4 @@
+#!/bin/zsh
+
+#Copies an item to your clipboard without a new line character
+echo "$1" | tr -d '\n' | pbcopy

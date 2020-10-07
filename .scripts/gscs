@@ -1,0 +1,4 @@
+#!/bin/zsh
+
+#Shows the files changed in a specified Git commit. $1 is the commit hash you want to view
+git diff-tree --no-commit-id --name-status -r "$1"

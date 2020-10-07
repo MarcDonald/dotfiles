@@ -5,21 +5,12 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-export PATH=$HOME/bin:/usr/local/bin:$PATH
-export PATH=$PATH:/home/marc/.jetbrainsscripts
-
 export ZSH="/home/marc/.oh-my-zsh"
 ZSH_THEME="powerlevel10k/powerlevel10k"
 source ~/.colors.sh
 plugins=(colored-man-pages autojump git adb zsh-autosuggestions zsh-syntax-highlighting fzf)
 
 source $ZSH/oh-my-zsh.sh
-
-if [[ -n $SSH_CONNECTION ]]; then
-  export EDITOR='nvim'
-else
-  export EDITOR='nvim'
-fi
 
 HISTSIZE=10000000
 SAVEHIST=10000000
@@ -30,10 +21,6 @@ autoload -Uz zcalc
 alias calc="zcalc"
 ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 
-# Load Git completion
-zstyle ':completion:*:*:git:*' script ~/.zsh/git-completion.bash
-fpath=(~/.zsh $fpath)
-
 autoload -Uz compinit && compinit
 
 #Use neovim instead of vim
@@ -42,9 +29,9 @@ alias vim='nvim'
 alias vimdiff='nvim -d'
 
 #Opening Config
-alias opprofilea='atom ~/.bash_profile'
-alias opprofile='vim ~/.bash_profile'
-alias spprofile='. ~/.bash_profile'
+alias opprofilea='atom ~/.zprofile'
+alias opprofile='vim ~/.zprofile'
+alias spprofile='. ~/.zprofile'
 
 alias opa='atom ~/.bashrc'
 alias op='vim ~/.zshrc'
@@ -60,9 +47,6 @@ alias opnot='vim ~/.config/dunst/dunstrc'
 
 #Reload bspwm
 alias rlwm='~/.config/bspwm/bspwmrc'
-
-#Fix mic volume
-alias fm='pactl set-source-volume alsa_input.usb-Samson_Technologies_Samson_Meteor_Mic-00.analog-stereo 0.125'
 
 #Do Not Disturb
 alias dndon='killall -SIGUSR1 dunst && echo "Notifications Paused"'
@@ -81,10 +65,6 @@ alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 
-#Add an "alert" alias for long running commands.  Use like so:
-#   sleep 10; alert
-alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
-
 #Docker
 alias d='docker'
 alias dco='docker-compose'
@@ -97,158 +77,33 @@ alias cleanExitDoc='d ps -a | grep Exit | cut -d " " -f 1 | xargs d rm && lsdocs
 alias lsdocc='d container ls'
 alias cllsdocc='cl && lsdocc'
 
-#Dynamo
-alias startdynamo='docker run --name dynamo -d -p 8000:8000 amazon/dynamodb-local'
-
 #Rust/Cargo
 alias c='cargo'
 
-#tmux
-alias t='tmux'
-alias ta='tmux attach -t'
-
 #Navigation
 #shellcheck disable=SC2034
-DOC_DIR=~/Documents
+DOC_DIR='~/Documents'
 alias doc='cd $DOC_DIR'
 alias cddr='cd $DOC_DIR/code'
 alias cddot='cd $DOC_DIR/code/dotfiles'
 
 #Managing dotfiles repo
-alias ud='cddot && ./scripts/updateDotfiles.sh'
-alias pd='cddot && ./scripts/propagateDotfiles.sh'
+alias ud='cddot && ./dotfile-scripts/updateDotfiles.sh'
 
 #Git
 alias g='git'
-git config --global core.pager 'diff-so-fancy | less --tabs=4 -RFX'
-git config --global alias.co checkout
-git config --global alias.st status
-git config --global alias.cm commit
-git config --global alias.cl clone
-git config --global alias.b branch
-git config --global alias.lo 'log --oneline'
-git config --global alias.lg 'log --oneline --graph --decorate'
-git config --global alias.df 'diff --color'
-git config --global alias.dfc 'diff --cached --color'
-git config --global alias.yeehaw 'push --force'
-git config --global alias.cane 'commit --amend --no-edit'
-git config --global alias.pr 'pull --rebase'
-git config --global alias.cmm 'commit -m'
-git config --global alias.cob 'checkout -b'
 alias gaa='git add .'
 alias gacane='git add . && git commit --amend --no-edit'
-alias grmb='git branch --merged develop | grep -v "^[ *]*develop$" | xargs git branch -d'
-alias grmbm='git branch --merged master | grep -v "^[ *]*master$" | xargs git branch -d'
 alias gpm='git checkout master && git pull && grmbm'
 alias gin='git pull'
 alias gst='git status'
-alias gc='git commit'
 alias gcm='git commit -m'
 alias gdf='git df'
 alias gdfc='git dfc'
 
-#FUNCTIONS
-#Shows the files changed in a specified Git commit. $1 is the commit hash you want to view
-function gscs() {
-  g diff-tree --no-commit-id --name-status -r "$1"
-}
-
-#Shows the changes in a specified Git commit. $1 is the commit hash you want to view
-function gsc() {
-  g lg -p -1 "$1"
-}
-
-#Rename a local branch $1 is the original branch name, $2 is the new branch name
-function grbl() {
-  g b -m "$1" "$2"
-}
-
-#Renames a remote branch $1 is the original branch name, $2 is the new branch name
-function grbr() {
-  grbl "$1" "$2"
-  g push origin :"$1"
-  g push --set-upstream origin "$2"
-}
-
-#Pushes a local branch to origin, creating it at the origin if necessary
-function gout() {
-  local branch
-  branch=$(git rev-parse --abbrev-ref HEAD)
-  local existsOnRemote
-  existsOnRemote=$(git ls-remote | grep -c "\b${branch}$")
-  if [[ existsOnRemote -eq 0 ]];then
-    git push --set-upstream origin "$branch"
-  else
-    if [[ "$1" == "-f" ]]; then
-      echo "Force pushing"
-      git push --force
-    else
-      git push
-    fi
-  fi
-}
-
-#Copies an item to your clipboard without a new line character
-function ctc() {
-  echo "$1" | tr -d '\n' | pbcopy
-}
-
-#Gets docker container name
-function dcname() {
-  lsdocc --format "{{.Image}}" | grep "$1"
-}
-
-#Gets docker container ID
-function dcid() {
-  lsdocc | grep "$1" | awk '{ print $1 }'
-}
-
-#Gets the first docker container ID in a list
-function dcidf() {
-  list=$(dcid "$1")
-  set -- "$list"
-  echo "$1"
-}
-
-#Tails logs for a docker container
-function dl() {
-  d logs --follow "$(dcid "$1")"
-}
-
-#Opens a docker container. If multiple containers are returned from dcid then it opens the first one in the list
-function ocon() {
-  d exec -it "$(dcidf "$1")" /bin/bash
-}
-
-#Opens a docker container with regular shell rather than bash. If multiple containers are returned from dcid then it opens the first one in the list
-function oconsh() {
-  d exec -it "$(dcidf "$1")" sh
-}
-
-#Copies something to a docker container where $1 is the local path $2 is a part of the container name and $3 is the path to move it to in the container
-#E.g. to move a local version of common utils into the APH's node modules do dcp soe-common-utils auto /home/src/app/node_modules
-function dcp() {
-  d cp "$1" "$(dcid "$2")":"$3"
-}
-
-#Same as dcp but copies directly into the node_modules folder
-function dcpnm() {
-  dcp "$1" "$2" /home/src/app/node_modules/"$3"
-}
-
-#Gets the name of the git branch and outputs it in brackets
-function parseGitBranch() {
-  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
-}
-
 # NVM
 export NVM_DIR="$HOME/.nvm"
 [ -s "/home/linuxbrew/.linuxbrew/opt/nvm/nvm.sh" ] && . "/home/linuxbrew/.linuxbrew/opt/nvm/nvm.sh"  # This loads nvm
-[ -s "/home/linuxbrew/.linuxbrew/opt/nvm/etc/bash_completion.d/nvm" ] && . "/home/linuxbrew/.linuxbrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
-
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="/home/marc/.sdkman"
-[[ -s "/home/marc/.sdkman/bin/sdkman-init.sh" ]] && source "/home/marc/.sdkman/bin/sdkman-init.sh"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
