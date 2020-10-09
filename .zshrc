@@ -81,11 +81,8 @@ alias cllsdocc='cl && lsdocc'
 alias c='cargo'
 
 #Navigation
-#shellcheck disable=SC2034
-DOC_DIR='~/Documents'
-alias doc='cd $DOC_DIR'
-alias cddr='cd $DOC_DIR/code'
-alias cddot='cd $DOC_DIR/code/dotfiles'
+alias cddr='cd ~/Documents/code'
+alias cddot='cd ~/Documents/code/dotfiles'
 
 #Managing dotfiles repo
 alias ud='cddot && ./dotfile-scripts/updateDotfiles.sh'
