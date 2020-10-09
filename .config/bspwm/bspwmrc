@@ -22,6 +22,8 @@ bspc monitor DP-2 -d 8 9 0
 xinput --set-prop 'Logitech Gaming Mouse G502' 'libinput Accel Speed' -0.6
 # Stops the X cursor when not hovering over a window
 xsetroot -cursor_name left_ptr
+# Stops monitors going to sleep
+xset s off -dpms
 
 feh --bg-center ~/Pictures/Wallpapers/system/wallpaper.jpg
 
@@ -47,3 +49,4 @@ bspc rule -a Soffice state=tiled
 sxhkd &
 dropbox start &
 discord &
+eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
