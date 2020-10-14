@@ -152,6 +152,8 @@ label = %date% %time%
 [module/pulseaudio]
 type = internal/pulseaudio
 
+sink = alsa_output.usb-Kingston_HyperX_Virtual_Surround_Sound_00000000-00.analog-stereo
+
 format-volume = <label-volume> <bar-volume>
 label-volume =   %percentage%%
 label-volume-foreground = ${root.foreground}
@@ -216,6 +218,10 @@ interval = 1
 format = <label>
 exec = python ~/.config/polybar/polybar-spotify/spotify_status.py -f '{song}: {artist}' -t 64
 format-underline = ${colors.secondary}
+; Controls require playerctl to be installed
+click-left = playerctl play-pause --player=spotify
+click-right = playerctl next --player=spotify
+click-middle = playerctl previous --player=spotify
 
 [module/short-spotify]
 inherit = module/spotify
