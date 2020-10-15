@@ -54,11 +54,31 @@ super p
 super s
   spotify
 
+ctrl + shift + Escape
+  gnome-system-monitor
+
+
+#
+## Hot Keys
+#
+
 super + shift + s
   maim -s --format png /dev/stdout | xclip -selection clipboard -t image/png -i
 
-super + m
-  gnome-system-monitor
+super + F10
+  playerctl next --player=spotify
+
+super + F11
+  playerctl play-pause --player=spotify
+
+super + F12
+  playerctl previous --player=spotify
+
+super + Prior
+  amixer -D pulse sset Master 5%+
+
+super + Next
+  amixer -D pulse sset Master 5%-
 
 #
 # bspwm hotkeys
