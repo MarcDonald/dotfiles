@@ -1,0 +1,6 @@
+#!/bin/sh
+
+while true; do
+  fixMic
+  sleep 1
+done
