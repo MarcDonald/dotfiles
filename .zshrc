@@ -28,6 +28,9 @@ alias vi='nvim'
 alias vim='nvim'
 alias vimdiff='nvim -d'
 
+#Use bat instead of cat
+alias cat='bat'
+
 #Opening Config
 alias opprofilea='atom ~/.zprofile'
 alias opprofile='vim ~/.zprofile'

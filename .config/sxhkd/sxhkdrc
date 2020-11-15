@@ -19,31 +19,31 @@ super + Escape
 #
 
 super f
-  chromium-browser
+  google-chrome
 
 super + shift + f
-  chromium-browser --incognito
+  google-chrome --incognito
 
 alt + f; alt + r
-  chromium-browser --new-window https://reddit.com/r/all
+  google-chrome --new-window https://reddit.com/r/all
 
 alt + f; alt + y
-  chromium-browser --new-window https://youtube.com
+  google-chrome --new-window https://youtube.com
 
 alt + f; alt + t
-  chromium-browser --new-window https://ticktick.com
+  google-chrome --new-window https://ticktick.com
 
 alt + f; alt + e
-  chromium-browser --new-window https://mail.google.com
+  google-chrome --new-window https://mail.google.com
 
 alt + f; alt + o
-  chromium-browser --new-window https://outlook.office.com
+  google-chrome --new-window https://outlook.office.com
 
 alt + f; alt + c
-  chromium-browser --new-window https://calendar.google.com
+  google-chrome --new-window https://calendar.google.com
 
 alt + f; alt + g
-  chromium-browser --new-window https://github.com
+  google-chrome --new-window https://github.com
 
 super d
   discord
