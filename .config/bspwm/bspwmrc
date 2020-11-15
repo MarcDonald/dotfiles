@@ -6,24 +6,25 @@ xrandr --output DP-0 --primary
 xrandr --output DP-0 --right-of DP-4
 xrandr --output DP-2 --right-of DP-0
 
-xrandr --output DP-4 --mode 1920x1080 --rate 144.00
-xrandr --output DP-0 --mode 2560x1440 --rate 144.00
-xrandr --output DP-2 --mode 1920x1080 --rate 74.92
+xrandr --output DP-4 --mode 1920x1080 --rate 144
+xrandr --output DP-0 --mode 2560x1440 --rate 144
+xrandr --output DP-2 --mode 1920x1080 --rate 60
 xrandr --output DP-2 --rotate left
 
-xrandr --output DP-4 --pos 0x300
+xrandr --output DP-4 --pos 0x50
 
 bspc monitor DP-0 -s DP-4
 bspc monitor DP-0 -d 1 2 3 4
 bspc monitor DP-4 -d 5 6 7
 bspc monitor DP-2 -d 8 9 0
 
+# Don't turn off monitors
+xset s off -dpms
+
 # Lowers mouse sensitivity
 xinput --set-prop 'Logitech Gaming Mouse G502' 'libinput Accel Speed' -0.6
 # Stops the X cursor when not hovering over a window
 xsetroot -cursor_name left_ptr
-# Put monitors to sleep after 5 minutes
-xset s 300 300
 
 feh --bg-center ~/Pictures/Wallpapers/system/wallpaper.jpg
 
@@ -41,6 +42,8 @@ bspc config window_gap           8
 bspc config split_ratio          0.52
 bspc config borderless_monocle   true
 bspc config gapless_monocle      true
+bspc config automatic_scheme spiral
+bspc config initial_polarity first_child
 
 bspc rule -a Peek state=floating
 bspc rule -a Soffice state=tiled

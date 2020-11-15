@@ -29,7 +29,7 @@
     # the top and down respectively.
     # The width can be negative.  In this case the actual width is the
     # screen width minus the width defined in within the geometry option.
-    geometry = "300x5-30+20"
+    geometry = "300x5-20+20"
 
     # Show how many messages are currently hidden (because of geometry).
     indicate_hidden = yes
@@ -222,7 +222,7 @@
     # corners.
     # The radius will be automatically lowered if it exceeds half of the
     # notification height to avoid clipping text and/or icons.
-    corner_radius = 8
+    corner_radius = 4
 
     # Ignore the dbus closeNotification message.
     # Useful to enforce the timeout set by dunst configuration. Without this
@@ -253,7 +253,7 @@
     # * close_all: Close all notifications.
     # These values can be strung together for each mouse event, and
     # will be executed in sequence.
-    mouse_left_click = do_action, close_current
+    mouse_left_click = do_action
     mouse_middle_click = close_all
     mouse_right_click = close_current
 
