@@ -1,0 +1,6 @@
+#!/bin/sh
+
+while true; do
+  sleep 900
+  notify-send 'Posture Check'
+done

@@ -50,6 +50,6 @@ bspc rule -a Soffice state=tiled
 
 # Application startups
 sxhkd &
+eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
 dropbox start &
 discord &
-eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
