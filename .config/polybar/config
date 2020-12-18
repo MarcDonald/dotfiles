@@ -208,9 +208,9 @@ menu-1-0-exec = shutdown now
 [module/mic-volume]
 type = custom/script
 interval = 1
-format = <label>
-click-left = sh ~/.config/polybar/mic-volume/fix-mic-volume.sh
-exec = sh ~/.config/polybar/mic-volume/mic-volume.sh
+format =  <label>
+click-left = bash ~/.config/polybar/mic-volume/fix-mic-volume.sh
+exec = bash ~/.config/polybar/mic-volume/mic-volume.sh
 
 [module/spotify]
 type = custom/script
