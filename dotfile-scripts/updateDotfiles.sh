@@ -9,6 +9,7 @@ cp ~/.p10k.zsh .
 
 #Vim
 cp ~/.vimrc .
+cp ~/.ideavimrc .
 
 #Git
 cp ~/.gitconfig .

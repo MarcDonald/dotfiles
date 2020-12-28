@@ -1,0 +1,13 @@
+noremap <Space> <Nop>
+let mapleader = "\<Space>"
+nmap <leader>w :action SaveAll<cr>
+nmap <leader>rn :action RenameElement<cr>
+nmap <leader>gd :action GotoDeclaration<cr>
+nmap <leader>gi :action GotoImplementation<cr>
+nmap <leader>q :action CloseEditor<cr>
+map <leader>aj :action GotoNextError<cr>
+map <leader>ak :action GotoPreviousError<cr>
+map <leader>h :action PreviousTab<cr>
+map <leader>l :action NextTab<cr>
+map <C-w>h :action SplitHorizontally<cr>
+map <C-w>v :action SplitVertically<cr>
