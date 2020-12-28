@@ -7,7 +7,6 @@ Lombok
 Prettier
 One Dark theme - Mark Skelton
 JSON To Kotlin Class
-Tailwindcss
 Rainbow Brackets
 
 # Android Studio
