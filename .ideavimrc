@@ -1,5 +1,41 @@
+" vim-plug loading
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+call plug#begin('~/.vim/plugged')
+
+" Plugins
+Plug 'machakann/vim-highlightedyank'
+
+" Settings
+" Show relative line numbers by default
+set rnu
+" Show absolute line number of current line
+set nu
+" Highlight matching braces
+set showmatch
+" Live Searching
+set incsearch
+" Highlight search
+set hlsearch
+" Show command as it's typed
+set showcmd
+" Ignore case by default
+set ignorecase
+
+" Keymappings
 noremap <Space> <Nop>
 let mapleader = "\<Space>"
+
+" Clear search by pressing enter or F4
+nnoremap <CR> :noh<CR><CR>
+nnoremap <F4> :noh<CR>
+" Toggle search case sensitivity with F6
+nnoremap <F6> :set ignorecase! ignorecase?<CR>
+
 nmap <leader>w :action SaveAll<cr>
 nmap <leader>rn :action RenameElement<cr>
 nmap <leader>gd :action GotoDeclaration<cr>
@@ -9,5 +45,8 @@ map <leader>aj :action GotoNextError<cr>
 map <leader>ak :action GotoPreviousError<cr>
 map <leader>h :action PreviousTab<cr>
 map <leader>l :action NextTab<cr>
-map <C-w>h :action SplitHorizontally<cr>
+map <C-w>s :action SplitHorizontally<cr>
 map <C-w>v :action SplitVertically<cr>
+" Paste from yank register only
+nnoremap <leader>p "0p
+nnoremap <leader>P "0P

@@ -57,6 +57,9 @@ super s
 ctrl + shift + Escape
   gnome-system-monitor
 
+super e
+  xdg-open /home/marc
+
 
 #
 ## Hot Keys

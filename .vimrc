@@ -7,6 +7,7 @@ endif
 
 call plug#begin('~/.vim/plugged')
 
+Plug 'instant-markdown/vim-instant-markdown', {'for': 'markdown'}
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'scrooloose/nerdtree'
@@ -19,7 +20,6 @@ Plug 'vim-scripts/mru.vim'
 Plug 'amix/open_file_under_cursor.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-Plug 'shime/vim-livedown'
 Plug 'udalov/kotlin-vim'
 Plug 'tpope/vim-unimpaired'
 Plug 'rust-lang/rust.vim'
@@ -49,7 +49,6 @@ if (empty($TMUX))
     set termguicolors
   endif
 endif
-
 
 " Set leader
 nnoremap <SPACE> <Nop>
@@ -191,6 +190,7 @@ set autoread
 " Persist undo tree
 set undodir=~/.vim/undodir
 set undofile
+filetype plugin on
 
 " KEYMAPS
 " Show and hide NERDTree by pressing F1
@@ -221,3 +221,6 @@ map <leader>ak :ALENext<CR>
 map <leader>pf :ALEFix<CR>
 map <leader>sc :set cuc!<CR>
 xnoremap ytc "+y
+nnoremap <leader>p "0p
+nnoremap <leader>P "0P
+nmap gm :LivedownToggle<CR>
