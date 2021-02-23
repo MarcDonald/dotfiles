@@ -7,7 +7,6 @@ endif
 
 call plug#begin('~/.vim/plugged')
 
-Plug 'instant-markdown/vim-instant-markdown', {'for': 'markdown'}
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'scrooloose/nerdtree'

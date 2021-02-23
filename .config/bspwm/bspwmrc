@@ -53,3 +53,4 @@ sxhkd &
 eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
 dropbox start
 discord &
+blueman-tray &
