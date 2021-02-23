@@ -47,3 +47,5 @@
 	required = true
 [pull]
 	ff = only
+[help]
+	autoCorrect = 1
