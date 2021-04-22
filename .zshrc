@@ -8,7 +8,7 @@ fi
 export ZSH="/home/marc/.oh-my-zsh"
 ZSH_THEME="powerlevel10k/powerlevel10k"
 source ~/.colors.sh
-plugins=(colored-man-pages autojump git adb zsh-autosuggestions zsh-syntax-highlighting fzf)
+plugins=(colored-man-pages autojump git adb zsh-autosuggestions zsh-syntax-highlighting golang)
 
 source $ZSH/oh-my-zsh.sh
 

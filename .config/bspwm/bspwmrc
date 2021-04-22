@@ -26,6 +26,9 @@ xinput --set-prop 'Logitech Gaming Mouse G502' 'libinput Accel Speed' -0.6
 # Stops the X cursor when not hovering over a window
 xsetroot -cursor_name left_ptr
 
+# Sets correct keyboard
+setxkbmap us mac
+
 feh --bg-center ~/Pictures/Wallpapers/system/wallpaper.jpg
 
 $HOME/.config/polybar/launch.sh
@@ -53,4 +56,3 @@ sxhkd &
 eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
 dropbox start
 discord &
-blueman-tray &
