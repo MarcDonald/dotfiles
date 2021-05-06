@@ -1,7 +1,8 @@
-ThemeFile=flat-ui
+ThemeFile=dracula
 Transparency=off
 OpaqueWhenFocused=no
-FontHeight=11
-Font=Fira Code
-CursorType=block
+FontHeight=12
+Font=JetBrains Mono
+CursorType=line
 BackgroundColour=64,128,128
+CursorColour=128,255,255
