@@ -49,3 +49,5 @@
 	ff = only
 [help]
 	autoCorrect = 1
+[init]
+	defaultBranch = main
