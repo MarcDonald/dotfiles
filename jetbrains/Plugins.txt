@@ -1,13 +1,16 @@
+.env files support
 .ignore
 Atom Material Icons
+CodeGlance
+GitToolbox
 IdeaVim
 Key Promoter X
-Kotlin
-Lombok
+Mario Progress Bar
 Prettier
 One Dark theme - Mark Skelton
 JSON To Kotlin Class
 Rainbow Brackets
+Styled Components & Styled JSX
 
 # Android Studio
 ADB Idea
