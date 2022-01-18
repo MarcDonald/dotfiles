@@ -1,4 +1,0 @@
-#!/bin/zsh
-
-#Gets docker container name
-docker container ls --format "{{.Image}}" | grep "$1"

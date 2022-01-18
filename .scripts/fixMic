@@ -1,4 +1,0 @@
-#!/bin/zsh
-
-#Fix mic volume
-pactl set-source-volume alsa_input.usb-RODE_Microphones_RODE_NT-USB-00.analog-stereo 0.42

@@ -1,4 +1,0 @@
-#!/bin/zsh
-
-#Tails logs for a docker container
-docker logs --follow "$(docker container ls | grep "$1" | awk '{ print $1 }')"

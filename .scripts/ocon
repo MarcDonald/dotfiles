@@ -1,4 +1,0 @@
-#!/bin/zsh
-
-#Opens a docker container. If multiple containers are returned from dcid then it opens the first one in the list
-docker exec -it "$(dcidf "$1")" /bin/bash

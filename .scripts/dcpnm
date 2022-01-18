@@ -1,4 +1,0 @@
-#!/bin/zsh
-
-#Same as dcp but copies directly into the node_modules folder
-dcp "$1" "$2" /home/src/app/node_modules/"$3"

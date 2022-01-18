@@ -1,4 +1,0 @@
-#!/bin/zsh
-
-#Start a DynamoDB container
-docker run --name dynamo -d -p 8000:8000 amazon/dynamodb-local

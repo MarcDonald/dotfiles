@@ -1,6 +1,0 @@
-#!/bin/zsh
-
-#Renames a remote branch $1 is the original branch name, $2 is the new branch name
-git branch -m "$1" "$2"
-g push origin :"$1"
-g push --set-upstream origin "$2"
