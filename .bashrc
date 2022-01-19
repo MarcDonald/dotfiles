@@ -1,4 +1,3 @@
-#Use neovim instead of vim
 alias vi='vim'
 alias vim='vim'
 alias vimdiff='vim -d'
@@ -54,7 +53,4 @@ alias gcm='git commit -m'
 alias gdf='git df'
 alias gdfc='git dfc'
 
-# Golang
-export GOPATH=$HOME/go
-export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
-export PATH=$PATH:$(go env GOPATH)/bin
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash

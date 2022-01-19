@@ -32,6 +32,9 @@ set sneak
 noremap <Space> <Nop>
 let mapleader = "\<Space>"
 
+" Don't use Ex mode, use Q for formatting
+map Q gq
+
 " Clear search by pressing enter or F4
 nnoremap <CR> :noh<CR><CR>
 nnoremap <F4> :noh<CR>
@@ -39,6 +42,11 @@ nnoremap <F4> :noh<CR>
 nnoremap <F6> :set ignorecase! ignorecase?<CR>
 " Yank whole line with Y
 nnoremap Y y$
+
+map <silent> w [w
+map <silent> b [b
+map <silent> e ]w
+map <silent> ge ]b
 
 " IntelliJ Stuff
 nmap <leader>w :action SaveAll<cr>

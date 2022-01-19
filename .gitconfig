@@ -15,7 +15,7 @@
 	df = diff --color
 	dfc = diff --cached --color
 [user]
-	email = marcsdeveloperemail@gmail.com
+	email = dev@marcdonald.com
 	name = Marc Donald
 [color]
 	ui = true
@@ -23,7 +23,7 @@
 	branch = auto
 [core]
 	autocrlf = input
-	editor = nvim
+	editor = vim
 	pager = diff-so-fancy | less --tabs=4 -RFX
 [color "status"]
 	changed = blue bold
