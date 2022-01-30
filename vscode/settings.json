@@ -1,0 +1,116 @@
+{
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "editor.fontSize": 16,
+    "editor.fontLigatures": true,
+    "editor.fontFamily": "'JetBrains Mono', Consolas, 'Courier New', monospace",
+    "editor.tabSize": 2,
+    "files.autoSave": "onFocusChange",
+    "terminal.integrated.defaultProfile.windows": "Git Bash",
+    "editor.foldingImportsByDefault": true,
+    "editor.smoothScrolling": true,
+    "editor.cursorSmoothCaretAnimation": true,
+    "editor.cursorSurroundingLines": 2,
+    "editor.find.autoFindInSelection": "always",
+    "workbench.colorTheme": "One Dark Pro",
+    "debug.console.fontSize": 15,
+    "eslint.format.enable": true,
+    "eslint.packageManager": "yarn",
+    "reactSnippets.settings.prettierEnabled": true,
+    "git.autofetch": true,
+    "markdown.preview.fontSize": 15,
+    "material-icon-theme.activeIconPack": "react",
+    "npm.packageManager": "yarn",
+    "npm.enableRunFromFolder": true,
+    "prettier.configPath": ".prettierrc.js",
+    "vim.camelCaseMotion.enable": true,
+    "vim.easymotion": true,
+    "vim.highlightedyank.enable": true,
+    "vim.leader": "<space>",
+    "vim.showMarksInGutter": true,
+    "vim.smartRelativeLine": true,
+    "vim.sneak": true,
+    "vim.sneakUseIgnorecaseAndSmartcase": true,
+    "vim.statusBarColorControl": true,
+    "vim.useSystemClipboard": true,
+    "vim.visualstar": true,
+    "workbench.colorCustomizations": {
+        "statusBar.background": "#005f5f",
+        "statusBar.noFolderBackground": "#005f5f",
+        "statusBar.debuggingBackground": "#005f5f"
+    },
+    "vim.normalModeKeyBindings": [
+        {
+            "before": ["leader", "s"],
+            "commands": [
+                "workbench.action.files.save",
+            ]
+        },
+        {
+            "before": ["leader", "q"],
+            "commands": [
+                "workbench.action.closeActiveEditor",
+            ]
+        },
+        {
+            "before": ["leader", "r", "n"],
+            "commands": [
+                "editor.action.rename",
+            ]
+        },
+        {
+            "before": ["leader", "g", "d"],
+            "commands": [
+                "editor.action.revealDefinition",
+            ]
+        },
+        {
+            "before": ["leader", "a", "j"],
+            "commands": [
+                "editor.action.marker.nextInFiles",
+            ]
+        },
+        {
+            "before": ["leader", "a", "k"],
+            "commands": [
+                "editor.action.marker.prevInFiles",
+            ]
+        },
+        {
+            "before": ["C-w", "s"],
+            "commands": [
+                "workbench.action.splitEditor",
+            ]
+        },
+        {
+            "before": ["Q"],
+            "after": ["g", "q"]
+        },
+        {
+            "before": ["leader", "l"],
+            "after": [
+                "g", "t"
+            ]
+        },
+        {
+            "before": ["leader", "h"],
+            "after": [
+                "g", "T"
+            ]
+        },
+        {
+            "before": ["leader", "c"],
+            "commands": [
+                "workbench.action.showCommands",
+            ]
+        },
+    
+    ],
+    "gitlens.views.commits.files.layout": "tree",
+    "workbench.preferredDarkColorTheme": "One Dark Pro",
+    "workbench.preferredLightColorTheme": "GitHub Light Default",
+    "window.autoDetectColorScheme": true,
+    "workbench.iconTheme": "material-icon-theme",
+    "workbench.productIconTheme": "material-product-icons",
+    "terminal.integrated.fontSize": 15
+}
