@@ -9,6 +9,11 @@ call plug#begin('~/.vim/plugged')
 
 " Plugins
 Plug 'machakann/vim-highlightedyank'
+Plug 'preservim/nerdtree'
+Plug 'tpope/vim-surround'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'vim-scripts/argtextobj.vim'
+Plug 'easymotion/vim-easymotion'
 
 " Settings
 " Show relative line numbers by default
@@ -25,12 +30,17 @@ set hlsearch
 set showcmd
 " Ignore case by default
 set ignorecase
-" IdeaVim-sneak activation
-set sneak
 
 " Keymappings
 noremap <Space> <Nop>
 let mapleader = "\<Space>"
+
+" Plugin Mappings
+map <C-t> :NERDTree<CR>
+let g:argtextobj_pairs="[:],(:),<:>"
+
+map <leader>F <Plug>(easymotion-s)
+map <leader>f <Plug>(easymotion-f)
 
 " Don't use Ex mode, use Q for formatting
 map Q gq
@@ -60,6 +70,8 @@ map <leader>h :action PreviousTab<cr>
 map <leader>l :action NextTab<cr>
 map <C-w>s :action SplitHorizontally<cr>
 map <C-w>v :action SplitVertically<cr>
+
 " Paste from yank register only
 nnoremap <leader>p "0p
 nnoremap <leader>P "0P
+set ideajoin
