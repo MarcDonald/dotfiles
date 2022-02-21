@@ -14,6 +14,7 @@ Plug 'tpope/vim-surround'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'vim-scripts/argtextobj.vim'
 Plug 'easymotion/vim-easymotion'
+Plug 'tpope/vim-commentary'
 
 " Settings
 " Show relative line numbers by default
@@ -38,9 +39,12 @@ let mapleader = "\<Space>"
 " Plugin Mappings
 map <C-t> :NERDTree<CR>
 let g:argtextobj_pairs="[:],(:),<:>"
-
 map <leader>F <Plug>(easymotion-s)
 map <leader>f <Plug>(easymotion-f)
+map <leader>md <A-x>
+map <leader>mn <A-n>
+map <leader>mp <A-p>
+vmap S <Plug>VSurround
 
 " Don't use Ex mode, use Q for formatting
 map Q gq
@@ -60,16 +64,26 @@ map <silent> ge ]b
 
 " IntelliJ Stuff
 nmap <leader>w :action SaveAll<cr>
-nmap <leader>rn :action RenameElement<cr>
+
 nmap <leader>gd :action GotoDeclaration<cr>
 nmap <leader>gi :action GotoImplementation<cr>
+nmap <leader>rn :action RenameElement<cr>
+
 nmap <leader>q :action CloseEditor<cr>
-map <leader>aj :action GotoNextError<cr>
-map <leader>ak :action GotoPreviousError<cr>
+nmap <leader>tp :action PinActiveTab<cr>
+nmap <leader>ta :action EditorTabPopupMenu<cr>
+nmap <leader>tr :action ReopenClosedTab<cr>
+nmap <leader>tg :action EditorTabsGroup<cr>
+nmap <leader>tsv :action SplitVertically<cr>
+nmap <leader>tsh :action SplitHorizontally<cr>
 map <leader>h :action PreviousTab<cr>
 map <leader>l :action NextTab<cr>
-map <C-w>s :action SplitHorizontally<cr>
-map <C-w>v :action SplitVertically<cr>
+
+nmap <leader>rr :action Rerun<cr>
+nmap <leader>rft :action RerunFailedTests<cr>
+
+map <leader>aj :action GotoNextError<cr>
+map <leader>ak :action GotoPreviousError<cr>
 
 " Paste from yank register only
 nnoremap <leader>p "0p
