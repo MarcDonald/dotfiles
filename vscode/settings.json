@@ -12,7 +12,7 @@
     "editor.cursorSmoothCaretAnimation": true,
     "editor.cursorSurroundingLines": 2,
     "editor.find.autoFindInSelection": "always",
-    "workbench.colorTheme": "One Dark Pro",
+    "workbench.colorTheme": "GitHub Light Default",
     "debug.console.fontSize": 15,
     "eslint.format.enable": true,
     "eslint.packageManager": "yarn",
@@ -106,11 +106,22 @@
         },
     
     ],
+    "vim.handleKeys": {
+        "<C-d>": true,
+        "<C-a>": false,
+        "<C-r>": false,
+        "<C-f>": false,
+        "Shift-Alt-F": false
+    },
     "gitlens.views.commits.files.layout": "tree",
     "workbench.preferredDarkColorTheme": "One Dark Pro",
     "workbench.preferredLightColorTheme": "GitHub Light Default",
     "window.autoDetectColorScheme": true,
     "workbench.iconTheme": "material-icon-theme",
     "workbench.productIconTheme": "material-product-icons",
-    "terminal.integrated.fontSize": 15
+    "terminal.integrated.fontSize": 15,
+    "[typescriptreact]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "editor.formatOnSave": true
 }

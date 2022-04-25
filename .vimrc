@@ -11,17 +11,10 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'scrooloose/nerdtree'
 Plug 'dense-analysis/ale'
-Plug 'tomtom/tcomment_vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'nathanaelkane/vim-indent-guides'
-Plug 'junegunn/goyo.vim'
 Plug 'vim-scripts/mru.vim'
-Plug 'amix/open_file_under_cursor.vim'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
-Plug 'udalov/kotlin-vim'
 Plug 'tpope/vim-unimpaired'
-Plug 'rust-lang/rust.vim'
 Plug 'airblade/vim-rooter'
 Plug 'machakann/vim-highlightedyank'
 Plug 'moll/vim-node'
@@ -30,6 +23,11 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'justinmk/vim-sneak'
 Plug 'chrisbra/Colorizer'
 Plug 'joshdick/onedark.vim'
+Plug 'tpope/vim-surround'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'vim-scripts/argtextobj.vim'
+Plug 'easymotion/vim-easymotion'
+Plug 'tpope/vim-commentary'
 
 call plug#end()
 
@@ -192,6 +190,17 @@ set undofile
 filetype plugin on
 
 " KEYMAPS
+" Plugin Mappings
+map <C-t> :NERDTree<CR>
+let g:argtextobj_pairs="[:],(:),<:>"
+map <leader>F <Plug>(easymotion-s)
+map <leader>f <Plug>(easymotion-f)
+map <leader>md <A-x>
+map <leader>mn <A-n>
+map <leader>mp <A-p>
+vmap S <Plug>VSurround
+
+
 " Show and hide NERDTree by pressing F1
 nnoremap <F1> :NERDTreeToggle<CR>
 " Clear search by pressing enter or F4

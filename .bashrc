@@ -35,6 +35,9 @@ alias cleanExitDoc='d ps -a | grep Exit | cut -d " " -f 1 | xargs d rm && lsdocs
 alias lsdocc='d container ls'
 alias cllsdocc='cl && lsdocc'
 
+#Kubernetes
+alias mkstart='minikube start --memory 5120 --cpus=4 && echo "Setting Minikube docker-env" && eval $(minikube -p minikube docker-env) && echo "Minikube docker-env set"'
+
 #Navigation
 alias cddr='cd ~/Documents/code'
 alias cddot='cd ~/Documents/code/dotfiles'

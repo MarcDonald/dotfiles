@@ -17,6 +17,9 @@
 [user]
 	email = dev@marcdonald.com
 	name = Marc Donald
+	signingKey = 95BA7DEC5B88788A1A6219C31443FF3E486DC689
+[commit]
+	gpgSign = true
 [color]
 	ui = true
 	status = auto
@@ -51,3 +54,5 @@
 	autoCorrect = 1
 [init]
 	defaultBranch = main
+[gpg]
+	program = C:\\Program Files\\Git\\usr\\bin\\gpg.exe

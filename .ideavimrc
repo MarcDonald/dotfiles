@@ -67,6 +67,9 @@ nmap <leader>w :action SaveAll<cr>
 
 nmap <leader>gd :action GotoDeclaration<cr>
 nmap <leader>gi :action GotoImplementation<cr>
+nmap <leader>ghm :action MethodHierarchy<cr>
+nmap <leader>ghc :action CallHierarchy<cr>
+nmap <leader>ght :action TypeHierarchy<cr>
 nmap <leader>rn :action RenameElement<cr>
 
 nmap <leader>q :action CloseEditor<cr>
@@ -78,6 +81,7 @@ nmap <leader>tsv :action SplitVertically<cr>
 nmap <leader>tsh :action SplitHorizontally<cr>
 map <leader>h :action PreviousTab<cr>
 map <leader>l :action NextTab<cr>
+map <leader><leader> :action RecentFiles<cr>
 
 nmap <leader>rr :action Rerun<cr>
 nmap <leader>rft :action RerunFailedTests<cr>
