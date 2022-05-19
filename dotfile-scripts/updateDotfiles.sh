@@ -1,8 +1,9 @@
 #!/bin/sh
 
 #zsh
-cp ~/.bashrc .
-cp ~/.bash_profile .
+cp ~/.zshrc .
+cp ~/.zprofile .
+cp ~/.p10k.zsh .
 
 #Vim
 cp ~/.vimrc .
@@ -10,11 +11,5 @@ cp ~/.ideavimrc .
 
 #Git
 cp ~/.gitconfig .
-
-#Git Bash for Windows
-cp ~/.minttyrc .
-
-#VS Code
-cp ~/AppData/Roaming/Code/User/settings.json ./vscode/
 
 echo "Copied dotfiles"

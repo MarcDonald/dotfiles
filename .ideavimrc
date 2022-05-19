@@ -3,7 +3,7 @@ if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
     \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
-end
+endif
 
 call plug#begin('~/.vim/plugged')
 
@@ -35,18 +35,25 @@ set ignorecase
 " Keymappings
 noremap <Space> <Nop>
 let mapleader = "\<Space>"
+" All I ever do with u and U is accidentally turn everything lowercase, so unmapping them
+xmap U <NOP>
+xmap u <NOP>
 
 " Plugin Mappings
 map <C-t> :NERDTree<CR>
 let g:argtextobj_pairs="[:],(:),<:>"
-map <leader>F <Plug>(easymotion-s)
-map <leader>f <Plug>(easymotion-f)
+
+map <leader>f <Plug>(easymotion-s)
+map <leader>F <Plug>(easymotion-f)
+
 map <leader>md <A-x>
 map <leader>mn <A-n>
 map <leader>mp <A-p>
-vmap S <Plug>VSurround
 
-" Don't use Ex mode, use Q for formatting
+vmap <leader>s <Plug>VSurround
+unmap S
+
+" Don't use Ex mode, use Q for formatting.
 map Q gq
 
 " Clear search by pressing enter or F4
@@ -67,8 +74,8 @@ nmap <leader>w :action SaveAll<cr>
 
 nmap <leader>gd :action GotoDeclaration<cr>
 nmap <leader>gi :action GotoImplementation<cr>
-nmap <leader>ghm :action MethodHierarchy<cr>
 nmap <leader>ghc :action CallHierarchy<cr>
+nmap <leader>ghm :action MethodHierarchy<cr>
 nmap <leader>ght :action TypeHierarchy<cr>
 nmap <leader>rn :action RenameElement<cr>
 
@@ -81,7 +88,6 @@ nmap <leader>tsv :action SplitVertically<cr>
 nmap <leader>tsh :action SplitHorizontally<cr>
 map <leader>h :action PreviousTab<cr>
 map <leader>l :action NextTab<cr>
-map <leader><leader> :action RecentFiles<cr>
 
 nmap <leader>rr :action Rerun<cr>
 nmap <leader>rft :action RerunFailedTests<cr>

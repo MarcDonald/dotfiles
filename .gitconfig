@@ -18,15 +18,13 @@
 	email = dev@marcdonald.com
 	name = Marc Donald
 	signingKey = 95BA7DEC5B88788A1A6219C31443FF3E486DC689
-[commit]
-	gpgSign = true
 [color]
 	ui = true
 	status = auto
 	branch = auto
 [core]
 	autocrlf = input
-	editor = vim
+	editor = nvim
 	pager = diff-so-fancy | less --tabs=4 -RFX
 [color "status"]
 	changed = blue bold
@@ -54,5 +52,9 @@
 	autoCorrect = 1
 [init]
 	defaultBranch = main
+[url "ssh://git@github.com/"]
+	insteadOf = https://github.com/
+[commit]
+	gpgSign = true
 [gpg]
-	program = C:\\Program Files\\Git\\usr\\bin\\gpg.exe
+	program = /usr/local/MacGPG2/bin/gpg

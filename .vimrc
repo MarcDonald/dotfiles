@@ -11,9 +11,14 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'scrooloose/nerdtree'
 Plug 'dense-analysis/ale'
+Plug 'tomtom/tcomment_vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'nathanaelkane/vim-indent-guides'
+Plug 'junegunn/goyo.vim'
 Plug 'vim-scripts/mru.vim'
+Plug 'amix/open_file_under_cursor.vim'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-unimpaired'
 Plug 'airblade/vim-rooter'
 Plug 'machakann/vim-highlightedyank'
@@ -23,29 +28,10 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'justinmk/vim-sneak'
 Plug 'chrisbra/Colorizer'
 Plug 'joshdick/onedark.vim'
-Plug 'tpope/vim-surround'
-Plug 'terryma/vim-multiple-cursors'
-Plug 'vim-scripts/argtextobj.vim'
-Plug 'easymotion/vim-easymotion'
-Plug 'tpope/vim-commentary'
+Plug 'prettier/vim-prettier'
+Plug 'bkad/CamelCaseMotion'
 
 call plug#end()
-
-"Use 24-bit (true-color) mode in Vim/Neovim when outside tmux.
-"If you're using tmux version 2.2 or later, you can remove the outermost $TMUX check and use tmux's 24-bit color support
-"(see < http://sunaku.github.io/tmux-24bit-color.html#usage > for more information.)
-if (empty($TMUX))
-  if (has("nvim"))
-    "For Neovim 0.1.3 and 0.1.4 < https://github.com/neovim/neovim/pull/2198 >
-    let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-  endif
-  "For Neovim > 0.1.5 and Vim > patch 7.4.1799 < https://github.com/vim/vim/commit/61be73bb0f965a895bfb064ea3e55476ac175162 >
-  "Based on Vim patch 7.4.1770 (`guicolors` option) < https://github.com/vim/vim/commit/8a633e3427b47286869aa4b96f2bfc1fe65b25cd >
-  " < https://github.com/neovim/neovim/wiki/Following-HEAD#20160511 >
-  if (has("termguicolors"))
-    set termguicolors
-  endif
-endif
 
 " Set leader
 nnoremap <SPACE> <Nop>
@@ -58,7 +44,7 @@ let g:ale_fixers = {
       \'typescript':['prettier'],
       \'typescriptreact':['prettier'],
       \'css':['prettier'],
-      \'rust':['rustfmt'],
+      \'go':['gofmt'],
       \'markdown':['prettier'],
       \'json':['jq'],
       \'python':['black','isort'],
@@ -123,7 +109,8 @@ set fileencoding=utf-8
 " Enable syntax highlighting
 syntax on
 " Set colorscheme
-colorscheme onedark
+set notermguicolors
+colorscheme pablo
 " Airline settings
 let g:airline_powerline_fonts = 0
 let g:airline#extensions#tabline#enabled = 1
@@ -190,17 +177,6 @@ set undofile
 filetype plugin on
 
 " KEYMAPS
-" Plugin Mappings
-map <C-t> :NERDTree<CR>
-let g:argtextobj_pairs="[:],(:),<:>"
-map <leader>F <Plug>(easymotion-s)
-map <leader>f <Plug>(easymotion-f)
-map <leader>md <A-x>
-map <leader>mn <A-n>
-map <leader>mp <A-p>
-vmap S <Plug>VSurround
-
-
 " Show and hide NERDTree by pressing F1
 nnoremap <F1> :NERDTreeToggle<CR>
 " Clear search by pressing enter or F4
@@ -214,7 +190,7 @@ nnoremap <F6> :set ignorecase! ignorecase?<CR>
 nnoremap <F7> :set invlist<CR>
 " Open file under cursor in new tab
 map <leader>o <esc><C-W>gF<CR>:tabm<CR>
-map <leader>f :GFiles<CR>
+map <leader>gf :GFiles<CR>
 map <leader>af :Files<CR>
 map <leader>; :Buffers<CR>
 map <leader>w :w<CR>
@@ -232,3 +208,10 @@ xnoremap ytc "+y
 nnoremap <leader>p "0p
 nnoremap <leader>P "0P
 nmap gm :LivedownToggle<CR>
+nnoremap Y y$
+nnoremap <leader>fp :Prettier<CR>
+
+map <silent> <S-w> <Plug>CamelCaseMotion_w
+map <silent> <S-b> <Plug>CamelCaseMotion_b
+map <silent> <S-e> <Plug>CamelCaseMotion_e
+map <silent> <leader><S-b> <Plug>CamelCaseMotion_ge
