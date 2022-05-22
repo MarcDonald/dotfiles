@@ -40,7 +40,7 @@ xmap U <NOP>
 xmap u <NOP>
 
 " Plugin Mappings
-map <C-t> :NERDTree<CR>
+map <A-1> :NERDTree<CR>
 let g:argtextobj_pairs="[:],(:),<:>"
 
 map <leader>f <Plug>(easymotion-s)
