@@ -23,7 +23,8 @@ if [ ! -d $ZSH_CACHE_DIR ]; then
   mkdir $ZSH_CACHE_DIR
 fi
 ZSH_THEME="powerlevel10k/powerlevel10k"
-plugins=(colored-man-pages autojump git adb zsh-autosuggestions zsh-syntax-highlighting docker docker-compose mvn yarn golang)
+
+plugins=(colored-man-pages autojump git adb zsh-autosuggestions zsh-syntax-highlighting docker docker-compose mvn yarn golang forgit fzf-zsh-plugin)
 source $ZSH/oh-my-zsh.sh
 
 HISTSIZE=10000000
@@ -54,7 +55,7 @@ alias spprofile='. ~/.zprofile'
 alias op='vim ~/.zshrc'
 alias sp='source ~/.zshrc'
 
-alias opvr='vim ~/.vimrc'
+alias opvr='vim ~/.config/nvim'
 
 #Terminal
 alias cl='clear'
@@ -89,3 +90,7 @@ export LSCOLORS=ExFxBxDxCxegedabagacad
 export HOMEBREW_NO_ENV_HINTS=true
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export FZF_DEFAULT_COMMAND='fd .'
+function vf() {
+  vim $(fzf --query "$1")
+}

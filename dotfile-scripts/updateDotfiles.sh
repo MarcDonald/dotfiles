@@ -6,8 +6,8 @@ cp ~/.zprofile .
 cp ~/.p10k.zsh .
 
 #Vim
-cp ~/.vimrc .
 cp ~/.ideavimrc .
+cp ~/.config/nvim/init.vim nvim
 
 #Git
 cp ~/.gitconfig .
