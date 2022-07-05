@@ -25,7 +25,7 @@ nnoremap <leader>pp "0p
 nnoremap <leader>PP "0P
 nnoremap <leader>fp :Prettier<CR>
 
-xnoremap ytc "+y
+xnoremap <leader>yc "+y
 nnoremap Y y$
 
 nnoremap <silent>w <Plug>CamelCaseMotion_w
@@ -40,3 +40,10 @@ nnoremap <silent>ge <Plug>CamelCaseMotion_ge
 nnoremap <Leader> <Plug>(easymotion-prefix)
 vnoremap <leader>s <Plug>VSurround
 unmap S
+
+nunmap ys
+nunmap yS
+nunmap yss
+nunmap ySs
+nunmap ySS
+nunmap y<C-G>

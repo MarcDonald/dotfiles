@@ -20,7 +20,6 @@ Plug 'airblade/vim-gitgutter'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-Plug 'tpope/vim-unimpaired'
 Plug 'airblade/vim-rooter'
 Plug 'machakann/vim-highlightedyank'
 Plug 'moll/vim-node'
