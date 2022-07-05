@@ -14,7 +14,6 @@ call plug#begin('~/.vim/plugged')
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'scrooloose/nerdtree'
-" Plug 'dense-analysis/ale'
 Plug 'tpope/vim-commentary'
 Plug 'airblade/vim-gitgutter'
 Plug 'nathanaelkane/vim-indent-guides'
@@ -111,7 +110,7 @@ set nowrap
 set noswapfile
 set nobackup
 set signcolumn=yes
-set colorcolumn=80
+set colorcolumn=120
 set completeopt=menuone,noselect,noinsert
 set lcs=tab:▸\ ,trail:·
 set updatetime=50

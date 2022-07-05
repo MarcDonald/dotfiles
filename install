@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+# nvim
+mkdir -p ~/.config/nvim/plugin
+mkdir -p ~/.config/nvim/after/plugin
+mkdir -p ~/.config/nvim/lua
+
+for f in `find nvim -regex ".*\.vim$"`; do
+	echo "Symlinking ~/Documents/dotfiles/$f to ~/.config/$f"
+	rm -rf ~/.config/$f
+	ln -s ~/Documents/dotfiles/$f ~/.config/$f
+done
+
+# homedir
+for f in `find homedir -type f -exec basename {} \;`; do
+	echo "Symlinking ~/Documents/dotfiles/homedir/$f to ~/$f"
+	rm -rf ~/$f
+	ln -s ~/Documents/dotfiles/homedir/$f ~/$f
+done

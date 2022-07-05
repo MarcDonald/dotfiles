@@ -1,8 +1,0 @@
-ThemeFile=dracula
-Transparency=off
-OpaqueWhenFocused=no
-FontHeight=15
-Font=JetBrains Mono
-CursorType=line
-BackgroundColour=64,128,128
-CursorColour=128,255,255
