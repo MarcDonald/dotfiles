@@ -1,19 +1,39 @@
 #!/usr/bin/env bash
 
+function stripDir() {
+	local strippedDir
+	strippedDir=$(echo "$1" | rev | cut -d'/' -f-"$2" | rev)
+	echo "$strippedDir"
+}
+
+if [[ -z $1 ]]; then
+	DOTFILE_DIR="$HOME/Documents/dotfiles"
+else
+	DOTFILE_DIR=$1
+fi
+
 # nvim
 mkdir -p ~/.config/nvim/plugin
 mkdir -p ~/.config/nvim/after/plugin
 mkdir -p ~/.config/nvim/lua
 
-for f in `find nvim -regex ".*\.vim$"`; do
-	echo "Symlinking ~/Documents/dotfiles/$f to ~/.config/$f"
-	rm -rf ~/.config/$f
-	ln -s ~/Documents/dotfiles/$f ~/.config/$f
+for f in $(find "$DOTFILE_DIR"/nvim -maxdepth 1 -regex ".*\.vim$"); do
+	strippedDir=$(stripDir "$f" 2)
+	echo "Linking $f to ~/.config/$strippedDir"
+	rm -rf ~/.config/"$strippedDir"
+	ln -s "$f" ~/.config/"$strippedDir"
+done
+
+for f in $(find "$DOTFILE_DIR"/nvim/plugin -maxdepth 1 -regex ".*\.vim$"); do
+	strippedDir=$(stripDir "$f" 3)
+	echo "Linking $f to ~/.config/$strippedDir"
+	rm -rf ~/.config/"$strippedDir"
+	ln -s "$f" ~/.config/"$strippedDir"
 done
 
 # homedir
-for f in `find homedir -type f -exec basename {} \;`; do
-	echo "Symlinking ~/Documents/dotfiles/homedir/$f to ~/$f"
-	rm -rf ~/$f
-	ln -s ~/Documents/dotfiles/homedir/$f ~/$f
+for f in $(find "$DOTFILE_DIR"/homedir -type f -exec basename {} \;); do
+	echo "Linking $DOTFILE_DIR/homedir/$f to ~/$f"
+	rm -rf ~/"$f"
+	ln -s "$DOTFILE_DIR"/homedir/"$f" ~/"$f"
 done
