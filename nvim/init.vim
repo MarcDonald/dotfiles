@@ -26,7 +26,7 @@ Plug 'sheerun/vim-polyglot'
 Plug 'justinmk/vim-sneak'
 Plug 'chrisbra/Colorizer'
 Plug 'joshdick/onedark.vim'
-Plug 'prettier/vim-prettier'
+Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 Plug 'bkad/CamelCaseMotion'
 Plug 'easymotion/vim-easymotion'
 Plug 'psliwka/vim-smoothie'
