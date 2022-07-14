@@ -9,24 +9,24 @@ nnoremap <F6> :set ignorecase! ignorecase?<CR>
 " Show and hide invisible characters by pressing F7
 nnoremap <F7> :set invlist<CR>
 " Open file under cursor in new tab
-nnoremap <leader>o <esc><C-W>gF<CR>:tabm<CR>
-nnoremap <leader>w :w<CR>
-nnoremap <leader>aw :wa<CR>
-nnoremap <leader><leader> <C-^>
-nnoremap <leader>js :%!jq .<CR>
-nnoremap <leader>q :bd<CR>
-nnoremap <leader>l :bn<CR>
-nnoremap <leader>h :bp<CR>
-nnoremap <leader>aj :ALEPrevious<CR>
-nnoremap <leader>ak :ALENext<CR>
-nnoremap <leader>pf :ALEFix<CR>
-nnoremap <leader>sc :set cuc!<CR>
-nnoremap <leader>pp "0p
-nnoremap <leader>PP "0P
-nnoremap <leader>fp :Prettier<CR>
+nmap <leader>o <esc><C-W>gF<CR>:tabm<CR>
+nmap <leader>w :w<CR>
+nmap <leader>aw :wa<CR>
+nmap <leader><leader> <C-^>
+nmap <leader>js :%!jq .<CR>
+nmap <leader>q :bd<CR>
+nmap <leader>l :bn<CR>
+nmap <leader>h :bp<CR>
+nmap <leader>aj :ALEPrevious<CR>
+nmap <leader>ak :ALENext<CR>
+nmap <leader>pf :ALEFix<CR>
+nmap <leader>sc :set cuc!<CR>
+nmap <leader>pp "0p
+nmap <leader>PP "0P
+nmap <leader>pf :Prettier<CR>
 
-xnoremap <leader>yc "+y
-nnoremap Y y$
+xmap <leader>yc "+y
+nmap Y y$
 
 nnoremap <silent>w <Plug>CamelCaseMotion_w
 nnoremap <silent>b <Plug>CamelCaseMotion_b
@@ -37,7 +37,9 @@ nnoremap <silent>ge <Plug>CamelCaseMotion_ge
 " sunmap e
 " sunmap ge
 
-nnoremap <Leader> <Plug>(easymotion-prefix)
+nmap <Leader> <Plug>(easymotion-prefix)
+nmap <leader>f <Plug>(easymotion-s)
+nmap <leader>F <Plug>(easymotion-f)
 vnoremap <leader>s <Plug>VSurround
 unmap S
 

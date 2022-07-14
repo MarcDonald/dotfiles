@@ -71,23 +71,23 @@ nnoremap <A-1> :NERDTree<CR>
 nnoremap <C-t> :NERDTree<CR>
 let g:argtextobj_pairs="[:],(:),<:>"
 
-nnoremap <leader>f <Plug>(easymotion-s)
-nnoremap <leader>F <Plug>(easymotion-f)
+nmap <leader>f <Plug>(easymotion-s)
+nmap <leader>F <Plug>(easymotion-f)
 
-nnoremap <leader>md <A-x>
-nnoremap <leader>mn <A-n>
-nnoremap <leader>mp <A-p>
+nmap <leader>md <A-x>
+nmap <leader>mn <A-n>
+nmap <leader>mp <A-p>
 
 vmap <leader>s <Plug>VSurround
 unmap S
 
 " Don't use Ex mode, use Q for formatting.
-nnoremap Q gq
+nmap Q gq
 
 " Toggle search case sensitivity with F6
 nnoremap <F6> :set ignorecase! ignorecase?<CR>
 " Yank whole line with Y
-nnoremap Y y$
+nmap Y y$
 
 xnoremap <silent> w [w
 xnoremap <silent> b [b
@@ -100,6 +100,7 @@ nnoremap <leader>q :action CloseEditor<cr>
 
 nnoremap <leader>gd :action GotoDeclaration<cr>
 nnoremap <leader>gi :action GotoImplementation<cr>
+nnoremap <leader>gb :action Annotate<cr>
 nnoremap <leader>ghc :action CallHierarchy<cr>
 nnoremap <leader>ghm :action MethodHierarchy<cr>
 nnoremap <leader>ght :action TypeHierarchy<cr>
@@ -112,19 +113,23 @@ nnoremap <leader>tp :action PinActiveTab<cr>
 nnoremap <leader>ta :action EditorTabPopupMenu<cr>
 nnoremap <leader>tr :action ReopenClosedTab<cr>
 nnoremap <leader>tg :action EditorTabsGroup<cr>
+
 nnoremap <leader>tv :action SplitVertically<cr>
 nnoremap <leader>th :action SplitHorizontally<cr>
-nnoremap <leader>tl :action StretchSplitToRight<cr>
-nnoremap <leader>th :action StretchSplitToLeft<cr>
-nnoremap <leader>tj :action StretchSplitToBottom<cr>
-nnoremap <leader>tk :action StretchSplitToTop<cr>
+
+nnoremap <C-w>> :action StretchSplitToRight<cr>
+nnoremap <C-w>< :action StretchSplitToLeft<cr>
+nnoremap <C-w>- :action StretchSplitToBottom<cr>
+nnoremap <C-w>+ :action StretchSplitToTop<cr>
 
 noremap <leader>h :action PreviousTab<cr>
 noremap <leader>l :action NextTab<cr>
 noremap <leader>aj :action GotoNextError<cr>
 noremap <leader>ak :action GotoPreviousError<cr>
 
+noremap <leader><leader> :action RecentFiles<cr>
+
 " Paste from yank register only
-nnoremap <leader>p "0p
-nnoremap <leader>P "0P
+nmap <leader>p "0p
+nmap <leader>P "0P
 " }}}
