@@ -71,8 +71,8 @@ nnoremap <A-1> :NERDTree<CR>
 nnoremap <C-t> :NERDTree<CR>
 let g:argtextobj_pairs="[:],(:),<:>"
 
-nmap <leader>f <Plug>(easymotion-s)
-nmap <leader>F <Plug>(easymotion-f)
+map <leader>f <Plug>(easymotion-s)
+map <leader>F <Plug>(easymotion-f)
 
 nmap <leader>md <A-x>
 nmap <leader>mn <A-n>
@@ -89,10 +89,10 @@ nnoremap <F6> :set ignorecase! ignorecase?<CR>
 " Yank whole line with Y
 nmap Y y$
 
-xnoremap <silent> w [w
-xnoremap <silent> b [b
-xnoremap <silent> e ]w
-xnoremap <silent> ge ]b
+noremap <silent> w [w
+noremap <silent> b [b
+noremap <silent> e ]w
+noremap <silent> ge ]b
 
 " IntelliJ Stuff
 nnoremap <leader>w :action SaveAll<cr>

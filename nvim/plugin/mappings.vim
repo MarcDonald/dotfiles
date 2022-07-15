@@ -28,18 +28,18 @@ nmap <leader>pf :Prettier<CR>
 xmap <leader>yc "+y
 nmap Y y$
 
-nnoremap <silent>w <Plug>CamelCaseMotion_w
-nnoremap <silent>b <Plug>CamelCaseMotion_b
-nnoremap <silent>e <Plug>CamelCaseMotion_e
-nnoremap <silent>ge <Plug>CamelCaseMotion_ge
+noremap <silent>w <Plug>CamelCaseMotion_w
+noremap <silent>b <Plug>CamelCaseMotion_b
+noremap <silent>e <Plug>CamelCaseMotion_e
+noremap <silent>ge <Plug>CamelCaseMotion_ge
 " sunmap w
 " sunmap b
 " sunmap e
 " sunmap ge
 
-nmap <Leader> <Plug>(easymotion-prefix)
-nmap <leader>f <Plug>(easymotion-s)
-nmap <leader>F <Plug>(easymotion-f)
+map <Leader> <Plug>(easymotion-prefix)
+map <leader>f <Plug>(easymotion-s)
+map <leader>F <Plug>(easymotion-f)
 vnoremap <leader>s <Plug>VSurround
 unmap S
 
