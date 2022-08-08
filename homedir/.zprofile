@@ -15,3 +15,6 @@ export EDITOR="nvim"
 zstyle ':completion:*:*:git:*' script ~/.zsh/git-completion.bash
 fpath=(~/.zsh $fpath)
 
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+

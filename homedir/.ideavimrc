@@ -85,49 +85,49 @@ unmap S
 nmap Q gq
 
 " Toggle search case sensitivity with F6
-nnoremap <F6> :set ignorecase! ignorecase?<CR>
+nmap <F6> :set ignorecase! ignorecase?<CR>
 " Yank whole line with Y
 nmap Y y$
 
-noremap <silent> w [w
-noremap <silent> b [b
-noremap <silent> e ]w
-noremap <silent> ge ]b
+map <silent> w [w
+map <silent> b [b
+map <silent> e ]w
+map <silent> ge ]b
 
 " IntelliJ Stuff
-nnoremap <leader>w :action SaveAll<cr>
-nnoremap <leader>q :action CloseEditor<cr>
+nmap <leader>w :action SaveAll<cr>
+nmap <leader>q :action CloseEditor<cr>
 
-nnoremap <leader>gd :action GotoDeclaration<cr>
-nnoremap <leader>gi :action GotoImplementation<cr>
-nnoremap <leader>gb :action Annotate<cr>
-nnoremap <leader>ghc :action CallHierarchy<cr>
-nnoremap <leader>ghm :action MethodHierarchy<cr>
-nnoremap <leader>ght :action TypeHierarchy<cr>
+nmap <leader>gd :action GotoDeclaration<cr>
+nmap <leader>gi :action GotoImplementation<cr>
+nmap <leader>gb :action Annotate<cr>
+nmap <leader>ghc :action CallHierarchy<cr>
+nmap <leader>ghm :action MethodHierarchy<cr>
+nmap <leader>ght :action TypeHierarchy<cr>
 
-nnoremap <leader>rn :action RenameElement<cr>
-nnoremap <leader>rr :action Rerun<cr>
-nnoremap <leader>rft :action RerunFailedTests<cr>
+nmap <leader>rn :action RenameElement<cr>
+nmap <leader>rr :action Rerun<cr>
+nmap <leader>rft :action RerunFailedTests<cr>
 
-nnoremap <leader>tp :action PinActiveTab<cr>
-nnoremap <leader>ta :action EditorTabPopupMenu<cr>
-nnoremap <leader>tr :action ReopenClosedTab<cr>
-nnoremap <leader>tg :action EditorTabsGroup<cr>
+nmap <leader>tp :action PinActiveTab<cr>
+nmap <leader>ta :action EditorTabPopupMenu<cr>
+nmap <leader>tr :action ReopenClosedTab<cr>
+nmap <leader>tg :action EditorTabsGroup<cr>
 
-nnoremap <leader>tv :action SplitVertically<cr>
-nnoremap <leader>th :action SplitHorizontally<cr>
+nmap <leader>tv :action SplitVertically<cr>
+nmap <leader>th :action SplitHorizontally<cr>
 
-nnoremap <C-w>> :action StretchSplitToRight<cr>
-nnoremap <C-w>< :action StretchSplitToLeft<cr>
-nnoremap <C-w>- :action StretchSplitToBottom<cr>
-nnoremap <C-w>+ :action StretchSplitToTop<cr>
+nmap <C-w>> :action StretchSplitToRight<cr>
+nmap <C-w>< :action StretchSplitToLeft<cr>
+nmap <C-w>- :action StretchSplitToBottom<cr>
+nmap <C-w>+ :action StretchSplitToTop<cr>
 
-noremap <leader>h :action PreviousTab<cr>
-noremap <leader>l :action NextTab<cr>
-noremap <leader>aj :action GotoNextError<cr>
-noremap <leader>ak :action GotoPreviousError<cr>
+nmap <leader>h :action PreviousTab<cr>
+nmap <leader>l :action NextTab<cr>
+nmap <leader>aj :action GotoNextError<cr>
+nmap <leader>ak :action GotoPreviousError<cr>
 
-noremap <leader><leader> :action RecentFiles<cr>
+nmap <leader><leader> :action RecentFiles<cr>
 
 " Paste from yank register only
 nmap <leader>p "0p
