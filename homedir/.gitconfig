@@ -48,6 +48,9 @@
 	required = true
 [pull]
 	ff = only
+[merge]
+	commit = no
+	ff = yes
 [help]
 	autoCorrect = 1
 [init]
