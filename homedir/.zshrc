@@ -13,9 +13,6 @@ if type brew &>/dev/null; then
   compinit
 fi
 
-zstyle ':completion:*:*:git:*' script ~/.zsh/git-completion.bash
-fpath=(~/.zsh $fpath)
-
 export ZSH="$HOME/.oh-my-zsh"
 # Set the cache to a more permenant directory
 ZSH_CACHE_DIR=$HOME/.oh-my-zsh-cache
@@ -24,7 +21,12 @@ if [ ! -d $ZSH_CACHE_DIR ]; then
 fi
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
-plugins=(colored-man-pages autojump git adb zsh-autosuggestions zsh-syntax-highlighting docker docker-compose mvn yarn golang forgit fzf-zsh-plugin)
+zstyle ':completion:*:*:git:*' script ~/.git-completion.bash
+# `compinit` scans $fpath, so do this before calling it.
+fpath=(~/.zsh/functions $fpath)
+autoload -Uz compinit && compinit
+
+plugins=(colored-man-pages git autojump adb zsh-autosuggestions zsh-syntax-highlighting docker docker-compose mvn yarn golang forgit fzf-zsh-plugin)
 source $ZSH/oh-my-zsh.sh
 
 HISTSIZE=10000000
@@ -35,8 +37,6 @@ setopt SHARE_HISTORY
 autoload -Uz zcalc
 alias calc="zcalc"
 ZSH_AUTOSUGGEST_STRATEGY=(history completion)
-
-autoload -Uz compinit && compinit
 
 export BAT_THEME=ansi
 
@@ -76,6 +76,7 @@ alias gst='git status'
 alias gcm='git commit -m'
 alias gdf='git df'
 alias gdfc='git dfc'
+alias gout='git push'
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

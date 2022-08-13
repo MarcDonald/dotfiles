@@ -59,5 +59,8 @@
 	insteadOf = https://github.com/
 [commit]
 	gpgSign = true
+[push]
+	autoSetupRemote = true
+	default = current
 [gpg]
 	program = /usr/local/MacGPG2/bin/gpg
