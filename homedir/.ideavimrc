@@ -89,10 +89,15 @@ nmap <F6> :set ignorecase! ignorecase?<CR>
 " Yank whole line with Y
 nmap Y y$
 
-map <silent> w [w
-map <silent> b [b
-map <silent> e ]w
-map <silent> ge ]b
+nmap <silent> w [w
+nmap <silent> b [b
+nmap <silent> e ]w
+nmap <silent> ge ]b
+
+xmap <silent> w [w
+xmap <silent> b [b
+xmap <silent> e ]w
+xmap <silent> ge ]b
 
 " IntelliJ Stuff
 nmap <leader>w :action SaveAll<cr>
