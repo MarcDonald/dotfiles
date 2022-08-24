@@ -89,10 +89,10 @@ nmap <F6> :set ignorecase! ignorecase?<CR>
 " Yank whole line with Y
 nmap Y y$
 
-nmap <silent> w [w
-nmap <silent> b [b
-nmap <silent> e ]w
-nmap <silent> ge ]b
+nnoremap <silent> w [w
+nnoremap <silent> b [b
+nnoremap <silent> e ]w
+nnoremap <silent> ge ]b
 
 xmap <silent> w [w
 xmap <silent> b [b
