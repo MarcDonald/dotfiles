@@ -94,10 +94,10 @@ nnoremap <silent> b [b
 nnoremap <silent> e ]w
 nnoremap <silent> ge ]b
 
-xmap <silent> w [w
-xmap <silent> b [b
-xmap <silent> e ]w
-xmap <silent> ge ]b
+xnoremap <silent> w [w
+xnoremap <silent> b [b
+xnoremap <silent> e ]w
+xnoremap <silent> ge ]b
 
 " IntelliJ Stuff
 nmap <leader>w :action SaveAll<cr>

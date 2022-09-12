@@ -76,4 +76,5 @@ lua <<EOF
   lspconfig.html.setup{}
   lspconfig.cssls.setup{}
   lspconfig.zk.setup{}
+  lspconfig.golangci_lint_ls.setup{}
 EOF

@@ -2,7 +2,7 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 
 export PATH="$HOME/bin:/usr/local/bin:$PATH"
 export PATH="$PATH:$HOME/.scripts"
-export PATH="$PATH:/$HOME/.jetbrainsscripts"
+export PATH="$PATH:$HOME/.jetbrainsscripts"
 export PATH="/usr/local/bin:${PATH}"
 export PATH="$PATH:$(go env GOPATH)/bin"
 export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
