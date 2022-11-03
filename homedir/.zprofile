@@ -8,6 +8,7 @@ export PATH="$PATH:$(go env GOPATH)/bin"
 export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
 export GOPATH="$HOME/go"
 export GPG_TTY=$(tty)
+source $HOME/.env
 
 export EDITOR="nvim"
 

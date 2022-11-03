@@ -26,7 +26,7 @@ zstyle ':completion:*:*:git:*' script ~/.git-completion.bash
 fpath=(~/.zsh/functions $fpath)
 autoload -Uz compinit && compinit
 
-plugins=(colored-man-pages git autojump adb zsh-autosuggestions zsh-syntax-highlighting docker docker-compose mvn yarn golang forgit fzf-zsh-plugin)
+plugins=(colored-man-pages git autojump adb zsh-autosuggestions zsh-syntax-highlighting docker docker-compose mvn yarn golang forgit fzf-zsh-plugin aws)
 source $ZSH/oh-my-zsh.sh
 
 HISTSIZE=10000000

@@ -7,7 +7,7 @@ function stripDir() {
 }
 
 if [[ -z $1 ]]; then
-	DOTFILE_DIR="$HOME/Documents/dotfiles"
+	DOTFILE_DIR="$HOME/Documents/config/dotfiles"
 else
 	DOTFILE_DIR=$1
 fi
