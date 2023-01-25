@@ -77,7 +77,7 @@ syntax on
 
 " Set colorscheme
 set notermguicolors
-colorscheme pablo
+colorscheme default
 
 " Spacing
 set smartindent
