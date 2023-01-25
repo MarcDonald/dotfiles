@@ -144,11 +144,6 @@
 		"when": "!editorFocus"
 	},
 	{
-		"command": "workbench.action.debug.run",
-		"key": "ctrl+d",
-		"when": "debuggersAvailable"
-	},
-	{
 		"command": "merge-conflict.accept.current",
 		"key": "shift+ctrl+[ArrowRight]",
 		"when": "isInDiffEditor"
@@ -230,21 +225,6 @@
 		"command": "editor.action.joinLines",
 		"key": "shift+ctrl+j",
 		"when": "editorTextFocus && !editorReadonly"
-	},
-	{
-		"command": "cursorLineEnd",
-		"key": "[End]",
-		"when": "textInputFocus"
-	},
-	{
-		"command": "cursorLineEnd",
-		"key": "cmd+[ArrowRight]",
-		"when": "textInputFocus"
-	},
-	{
-		"command": "cursorLineEnd",
-		"key": "ctrl+e",
-		"when": "textInputFocus"
 	},
 	{
 		"command": "cursorLineEndSelect",
@@ -491,10 +471,6 @@
 		"when": "!inDebugMode && !terminalFocus"
 	},
 	{
-		"command": "workbench.action.showCommands",
-		"key": "shift+cmd+a"
-	},
-	{
 		"command": "workbench.action.showAllSymbols",
 		"key": "cmd+o"
 	},
@@ -683,10 +659,6 @@
 		"key": "cmd+s"
 	},
 	{
-		"command": "workbench.action.showCommands",
-		"key": "shift shift"
-	},
-	{
 		"command": "editor.action.selectHighlights",
 		"key": "ctrl+cmd+g",
 		"when": "editorFocus"
@@ -770,7 +742,7 @@
 	},
 	{
 		"command": "git.sync",
-		"key": "cmd+t"
+		"key": "shift+alt+g"
 	},
 	{
 		"command": "editor.action.dirtydiff.next",
@@ -1263,5 +1235,62 @@
 		"key": "f12",
 		"command": "-editor.action.revealDefinition",
 		"when": "editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor"
+	},
+	{
+		"key": "ctrl+d",
+		"command": "-workbench.action.debug.run",
+		"when": "debuggersAvailable && !inDebugMode && !terminalFocus"
+	},
+	{
+		"key": "ctrl+e",
+		"command": "-cursorLineEnd",
+		"when": "textInputFocus"
+	},
+	{
+		"key": "Enter",
+		"command": "editor.action.nextMatchFindAction",
+		"when": "editorFocus && findInputFocussed"
+	},
+	{
+		"key": "cmd+Enter",
+		"command": "editor.action.previousMatchFindAction",
+		"when": "editorFocus && findInputFocussed"
+	},
+	{
+		"key": "shift+alt+t",
+		"command": "workbench.action.reopenClosedEditor"
+	},
+	{
+		"key": "shift+cmd+t",
+		"command": "-workbench.action.reopenClosedEditor"
+	},
+	{
+		"key": "alt+cmd+g /",
+		"command": "-gitlens.gitCommands",
+		"when": "!gitlens:disabled && config.gitlens.keymap == 'chorded'"
+	},
+	{
+		"key": "shift+alt+w",
+		"command": "gitlens.toggleFileBlame",
+		"when": "editorTextFocus && config.gitlens.keymap == 'alternate' && gitlens:activeFileStatus =~ /blameable/"
+	},
+	{
+		"key": "alt+b",
+		"command": "-gitlens.toggleFileBlame",
+		"when": "editorTextFocus && config.gitlens.keymap == 'alternate' && gitlens:activeFileStatus =~ /blameable/"
+	},
+	{
+		"key": "alt+b",
+		"command": "gitlens.gitCommands",
+		"when": "!gitlens:disabled"
+	},
+	{
+		"key": "alt+/",
+		"command": "-gitlens.gitCommands",
+		"when": "!gitlens:disabled && config.gitlens.keymap == 'alternate'"
+	},
+	{
+		"key": "cmd+k",
+		"command": "gitlens.views.commits.focus"
 	}
 ]

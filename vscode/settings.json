@@ -1,7 +1,7 @@
 {
 	"editor.suggestSelection": "first",
 	"vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
-	"editor.fontSize": 16,
+	"editor.fontSize": 14,
 	"editor.fontLigatures": true,
 	"editor.fontFamily": "'JetBrains Mono', Consolas, 'Courier New', monospace",
 	"editor.tabSize": 2,
@@ -12,19 +12,22 @@
 	"editor.cursorSmoothCaretAnimation": true,
 	"editor.cursorSurroundingLines": 2,
 	"editor.find.autoFindInSelection": "always",
-	"workbench.colorTheme": "One Dark Italic",
+	"workbench.colorTheme": "One Dark Pro",
 	"debug.console.fontSize": 15,
 	"eslint.format.enable": true,
-	"eslint.packageManager": "yarn",
+	"eslint.packageManager": "npm",
 	"reactSnippets.settings.prettierEnabled": true,
 	"git.autofetch": true,
 	"markdown.preview.fontSize": 15,
 	"material-icon-theme.activeIconPack": "react",
-	"npm.packageManager": "yarn",
+	"npm.packageManager": "npm",
 	"npm.enableRunFromFolder": true,
 	"prettier.configPath": ".prettierrc.js",
 	"vim.camelCaseMotion.enable": true,
 	"vim.easymotion": true,
+	"vim.easymotionMarkerForegroundColorOneChar": "#ffffff",
+	"vim.easymotionMarkerForegroundColorTwoCharFirst": "#FFFF00",
+	"vim.easymotionMarkerForegroundColorTwoCharSecond": "#ffffff",
 	"vim.highlightedyank.enable": true,
 	"vim.leader": "<space>",
 	"vim.showMarksInGutter": true,
@@ -40,10 +43,6 @@
 		"statusBar.debuggingBackground": "#005f5f"
 	},
 	"vim.normalModeKeyBindings": [
-		{
-			"before": ["leader", "s"],
-			"commands": ["workbench.action.files.save"]
-		},
 		{
 			"before": ["leader", "q"],
 			"commands": ["workbench.action.closeActiveEditor"]
@@ -69,6 +68,14 @@
 			"commands": ["workbench.action.splitEditor"]
 		},
 		{
+			"before": ["C-w", "v"],
+			"commands": ["workbench.action.splitEditor"]
+		},
+		{
+			"before": ["C-w", "h"],
+			"commands": ["workbench.action.splitEditorDown"]
+		},
+		{
 			"before": ["Q"],
 			"after": ["g", "q"]
 		},
@@ -83,6 +90,11 @@
 		{
 			"before": ["leader", "c"],
 			"commands": ["workbench.action.showCommands"]
+		},
+		{ "before": ["leader", "w"], "commands": ["workbench.action.files.save"] },
+		{
+			"before": ["leader", "f"],
+			"after": ["leader", "leader"]
 		}
 	],
 	"vim.handleKeys": {
@@ -90,15 +102,14 @@
 		"<C-a>": false,
 		"<C-r>": false,
 		"<C-f>": false,
-		"Shift-Alt-F": false
+		"Shift-Alt-F": false,
+		"Shift-F": false
 	},
-	"gitlens.views.commits.files.layout": "tree",
-	"workbench.preferredDarkColorTheme": "One Dark Italic",
+	"vim.insertModeKeyBindings": [],
+	"workbench.preferredDarkColorTheme": "One Dark Pro",
 	"workbench.preferredLightColorTheme": "GitHub Light Default",
 	"window.autoDetectColorScheme": true,
-	"workbench.iconTheme": "material-icon-theme",
-	"workbench.productIconTheme": "material-product-icons",
-	"terminal.integrated.fontSize": 15,
+	"terminal.integrated.fontSize": 14,
 	"[typescriptreact]": {
 		"editor.defaultFormatter": "esbenp.prettier-vscode"
 	},
@@ -122,5 +133,76 @@
 		"editor.defaultFormatter": "esbenp.prettier-vscode"
 	},
 	"npm.keybindingsChangedWarningShown": true,
-	"vim.insertModeKeyBindings": []
+	"editor.tokenColorCustomizations": {
+		"textMateRules": [
+			{
+				"scope": "keyword.other.dotenv",
+				"settings": {
+					"foreground": "#FF000000"
+				}
+			}
+		]
+	},
+	"vim.vimrc.enable": true,
+	"editor.stickyScroll.enabled": true,
+	"[javascript]": {
+		"editor.defaultFormatter": "dbaeumer.vscode-eslint"
+	},
+	"workbench.editor.wrapTabs": true,
+	"screencastMode.fontSize": 30,
+	"screencastMode.onlyKeyboardShortcuts": true,
+	"screencastMode.verticalOffset": 10,
+	"window.nativeTabs": true,
+	"diffEditor.codeLens": true,
+	"explorer.compactFolders": false,
+	"github.gitProtocol": "ssh",
+	"git.enableCommitSigning": true,
+	"git.autoStash": true,
+	"git.branchProtection": ["main", "master"],
+	"git.allowForcePush": true,
+	"git.defaultCloneDirectory": "$HOME/Documents/misc",
+	"git.showPushSuccessNotification": true,
+	"gitlens.autolinks": [
+		{
+			"ignoreCase": false,
+			"prefix": "UTSS-",
+			"url": "https://forge.lmig.com/issues/browse/UTSS-<num>"
+		},
+		{
+			"ignoreCase": false,
+			"prefix": "LITIA-",
+			"url": "https://forge.lmig.com/issues/browse/LITIA-<num>"
+		},
+		{
+			"ignoreCase": false,
+			"prefix": "CICC-",
+			"url": "https://forge.lmig.com/issues/browse/CICC-<num>"
+		},
+		{
+			"prefix": "DMR-",
+			"url": "https://forge.lmig.com/issues/browse/DMR-<num>"
+		}
+	],
+	"aws.samcli.enableCodeLenses": true,
+	"vim.hlsearch": true,
+	"vim.vimrc.path": "/Users/marc/.vscodevimrc",
+	"gitlens.views.branches.branches.layout": "list",
+	"editor.linkedEditing": true,
+	"boot-java.rewrite.reconcile": true,
+	"[markdown]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode",
+		"editor.wordWrap": "off"
+	},
+	"githubPullRequests.pullBranch": "never",
+	"git.pruneOnFetch": true,
+	"javascript.inlayHints.functionLikeReturnTypes.enabled": true,
+	"typescript.format.semicolons": "insert",
+	"typescript.inlayHints.parameterNames.enabled": "all",
+	"editor.minimap.enabled": false,
+	"gitlens.views.commits.showBranchComparison": false,
+	"gitlens.views.commits.avatars": false,
+	"gitlens.views.commits.pullRequests.showForBranches": false,
+	"gitlens.views.commits.pullRequests.enabled": false,
+	"editor.wordWrapColumn": 120,
+	"window.zoomLevel": 1
 }
