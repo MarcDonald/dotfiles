@@ -1,7 +1,6 @@
 [alias]
 	co = checkout
 	st = status
-	cm = commit
 	cl = clone
 	b = branch
 	lo = log --oneline
@@ -10,7 +9,6 @@
 	cane = commit --amend --no-edit
 	pr = pull --rebase
 	gaa = add .
-	cmm = commit -m
 	cob = checkout -b
 	df = diff --color
 	dfc = diff --cached --color

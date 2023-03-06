@@ -63,6 +63,8 @@ set ideamarks
 " All I ever do with u and U is accidentally turn everything lowercase, so unmapping them
 xmap U <NOP>
 xmap u <NOP>
+xmap S <NOP>
+xmap s <NOP>
 
 noremap <Space> <Nop>
 let mapleader = "\<Space>"
@@ -71,15 +73,24 @@ nnoremap <A-1> :NERDTree<CR>
 nnoremap <C-t> :NERDTree<CR>
 let g:argtextobj_pairs="[:],(:),<:>"
 
-map <leader>f <Plug>(easymotion-s)
-map <leader>F <Plug>(easymotion-f)
+" Easymotion
+let g:EasyMotion_do_mapping = 0 " Disable default mappings
+nmap <Leader>fF <Plug>(easymotion-F)
+nmap <Leader>ff <Plug>(easymotion-f)
+nmap <Leader>fl <Plug>(easymotion-lineforward)
+nmap <Leader>fj <Plug>(easymotion-j)
+nmap <Leader>fk <Plug>(easymotion-k)
+nmap <Leader>fh <Plug>(easymotion-linebackward)
+nmap s <Plug>(easymotion-jumptoanywhere)
+ 
+let g:EasyMotion_smartcase = 1
+let g:EasyMotion_startofline = 0 " keep cursor column when JK motion
 
 nmap <leader>md <A-x>
 nmap <leader>mn <A-n>
 nmap <leader>mp <A-p>
 
 vmap <leader>s <Plug>VSurround
-unmap S
 
 " Don't use Ex mode, use Q for formatting.
 nmap Q gq

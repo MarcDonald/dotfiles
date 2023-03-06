@@ -69,14 +69,16 @@ alias g='git'
 alias gaa='git add .'
 alias gacm='git commit -a -m'
 alias gacane='git commit -a --amend --no-edit'
+alias gcane='git commit --amend --no-edit'
+alias gca='git commit --amend'
 alias gacaneud='git commit -a --amend --no-edit --date=now'
 alias gpm='git checkout master && git pull && grmbm'
 alias gin='git pull'
 alias gst='git status'
-alias gcm='git commit -m'
 alias gdf='git df'
 alias gdfc='git dfc'
 alias gout='git push'
+alias gc='gcmm'
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
