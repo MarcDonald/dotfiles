@@ -1,6 +1,8 @@
 [alias]
 	co = checkout
 	st = status
+	cm = commit
+	cmm = commit -m
 	cl = clone
 	b = branch
 	lo = log --oneline
@@ -53,8 +55,8 @@
 	autoCorrect = 1
 [init]
 	defaultBranch = main
-; [url "ssh://git@github.com/"]
-; 	insteadOf = https://github.com/
+ [url "ssh://git@github.com/marcdonald/homebrew-tools"]
+ 	insteadOf = https://github.com/marcdonald/homebrew-tools
 [commit]
 	gpgSign = true
 [push]
