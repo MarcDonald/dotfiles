@@ -35,6 +35,7 @@ Plug 'mbbill/undotree'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'vim-scripts/argtextobj.vim'
+Plug 'github/copilot.vim'
 
 " LSP ---------------------------------------------------------------- {{{
 Plug 'neovim/nvim-lspconfig'

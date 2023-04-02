@@ -8,9 +8,6 @@ fi
 # Homebrew autocomplete must be called before compinit and oh my zsh
 if type brew &>/dev/null; then
   FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
-
-  autoload -Uz compinit
-  compinit
 fi
 
 export ZSH="$HOME/.oh-my-zsh"
@@ -26,7 +23,7 @@ zstyle ':completion:*:*:git:*' script ~/.git-completion.bash
 fpath=(~/.zsh/functions $fpath)
 autoload -Uz compinit && compinit
 
-plugins=(colored-man-pages git autojump adb zsh-autosuggestions zsh-syntax-highlighting docker docker-compose mvn yarn golang forgit fzf-zsh-plugin aws)
+plugins=(colored-man-pages git autojump adb zsh-autosuggestions zsh-syntax-highlighting docker docker-compose mvn yarn golang fzf-zsh-plugin aws)
 source $ZSH/oh-my-zsh.sh
 
 HISTSIZE=10000000
@@ -80,6 +77,9 @@ alias gdf='git df'
 alias gdfc='git dfc'
 alias gout='git push'
 alias gc='gcmm'
+
+alias cmt='cmmiter commit'
+alias cm='cmmiter commit'
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
