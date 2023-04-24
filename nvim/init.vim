@@ -36,6 +36,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'vim-scripts/argtextobj.vim'
 Plug 'github/copilot.vim'
+Plug 'christoomey/vim-tmux-navigator'
 
 " LSP ---------------------------------------------------------------- {{{
 Plug 'neovim/nvim-lspconfig'
