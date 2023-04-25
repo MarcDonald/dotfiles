@@ -5,6 +5,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+
 # Homebrew autocomplete must be called before compinit and oh my zsh
 if type brew &>/dev/null; then
   FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
@@ -23,6 +24,7 @@ zstyle ':completion:*:*:git:*' script ~/.git-completion.bash
 fpath=(~/.zsh/functions $fpath)
 autoload -Uz compinit && compinit
 
+source ~/.zsh/catppuccin_mocha-zsh-syntax-highlighting.zsh
 plugins=(colored-man-pages git autojump zsh-autosuggestions zsh-syntax-highlighting golang fzf-zsh-plugin aws)
 source $ZSH/oh-my-zsh.sh
 

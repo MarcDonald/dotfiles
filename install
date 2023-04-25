@@ -12,23 +12,22 @@ else
 	DOTFILE_DIR=$1
 fi
 
-# nvim
-mkdir -p ~/.config/nvim/plugin
-mkdir -p ~/.config/nvim/after/plugin
-mkdir -p ~/.config/nvim/lua
+#nvim with nvchad
+mkdir -p ~/.config/nvim/lua/custom
+mkdir -p ~/.config/nvim/lua/custom/configs
 
-for f in $(find "$DOTFILE_DIR"/nvim -maxdepth 1 -regex ".*\.vim$"); do
-	strippedDir=$(stripDir "$f" 2)
-	echo "Linking $f to ~/.config/$strippedDir"
-	rm -rf ~/.config/"$strippedDir"
-	ln -s "$f" ~/.config/"$strippedDir"
+for f in $(find "$DOTFILE_DIR"/nvchad/custom -maxdepth 1 -regex ".*\.lua$"); do
+	strippedDir=$(stripDir "$f" 1)
+	echo "Linking $f to ~/.config/nvim/lua/custom/$strippedDir"
+	rm -rf ~/.config/nvim/lua/custom/"$strippedDir"
+	ln -s "$f" ~/.config/nvim/lua/custom/"$strippedDir"
 done
 
-for f in $(find "$DOTFILE_DIR"/nvim/plugin -maxdepth 1 -regex ".*\.vim$"); do
-	strippedDir=$(stripDir "$f" 3)
-	echo "Linking $f to ~/.config/$strippedDir"
-	rm -rf ~/.config/"$strippedDir"
-	ln -s "$f" ~/.config/"$strippedDir"
+for f in $(find "$DOTFILE_DIR"/nvchad/custom/configs -maxdepth 1 -regex ".*\.lua$"); do
+	strippedDir=$(stripDir "$f" 1)
+	echo "Linking $f to ~/.config/nvim/lua/custom/configs/$strippedDir"
+	rm -rf ~/.config/nvim/lua/custom/configs/"$strippedDir"
+	ln -s "$f" ~/.config/nvim/lua/custom/configs/"$strippedDir"
 done
 
 # homedir
