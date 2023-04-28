@@ -130,18 +130,28 @@ nmap <leader>ta :action EditorTabPopupMenu<cr>
 nmap <leader>tr :action ReopenClosedTab<cr>
 nmap <leader>tg :action EditorTabsGroup<cr>
 
-nmap <leader>tv :action SplitVertically<cr>
-nmap <leader>th :action SplitHorizontally<cr>
+map <C-t>v :action SplitVertically<cr>
+map <C-t>h :action SplitHorizontally<cr>
 
 nmap <C-w>> :action StretchSplitToRight<cr>
 nmap <C-w>< :action StretchSplitToLeft<cr>
 nmap <C-w>- :action StretchSplitToBottom<cr>
 nmap <C-w>+ :action StretchSplitToTop<cr>
 
+nmap <C-h> <C-w>left
+nmap <C-j> <C-w>down
+nmap <C-k> <C-w>up
+nmap <C-l> <C-w>right
+
 nmap <leader>h :action PreviousTab<cr>
 nmap <leader>l :action NextTab<cr>
-nmap <leader>aj :action GotoNextError<cr>
-nmap <leader>ak :action GotoPreviousError<cr>
+nmap <leader>ne :action GotoNextError<cr>
+nmap <leader>pe :action GotoPreviousError<cr>
+nmap <leader>e :action ActivateProjectToolWindow<cr>
+nmap <leader>a :action NewFile<cr>
+nmap <leader>W :action NewDir<cr>
+nmap <leader>ph :action Vcs.ShowHistoryForBlock<cr>
+vmap <leader>ph :action Vcs.ShowHistoryForBlock<cr>
 
 nmap <leader><leader> :action RecentFiles<cr>
 
