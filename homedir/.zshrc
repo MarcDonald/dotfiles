@@ -25,7 +25,7 @@ fpath=(~/.zsh/functions $fpath)
 autoload -Uz compinit && compinit
 
 source ~/.zsh/catppuccin_mocha-zsh-syntax-highlighting.zsh
-plugins=(colored-man-pages git autojump zsh-autosuggestions zsh-syntax-highlighting golang fzf-zsh-plugin aws)
+plugins=(colored-man-pages git zsh-autosuggestions zsh-syntax-highlighting golang fzf-zsh-plugin aws z)
 source $ZSH/oh-my-zsh.sh
 
 HISTSIZE=10000000
@@ -83,9 +83,9 @@ alias gc='gcmm'
 alias cmt='cmmiter commit'
 alias cm='cmmiter commit'
 
-alias t='tmux'
-alias ta='tmux attach'
-alias tls='tmux ls'
+alias j='z'
+alias tn="tmux new -s $(basename $(pwd))"
+alias tls="tmux ls"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

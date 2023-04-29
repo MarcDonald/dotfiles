@@ -6,6 +6,8 @@ export PATH="$PATH:$HOME/.jetbrainsscripts"
 export PATH="/usr/local/bin:${PATH}"
 export PATH="$PATH:$(go env GOPATH)/bin"
 export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
+export PATH=$HOME/.tmux/plugins/t-smart-tmux-session-manager/bin:$PATH
+export PATH=$HOME/.config/tmux/plugins/t-smart-tmux-session-manager/bin:$PATH
 export GOPATH="$HOME/go"
 export GPG_TTY=$(tty)
 source $HOME/.env
