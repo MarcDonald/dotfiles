@@ -36,6 +36,13 @@ for f in $(find "$DOTFILE_DIR"/homedir -type f -exec basename {} \;); do
 	rm -rf ~/"$f"
 	ln -s "$DOTFILE_DIR"/homedir/"$f" ~/"$f"
 done
+#
+# config dir
+for f in $(find "$DOTFILE_DIR"/configdir -type f -exec basename {} \;); do
+	echo "Linking $DOTFILE_DIR/configdir/$f to ~/.config/$f"
+	rm -rf ~/.config/"$f"
+	ln -s "$DOTFILE_DIR"/configdir/"$f" ~/.config/"$f"
+done
 
 # vscode
 mkdir -p ~/Library/Application\ Support/Code/User
