@@ -14,10 +14,16 @@ source $HOME/.env
 
 export EDITOR="nvim"
 
-# Load Git completion
-zstyle ':completion:*:*:git:*' script ~/.zsh/git-completion.bash
+# Enable colours
+export CLICOLOR=1
+export LSCOLORS=ExFxBxDxCxegedabagacad
+
 fpath=(~/.zsh $fpath)
 
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
+# Homebrew autocomplete must be called before compinit and oh my zsh
+if type brew &>/dev/null; then
+  FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
+fi
 
+export HOMEBREW_NO_ENV_HINTS=true
+export BAT_THEME=ansi

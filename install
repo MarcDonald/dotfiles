@@ -58,3 +58,7 @@ for f in $(find "$DOTFILE_DIR"/vscode/snippets -maxdepth 1 -type f -exec basenam
 	rm -rf ~/Library/Application\ Support/Code/User/snippets/"$f"
 	ln -s "$DOTFILE_DIR/vscode/snippets/$f" ~/Library/Application\ Support/Code/User/snippets/"$f"
 done
+
+sh ./install_custom_zsh_plugins.sh
+
+git clone https://github.com/marcdonald/scripts ~/.scripts
