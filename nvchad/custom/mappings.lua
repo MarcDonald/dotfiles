@@ -7,6 +7,8 @@ M.disabled = {
     ["<leader>w"] = "",
     ["<leader>q"] = "",
     ["<leader>ls"] = "",
+    ["<leader>wk"] = "",
+    ["<leader>wl"] = "",
   }
 }
 
@@ -26,51 +28,30 @@ M.abc = {
       end,
       "goto prev buffer",
     },
-    ["<leader>q"] = {
-      function()
-        require("nvchad_ui.tabufline").close_buffer()
-      end,
-      "close buffer",
-    },
+    ["<leader>q"] = { "<cmd> q <CR>", "close current window" },
     ["<leader>sh"] = {
       function()
         vim.lsp.buf.signature_help()
       end,
       "lsp signature_help",
     },
-    ["<leader>tt"] = {
-      function()
-        require("nvterm.terminal").new "horizontal"
-      end,
-      "new horizontal term",
-    },
-
-
     ["<leader>Wa"] = {
       function()
         vim.lsp.buf.add_workspace_folder()
       end,
       "add workspace folder",
     },
-
     ["<leader>Wr"] = {
       function()
         vim.lsp.buf.remove_workspace_folder()
       end,
       "remove workspace folder",
     },
-
-    ["<leader>wl"] = {
+    ["<leader>Wl"] = {
       function()
         print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
       end,
       "list workspace folders",
-    },
-    ["<leader>WK"] = {
-      function()
-        vim.cmd "WhichKey"
-      end,
-      "which-key all keymaps",
     },
     ["<leader>Wk"] = {
       function()
@@ -79,6 +60,11 @@ M.abc = {
       end,
       "which-key query lookup",
     },
+    ["<C-h>"] = { "<cmd> TmuxNavigateLeft <CR>", "navigate pane left" },
+    ["<C-j>"] = { "<cmd> TmuxNavigateDown <CR>", "navitate pane down" },
+    ["<C-k>"] = { "<cmd> TmuxNavigateUp <CR>", "navigate pane up" },
+    ["<C-l>"] = { "<cmd> TmuxNavigateRight <CR>", "navigate pane right" },
+    ["<C-w>h"] = { "<cmd> split <CR>", "horizontal split" },
   }
 }
 

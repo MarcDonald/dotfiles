@@ -2,8 +2,7 @@ local plugins = {
   {
     "neovim/nvim-lspconfig",
     dependencies = {
-      "jose-elias-alvarez/null-ls.nvim",
-      config = function()
+      "jose-elias-alvarez/null-ls.nvim", config = function()
         require "custom.configs.null-ls"
       end,
     },
@@ -20,5 +19,10 @@ local plugins = {
       }
     }
   },
+  {
+    "christoomey/vim-tmux-navigator",
+    lazy = false
+  },
 }
+
 return plugins
