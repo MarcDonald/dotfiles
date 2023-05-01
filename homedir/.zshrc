@@ -19,7 +19,7 @@ export NVM_COMPLETION=true
 
 source ~/.oh-my-zsh/custom/themes/catppuccin/themes/catppuccin_mocha-zsh-syntax-highlighting.zsh
 
-plugins=(colored-man-pages git zsh-autosuggestions zsh-syntax-highlighting golang z zsh-nvm)
+plugins=(colored-man-pages git zsh-autosuggestions zsh-syntax-highlighting zsh-autocomplete golang z zsh-nvm)
 
 # init oh-my-zsh
 source $ZSH/oh-my-zsh.sh
