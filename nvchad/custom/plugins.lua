@@ -23,6 +23,10 @@ local plugins = {
     "christoomey/vim-tmux-navigator",
     lazy = false
   },
+  {
+    "machakann/vim-highlightedyank",
+    lazy = false
+  }
 }
 
 return plugins
