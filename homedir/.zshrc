@@ -7,8 +7,6 @@ if [ ! -d $ZSH_CACHE_DIR ]; then
   mkdir $ZSH_CACHE_DIR
 fi
 
-zstyle ':completion:*:*:git:*' script ~/.git-completion.bash
-
 # `compinit` scans $fpath, so do this before calling it.
 fpath=(~/.zsh/functions $fpath)
 autoload -Uz compinit && compinit
@@ -83,4 +81,8 @@ alias tls="tmux ls"
 export FZF_DEFAULT_COMMAND='fd .'
 function vf() {
   vim $(fzf --query "$1")
+}
+
+function cdf() {
+  cd $(fzf --query "$1")
 }
