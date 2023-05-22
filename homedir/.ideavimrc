@@ -70,7 +70,6 @@ noremap <Space> <Nop>
 let mapleader = "\<Space>"
 
 nnoremap <A-1> :NERDTree<CR>
-nnoremap <C-t> :NERDTree<CR>
 let g:argtextobj_pairs="[:],(:),<:>"
 
 " Easymotion
@@ -132,6 +131,8 @@ nmap <leader>tg :action EditorTabsGroup<cr>
 
 map <C-t>v :action SplitVertically<cr>
 map <C-t>h :action SplitHorizontally<cr>
+map `\ :action SplitVertically<cr>
+map `- :action SplitHorizontally<cr>
 
 nmap <C-w>> :action StretchSplitToRight<cr>
 nmap <C-w>< :action StretchSplitToLeft<cr>

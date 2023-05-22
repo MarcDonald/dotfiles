@@ -64,7 +64,6 @@ M.abc = {
     ["<C-j>"] = { "<cmd> TmuxNavigateDown <CR>", "navitate pane down" },
     ["<C-k>"] = { "<cmd> TmuxNavigateUp <CR>", "navigate pane up" },
     ["<C-l>"] = { "<cmd> TmuxNavigateRight <CR>", "navigate pane right" },
-    ["<C-w>h"] = { "<cmd> split <CR>", "horizontal split" },
   }
 }
 
