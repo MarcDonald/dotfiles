@@ -3,21 +3,20 @@ export ZSH="$HOME/.oh-my-zsh"
 
 # Set the cache to a more permanent directory
 ZSH_CACHE_DIR=$HOME/.oh-my-zsh-cache
-if [ ! -d $ZSH_CACHE_DIR ]; then
-  mkdir $ZSH_CACHE_DIR
-fi
 
-# `compinit` scans $fpath, so do this before calling it.
-fpath=(~/.zsh/functions $fpath)
-autoload -Uz compinit && compinit
+if [ ! -d $ZSH_CACHE_DIR ];
+ then mkdir $ZSH_CACHE_DIR
+fi 
 
-# Lazy load nvm because the startup time is absurd otherwise
-export NVM_LAZY_LOAD=true
-export NVM_COMPLETION=true
+# `compinit` scans $fpath, so do this before calling it. 
+fpath=(~/.zsh/functions $fpath) autoload -Uz compinit && compinit 
+
+# fnm
+eval "$(fnm env --use-on-cd)"
 
 source ~/.oh-my-zsh/custom/themes/catppuccin/themes/catppuccin_mocha-zsh-syntax-highlighting.zsh
 
-plugins=(colored-man-pages git zsh-autosuggestions zsh-syntax-highlighting zsh-autocomplete golang z zsh-nvm)
+plugins=(colored-man-pages git zsh-autosuggestions zsh-syntax-highlighting zsh-autocomplete golang z fnm)
 
 # init oh-my-zsh
 source $ZSH/oh-my-zsh.sh
@@ -55,6 +54,8 @@ alias cl='clear'
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
+alias ll="exa -l -g --icons --git"
+alias llt="exa -1 --icons --tree --git-ignore"
 
 #Git
 alias g='git'
@@ -75,6 +76,9 @@ alias cm='cmmiter commit'
 alias j='z'
 alias tn="tmux new -s $(basename $(pwd))"
 alias tls="tmux ls"
+alias p='pnpm'
+
+alias search="fzf --preview 'bat --color=always --style=numbers --line-range=:500 {}' | xargs nvim"
 
 # FZF
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
@@ -109,3 +113,10 @@ bindkey -M menuselect '\t' menu-complete "$terminfo[kcbt]" reverse-menu-complete
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
+# pnpm
+export PNPM_HOME="/Users/marc/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
