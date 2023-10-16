@@ -131,8 +131,8 @@ nmap <leader>tg :action EditorTabsGroup<cr>
 
 map <C-t>v :action SplitVertically<cr>
 map <C-t>h :action SplitHorizontally<cr>
-map `\ :action SplitVertically<cr>
-map `- :action SplitHorizontally<cr>
+map <leader>\ :action SplitVertically<cr>
+map <leader>- :action SplitHorizontally<cr>
 
 nmap <C-w>> :action StretchSplitToRight<cr>
 nmap <C-w>< :action StretchSplitToLeft<cr>

@@ -1,15 +1,15 @@
 {
 	"editor.suggestSelection": "first",
 	"vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
-	"editor.fontSize": 14,
+	"editor.fontSize": 13,
 	"editor.fontLigatures": true,
-	"editor.fontFamily": "'JetBrains Mono', Consolas, 'Courier New', monospace",
+	"editor.fontFamily": "'Comic Code Ligatures', 'JetBrainsMono Nerd Font', Consolas, 'Courier New', monospace",
 	"editor.tabSize": 2,
 	"files.autoSave": "onFocusChange",
 	"terminal.integrated.defaultProfile.windows": "Git Bash",
 	"editor.foldingImportsByDefault": true,
 	"editor.smoothScrolling": true,
-	"editor.cursorSmoothCaretAnimation": true,
+	"editor.cursorSmoothCaretAnimation": "on",
 	"editor.cursorSurroundingLines": 2,
 	"editor.find.autoFindInSelection": "always",
 	"workbench.colorTheme": "One Dark Pro",
@@ -22,7 +22,7 @@
 	"material-icon-theme.activeIconPack": "react",
 	"npm.packageManager": "npm",
 	"npm.enableRunFromFolder": true,
-	"prettier.configPath": ".prettierrc.js",
+	"prettier.configPath": ".prettierrc.cjs",
 	"vim.camelCaseMotion.enable": true,
 	"vim.easymotion": true,
 	"vim.easymotionMarkerForegroundColorOneChar": "#ffffff",
@@ -109,7 +109,7 @@
 	"workbench.preferredDarkColorTheme": "One Dark Pro",
 	"workbench.preferredLightColorTheme": "GitHub Light Default",
 	"window.autoDetectColorScheme": true,
-	"terminal.integrated.fontSize": 14,
+	"terminal.integrated.fontSize": 13,
 	"[typescriptreact]": {
 		"editor.defaultFormatter": "esbenp.prettier-vscode"
 	},
@@ -204,5 +204,18 @@
 	"gitlens.views.commits.pullRequests.showForBranches": false,
 	"gitlens.views.commits.pullRequests.enabled": false,
 	"editor.wordWrapColumn": 120,
-	"window.zoomLevel": 1
+	"workbench.iconTheme": "catppuccin-mocha",
+	"prettier.useTabs": true,
+	"files.exclude": {
+		".idea": true,
+		"*.iml": true
+	},
+	"editor.defaultFormatter": "esbenp.prettier-vscode",
+	"editor.formatOnPaste": true,
+	"prettier.jsxSingleQuote": true,
+	"workbench.productIconTheme": "material-product-icons",
+	"window.zoomLevel": 1,
+	"terminal.external.osxExec": "iTerm2.app",
+	"terminal.integrated.fontFamily": "'Comic Code Ligatures', 'JetBrainsMono Nerd Font'",
+	"editor.tabCompletion": "on"
 }

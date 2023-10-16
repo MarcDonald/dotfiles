@@ -9,12 +9,14 @@ if [ ! -d $ZSH_CACHE_DIR ];
 fi 
 
 # `compinit` scans $fpath, so do this before calling it. 
-fpath=(~/.zsh/functions $fpath) autoload -Uz compinit && compinit 
+fpath=(~/.zsh/functions $fpath) autoload -Uz compinit && compinit -u
 
 # fnm
 eval "$(fnm env --use-on-cd)"
 
-source ~/.oh-my-zsh/custom/themes/catppuccin/themes/catppuccin_mocha-zsh-syntax-highlighting.zsh
+#source ~/.oh-my-zsh/custom/themes/catppuccin/themes/catppuccin_mocha-zsh-syntax-highlighting.zsh
+ZSH_THEME="gruvbox"
+SOLARIZED_THEME="dark"
 
 plugins=(colored-man-pages git zsh-autosuggestions zsh-syntax-highlighting zsh-autocomplete golang z fnm)
 
@@ -77,8 +79,10 @@ alias j='z'
 alias tn="tmux new -s $(basename $(pwd))"
 alias tls="tmux ls"
 alias p='pnpm'
+alias nukenpm='rm -rfv node_modules && rm package-lock.json'
 
 alias search="fzf --preview 'bat --color=always --style=numbers --line-range=:500 {}' | xargs nvim"
+alias checksig="spctl -a -vvv -t install"
 
 # FZF
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
@@ -92,10 +96,10 @@ function cdf() {
 }
 
 # zsh-autocomplete
-zstyle ':autocomplete:*' min-delay 0.250
-zstyle ':autocomplete:*complete*:*' insert-unambiguous yes
-zstyle ':autocomplete:*history*:*' insert-unambiguous yes
-zstyle ':autocomplete:menu-search:*' insert-unambiguous yes
+zstyle ':autocomplete:*' min-delay 0.3
+zstyle ':autocomplete:*complete*:*' insert-unambiguous no
+zstyle ':autocomplete:*history*:*' insert-unambiguous no
+zstyle ':autocomplete:menu-search:*' insert-unambiguous no
 bindkey '\t' menu-select "$terminfo[kcbt]" menu-select
 bindkey -M menuselect '\t' menu-complete "$terminfo[kcbt]" reverse-menu-complete
 # turn off zsh-autocomplete history search
@@ -120,3 +124,7 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
+
+# tabtab source for electron-forge package
+# uninstall by removing these lines or running `tabtab uninstall electron-forge`
+[[ -f /Users/marc/.npm/_npx/6913fdfd1ea7a741/node_modules/tabtab/.completions/electron-forge.zsh ]] && . /Users/marc/.npm/_npx/6913fdfd1ea7a741/node_modules/tabtab/.completions/electron-forge.zsh
