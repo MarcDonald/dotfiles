@@ -1,7 +1,7 @@
 {
 	"editor.suggestSelection": "first",
 	"vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
-	"editor.fontSize": 13,
+	"editor.fontSize": 14,
 	"editor.fontLigatures": true,
 	"editor.fontFamily": "'Comic Code Ligatures', 'JetBrainsMono Nerd Font', Consolas, 'Courier New', monospace",
 	"editor.tabSize": 2,
@@ -40,7 +40,9 @@
 	"workbench.colorCustomizations": {
 		"statusBar.background": "#005f5f",
 		"statusBar.noFolderBackground": "#005f5f",
-		"statusBar.debuggingBackground": "#005f5f"
+		"statusBar.debuggingBackground": "#005f5f",
+		"statusBar.foreground": "#ffffff",
+		"statusBar.debuggingForeground": "#ffffff"
 	},
 	"vim.normalModeKeyBindings": [
 		{
@@ -214,8 +216,8 @@
 	"editor.formatOnPaste": true,
 	"prettier.jsxSingleQuote": true,
 	"workbench.productIconTheme": "material-product-icons",
-	"window.zoomLevel": 1,
 	"terminal.external.osxExec": "iTerm2.app",
 	"terminal.integrated.fontFamily": "'Comic Code Ligatures', 'JetBrainsMono Nerd Font'",
-	"editor.tabCompletion": "on"
+	"editor.tabCompletion": "on",
+	"arduino.useArduinoCli": true
 }
