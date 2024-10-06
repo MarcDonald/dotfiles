@@ -14,9 +14,9 @@ fpath=(~/.zsh/functions $fpath) autoload -Uz compinit && compinit -u
 # fnm
 eval "$(fnm env --use-on-cd)"
 
-#source ~/.oh-my-zsh/custom/themes/catppuccin/themes/catppuccin_mocha-zsh-syntax-highlighting.zsh
-ZSH_THEME="gruvbox"
-SOLARIZED_THEME="dark"
+source ~/.oh-my-zsh/custom/themes/catppuccin/themes/catppuccin_mocha-zsh-syntax-highlighting.zsh
+#ZSH_THEME="gruvbox"
+#SOLARIZED_THEME="dark"
 
 plugins=(colored-man-pages git zsh-autosuggestions zsh-syntax-highlighting zsh-autocomplete golang z fnm)
 
@@ -77,10 +77,14 @@ alias cm='cmmiter commit'
 
 #Misc
 alias j='z'
-alias tn="tmux new -s $(basename $(pwd))"
-alias tls="tmux ls"
 alias p='pnpm'
 alias nukenpm='rm -rfv node_modules && rm package-lock.json'
+
+# tmux
+alias t='tmux'
+alias ta='tmux attach-session -t'
+alias tn="tmux new -s $(basename $(pwd))"
+alias tls="tmux ls"
 
 alias search="fzf --preview 'bat --color=always --style=numbers --line-range=:500 {}' | xargs nvim"
 alias checksig="spctl -a -vvv -t install"

@@ -1,7 +1,6 @@
 {
 	"editor.suggestSelection": "first",
 	"vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
-	"editor.fontSize": 14,
 	"editor.fontLigatures": true,
 	"editor.fontFamily": "'Comic Code Ligatures', 'JetBrainsMono Nerd Font', Consolas, 'Courier New', monospace",
 	"editor.tabSize": 2,
@@ -11,8 +10,8 @@
 	"editor.smoothScrolling": true,
 	"editor.cursorSmoothCaretAnimation": "on",
 	"editor.cursorSurroundingLines": 2,
-	"editor.find.autoFindInSelection": "always",
-	"workbench.colorTheme": "One Dark Pro",
+	"editor.find.autoFindInSelection": "multiline",
+	"workbench.colorTheme": "Catppuccin Mocha",
 	"debug.console.fontSize": 15,
 	"eslint.format.enable": true,
 	"eslint.packageManager": "npm",
@@ -22,7 +21,7 @@
 	"material-icon-theme.activeIconPack": "react",
 	"npm.packageManager": "npm",
 	"npm.enableRunFromFolder": true,
-	"prettier.configPath": ".prettierrc.cjs",
+	"prettier.configPath": ".prettierrc.js",
 	"vim.camelCaseMotion.enable": true,
 	"vim.easymotion": true,
 	"vim.easymotionMarkerForegroundColorOneChar": "#ffffff",
@@ -38,9 +37,9 @@
 	"vim.useSystemClipboard": true,
 	"vim.visualstar": true,
 	"workbench.colorCustomizations": {
-		"statusBar.background": "#005f5f",
-		"statusBar.noFolderBackground": "#005f5f",
-		"statusBar.debuggingBackground": "#005f5f",
+		"statusBar.background": "#005f87",
+		"statusBar.noFolderBackground": "#005f87",
+		"statusBar.debuggingBackground": "#005f87",
 		"statusBar.foreground": "#ffffff",
 		"statusBar.debuggingForeground": "#ffffff"
 	},
@@ -99,6 +98,22 @@
 			"after": ["leader", "leader"]
 		}
 	],
+	"vim.normalModeKeyBindingsNonRecursive": [
+		{ "before": ["w"], "after": ["leader", "w"] },
+		{ "before": ["b"], "after": ["leader", "b"] },
+		{ "before": ["e"], "after": ["leader", "e"] },
+		{ "before": ["S-w"], "after": ["w"] },
+		{ "before": ["S-b"], "after": ["b"] },
+		{ "before": ["S-e"], "after": ["e"] }
+	],
+	"vim.visualModeKeyBindingsNonRecursive": [
+		{ "before": ["w"], "after": ["leader", "w"] },
+		{ "before": ["b"], "after": ["leader", "b"] },
+		{ "before": ["e"], "after": ["leader", "e"] },
+		{ "before": ["S-w"], "after": ["w"] },
+		{ "before": ["S-b"], "after": ["b"] },
+		{ "before": ["S-e"], "after": ["e"] }
+	],
 	"vim.handleKeys": {
 		"<C-d>": true,
 		"<C-a>": false,
@@ -108,9 +123,8 @@
 		"Shift-F": false
 	},
 	"vim.insertModeKeyBindings": [],
-	"workbench.preferredDarkColorTheme": "One Dark Pro",
-	"workbench.preferredLightColorTheme": "GitHub Light Default",
-	"window.autoDetectColorScheme": true,
+	"workbench.preferredDarkColorTheme": "Catppuccin Mocha",
+	"workbench.preferredLightColorTheme": "Atom One Light",
 	"terminal.integrated.fontSize": 13,
 	"[typescriptreact]": {
 		"editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -136,6 +150,26 @@
 	},
 	"npm.keybindingsChangedWarningShown": true,
 	"editor.tokenColorCustomizations": {
+		"[*Light*]": {
+			"textMateRules": [
+				{
+					"scope": "ref.matchtext",
+					"settings": {
+						"foreground": "#000"
+					}
+				}
+			]
+		},
+		"[*Dark*]": {
+			"textMateRules": [
+				{
+					"scope": "ref.matchtext",
+					"settings": {
+						"foreground": "#fff"
+					}
+				}
+			]
+		},
 		"textMateRules": [
 			{
 				"scope": "keyword.other.dotenv",
@@ -187,8 +221,7 @@
 	],
 	"aws.samcli.enableCodeLenses": true,
 	"vim.hlsearch": true,
-	"vim.vimrc.path": "/Users/marc/.vscodevimrc",
-	"gitlens.views.branches.branches.layout": "list",
+	"vim.vimrc.path": "/Users/n0345539/code/digital-dialogue/platinum-ui/.vscodevimrc",
 	"editor.linkedEditing": true,
 	"boot-java.rewrite.reconcile": true,
 	"[markdown]": {
@@ -200,13 +233,12 @@
 	"javascript.inlayHints.functionLikeReturnTypes.enabled": true,
 	"typescript.format.semicolons": "insert",
 	"typescript.inlayHints.parameterNames.enabled": "all",
-	"editor.minimap.enabled": false,
 	"gitlens.views.commits.showBranchComparison": false,
 	"gitlens.views.commits.avatars": false,
 	"gitlens.views.commits.pullRequests.showForBranches": false,
 	"gitlens.views.commits.pullRequests.enabled": false,
 	"editor.wordWrapColumn": 120,
-	"workbench.iconTheme": "catppuccin-mocha",
+	"workbench.iconTheme": "material-icon-theme",
 	"prettier.useTabs": true,
 	"files.exclude": {
 		".idea": true,
@@ -219,5 +251,18 @@
 	"terminal.external.osxExec": "iTerm2.app",
 	"terminal.integrated.fontFamily": "'Comic Code Ligatures', 'JetBrainsMono Nerd Font'",
 	"editor.tabCompletion": "on",
-	"arduino.useArduinoCli": true
+	"arduino.useArduinoCli": true,
+	"files.associations": {
+		".env*": "dotenv"
+	},
+	"redhat.telemetry.enabled": true,
+	"editor.fontSize": 13,
+	"gitlens.views.branches.branches.layout": "list",
+	"jest.nodeEnv": {
+		"TZ": "UTC"
+	},
+	"emmet.showExpandedAbbreviation": "inMarkupAndStylesheetFilesOnly",
+	"intellij-idea-keybindings.useCamelHumpsWords": true,
+	"vim.sneakReplacesF": true,
+	"window.systemColorTheme": "auto"
 }

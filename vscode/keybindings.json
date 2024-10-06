@@ -476,7 +476,7 @@
 	},
 	{
 		"command": "workbench.action.quickOpen",
-		"key": "shift+cmd+o"
+		"key": "cmd+o"
 	},
 	{
 		"command": "editor.action.goToImplementation",
@@ -1292,5 +1292,29 @@
 	{
 		"key": "cmd+k",
 		"command": "gitlens.views.commits.focus"
+	},
+	{
+		"key": "shift+cmd+o",
+		"command": "-workbench.action.quickOpen"
+	},
+	{
+		"key": "cmd+o",
+		"command": "editor.action.accessibleViewGoToSymbol",
+		"when": "accessibilityHelpIsShown && accessibleViewGoToSymbolSupported || accessibleViewGoToSymbolSupported && accessibleViewIsShown"
+	},
+	{
+		"key": "shift+cmd+o",
+		"command": "-editor.action.accessibleViewGoToSymbol",
+		"when": "accessibilityHelpIsShown && accessibleViewGoToSymbolSupported || accessibleViewGoToSymbolSupported && accessibleViewIsShown"
+	},
+	{
+		"key": "cmd+o",
+		"command": "workbench.action.terminal.openDetectedLink",
+		"when": "terminalFocus && terminalHasBeenCreated"
+	},
+	{
+		"key": "shift+cmd+o",
+		"command": "-workbench.action.terminal.openDetectedLink",
+		"when": "terminalFocus && terminalHasBeenCreated"
 	}
 ]
