@@ -16,10 +16,6 @@
   dfc = diff --cached --color
   dft = difftool
   dlog = "-c diff.external=difft log -p --ext-diff"
-[user]
-	email = dev@marcdonald.com
-	name = Marc Donald
-	signingKey = 95BA7DEC5B88788A1A6219C31443FF3E486DC689
 [color]
 	ui = true
 	status = auto
@@ -75,4 +71,6 @@
 	autoSetupRemote = true
 	default = current
 [gpg]
-	program = /usr/local/MacGPG2/bin/gpg
+  program = /usr/local/MacGPG2/bin/gpg
+[include]
+  path = .personal.gitconfig
