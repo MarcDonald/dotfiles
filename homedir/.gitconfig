@@ -13,7 +13,9 @@
 	gaa = add .
 	cob = checkout -b
 	df = diff --color
-	dfc = diff --cached --color
+  dfc = diff --cached --color
+  dft = difftool
+  dlog = "-c diff.external=difft log -p --ext-diff"
 [user]
 	email = dev@marcdonald.com
 	name = Marc Donald
@@ -25,7 +27,16 @@
 [core]
 	autocrlf = input
 	editor = nvim
-	pager = diff-so-fancy | less --tabs=4 -RFX
+  pager = diff-so-fancy | less --tabs=4 -RFX
+[diff]
+  tool = difftastic
+  external = difft
+[difftool]
+  prompt = false
+[difftool "difftastic"]
+  cmd = difft "$LOCAL" "$REMOTE"
+[pager]
+  difftool = true
 [color "status"]
 	changed = blue bold
 	untracked = cyan bold
@@ -48,6 +59,7 @@
 	required = true
 [pull]
 	ff = only
+	rebase = true
 [merge]
 	commit = no
 	ff = yes

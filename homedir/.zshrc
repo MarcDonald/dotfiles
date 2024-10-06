@@ -63,6 +63,7 @@ alias llt="exa -1 --icons --tree --git-ignore"
 alias g='git'
 alias gaa='git add .'
 alias gcmm='git commit -m'
+alias gcmt='git commit -m'
 alias gacane='git commit -a --amend --no-edit'
 alias gcane='git commit --amend --no-edit'
 alias gca='git commit --amend'
@@ -128,3 +129,9 @@ esac
 # tabtab source for electron-forge package
 # uninstall by removing these lines or running `tabtab uninstall electron-forge`
 [[ -f /Users/marc/.npm/_npx/6913fdfd1ea7a741/node_modules/tabtab/.completions/electron-forge.zsh ]] && . /Users/marc/.npm/_npx/6913fdfd1ea7a741/node_modules/tabtab/.completions/electron-forge.zsh
+
+if [ -d "/opt/homebrew/opt/ruby/bin" ]; then
+  export PATH=/opt/homebrew/opt/ruby/bin:$PATH
+  export PATH=`gem environment gemdir`/bin:$PATH
+fi
+
