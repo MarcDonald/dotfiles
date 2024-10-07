@@ -63,7 +63,6 @@ alias llt="exa -1 --icons --tree --git-ignore"
 alias g='git'
 alias gaa='git add .'
 alias gcmm='git commit -m'
-alias gcmt='git commit -m'
 alias gacane='git commit -a --amend --no-edit'
 alias gcane='git commit --amend --no-edit'
 alias gca='git commit --amend'
@@ -71,9 +70,6 @@ alias gacaneud='git commit -a --amend --no-edit --date=now'
 alias gin='git pull'
 alias gst='git status'
 alias gout='git push'
-
-alias cmt='cmmiter commit'
-alias cm='cmmiter commit'
 
 #Misc
 alias j='z'
