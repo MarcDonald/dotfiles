@@ -21,7 +21,7 @@
 	"material-icon-theme.activeIconPack": "react",
 	"npm.packageManager": "npm",
 	"npm.enableRunFromFolder": true,
-	"prettier.configPath": ".prettierrc.js",
+	"prettier.configPath": ".prettierrc.cjs",
 	"vim.camelCaseMotion.enable": true,
 	"vim.easymotion": true,
 	"vim.easymotionMarkerForegroundColorOneChar": "#ffffff",
@@ -181,7 +181,7 @@
 	},
 	"editor.stickyScroll.enabled": true,
 	"[javascript]": {
-		"editor.defaultFormatter": "dbaeumer.vscode-eslint"
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
 	},
 	"workbench.editor.wrapTabs": true,
 	"screencastMode.fontSize": 30,
@@ -263,5 +263,12 @@
 	"emmet.showExpandedAbbreviation": "inMarkupAndStylesheetFilesOnly",
 	"intellij-idea-keybindings.useCamelHumpsWords": true,
 	"vim.sneakReplacesF": true,
-	"window.systemColorTheme": "auto"
+	"window.systemColorTheme": "auto",
+	"editor.minimap.enabled": false,
+	"typescript.updateImportsOnFileMove.enabled": "always",
+	"editor.accessibilitySupport": "off",
+	"[go]": {
+		"editor.defaultFormatter": "golang.go"
+	},
+	"prettier.enable": false
 }

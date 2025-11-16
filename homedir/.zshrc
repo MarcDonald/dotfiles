@@ -18,7 +18,7 @@ source ~/.oh-my-zsh/custom/themes/catppuccin/themes/catppuccin_mocha-zsh-syntax-
 #ZSH_THEME="gruvbox"
 #SOLARIZED_THEME="dark"
 
-plugins=(colored-man-pages git zsh-autosuggestions zsh-syntax-highlighting zsh-autocomplete golang z fnm)
+plugins=(colored-man-pages git zsh-autosuggestions zsh-syntax-highlighting zsh-autocomplete golang z fnm docker)
 
 # init oh-my-zsh
 source $ZSH/oh-my-zsh.sh
@@ -56,13 +56,14 @@ alias cl='clear'
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
-alias ll="exa -l -g --icons --git"
-alias llt="exa -1 --icons --tree --git-ignore"
+alias ll="eza -l -g --icons --git"
+alias llt="eza -1 --icons --tree --git-ignore"
 
 #Git
 alias g='git'
 alias gaa='git add .'
 alias gcmm='git commit -m'
+alias gcmt='git commit -m'
 alias gacane='git commit -a --amend --no-edit'
 alias gcane='git commit --amend --no-edit'
 alias gca='git commit --amend'
